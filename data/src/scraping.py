@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from understatapi import UnderstatClient
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -33,6 +34,67 @@ afc_df.to_csv('Arsenal.csv', index=False)
 
 afc_df = pd.read_csv("Arsenal.csv")
 
-for opponent in afc_df["Opponent"]:
-    print(opponent)
+understat = UnderstatClient()
+
+matches = (
+    understat
+    .league("EPL")
+    .get_match_data(season="2025")
+)
+
+team_name_map = {
+    "Wolves": "Wolverhampton Wanderers",
+    "Leeds United": "Leeds",
+    "Nottingham": "Nottingham Forest",
+    "Manchester Utd": "Manchester United",
+    "Newcastle": "Newcastle United"
+}
+
+for _, row in afc_df.iterrows():
+    opponent = row["Opponent"]
+
+    opponent = team_name_map.get(opponent, opponent)
+
+    venue = row["Venue"]
+    comp = row["Comp"]
+
+    if venue == "Home" and comp == "Premier League":
+        game = next(
+            (
+                m for m in matches
+                if m["h"]["title"] == "Arsenal"
+                and m["a"]["title"] == opponent
+            ),
+            None,
+        )
+
+        if game:
+            print(game)
+            print("\n")
+        else:
+            print(f"Couldn't find Arsenal vs {opponent}")
+
+    elif venue == "Away" and comp == "Premier League":
+        game = next(
+            (
+                m for m in matches
+                if m["h"]["title"] == opponent
+                and m["a"]["title"] == "Arsenal"
+            ),
+            None,
+        )
+
+        if game:
+            print(game)
+            print("\n")
+        else:
+            print(f"Couldn't find Arsenal vs {opponent}")
+
+
+
+
+
+
+
+
 
