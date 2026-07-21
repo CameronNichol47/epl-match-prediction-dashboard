@@ -37,24 +37,9 @@ game = next(
     and m["a"]["title"] == "Aston Villa"
 )
 
-print(game['xG']['a'])
+print(game.keys())
 
-response = requests.get(url, headers=headers)
 
-print(response.status_code)
-
-data = response.json()
-matches = []
-
-for match in data["matches"]:
-    matches.append({
-        "home": match["homeTeam"]["name"],
-        "away": match["awayTeam"]["name"],
-        "date": match["utcDate"]
-    })
-    
-    
-print(matches)
     
 
 

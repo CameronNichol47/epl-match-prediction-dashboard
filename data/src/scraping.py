@@ -4,18 +4,16 @@ from understatapi import UnderstatClient
 
 BASE_DIR = Path(__file__).resolve().parent
 
-html_path = (
+standard_html_path = (
     BASE_DIR.parent
     / "raw"
     / "Arsenal Stats, Premier League _ FBref.com.html"
 )
 
-with html_path.open("r", encoding="utf-8") as file:
-    tables = pd.read_html(file)
-    afc_df = tables[1]
+with standard_html_path.open("r", encoding="utf-8") as file:
+    standard_tables = pd.read_html(file)
 
-for col in tables[1].columns:
-    print(col)
+afc_df = standard_tables[1]
 
 columns = [
     "Date",
@@ -29,6 +27,101 @@ columns = [
 ]
 
 afc_df=afc_df[columns].copy()
+
+html_path = (
+    BASE_DIR.parent
+    / "raw"
+    / "Arsenal Match Logs (Shooting), All Competitions _ FBref.com.html"
+)
+
+with html_path.open("r", encoding="utf-8") as file:
+    tables = pd.read_html(file)
+
+def load_shooting(df, tables):
+    shooting_for = tables[0]
+
+    shooting_for = shooting_for[
+        [
+            ("For Arsenal", "Date"),
+            ("For Arsenal", "Comp"),
+            ("For Arsenal", "Venue"),
+            ("For Arsenal", "Opponent"),
+            ("Standard", "Sh"),
+            ("Standard", "SoT"),
+            ("Standard", "SoT%"),
+        ]
+    ].copy()
+
+    shooting_for.columns = [
+        "Date",
+        "Comp",
+        "Venue",
+        "Opponent",
+        "Shots_For",
+        "SoT_For",
+        "SoT%_For",
+    ]
+
+    merge_columns = [
+        "Date",
+        "Comp",
+        "Venue",
+        "Opponent",
+    ]
+
+    df = df.merge(
+        shooting_for,
+        on=merge_columns,
+        how="left",
+    )
+
+    return df
+
+afc_df = load_shooting(afc_df, tables)
+
+
+def load_shooting_against(df, tables):
+    shooting_against = tables[1]    
+
+    shooting_against = shooting_against[
+        [
+            ("Against Arsenal", "Date"),
+            ("Against Arsenal", "Comp"),
+            ("Against Arsenal", "Venue"),
+            ("Against Arsenal", "Opponent"),
+            ("Standard", "Sh"),
+            ("Standard", "SoT"),
+            ("Standard", "SoT%"),
+        ]
+    ].copy()
+
+    shooting_against.columns = [
+        "Date",
+        "Comp",
+        "Venue",
+        "Opponent",
+        "Shots_Against",
+        "SoT_Against",
+        "SoT%_Against",
+    ]
+
+    df = df.merge(
+        shooting_against,
+        on=[
+            "Date",
+            "Comp",
+            "Opponent",
+        ],
+        how="left",
+    )
+
+    return df
+
+afc_df = load_shooting_against(afc_df, tables)
+
+afc_df = afc_df[afc_df["Comp"] == "Premier League"]
+
+afc_df.rename(columns={"Venue_x": "Venue"}, inplace=True)
 
 afc_df.to_csv('Arsenal.csv', index=False)
 
