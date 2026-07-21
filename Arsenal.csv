@@ -1,4 +1,4 @@
-Date,Comp,Venue,Result,GF,GA,Opponent,Poss,Shots_For,SoT_For,SoT%_For,Venue_y,Shots_Against,SoT_Against,SoT%_Against,XG_for,XG against
+Date,Comp,Venue,Result,GF,GA,Opponent,Poss,Shots_For,SoT_For,SoT%_For,Venue_y,Shots_Against,SoT_Against,SoT%_Against,XG_for,XG_against
 2025-08-17,Premier League,Away,W,1,0,Manchester Utd,39,9,3,33.3,Home,22,7,31.8,1.3304,1.37653
 2025-08-23,Premier League,Home,W,5,0,Leeds United,68,18,5,27.8,Away,3,1,33.3,2.73761,0.156761
 2025-08-31,Premier League,Away,L,0,1,Liverpool,47,11,1,9.1,Home,9,3,33.3,0.485679,0.481404

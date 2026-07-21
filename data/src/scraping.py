@@ -3,39 +3,40 @@ import pandas as pd
 from understatapi import UnderstatClient
 
 BASE_DIR = Path(__file__).resolve().parent
+RAW_DIR = BASE_DIR.parent / "raw"
 
-standard_html_path = (
-    BASE_DIR.parent
-    / "raw"
-    / "Arsenal Stats, Premier League _ FBref.com.html"
-)
+def load_standard_data():
+    standard_html_path = (
+        RAW_DIR
+        / "Arsenal Stats, Premier League _ FBref.com.html"
+    )
 
-with standard_html_path.open("r", encoding="utf-8") as file:
-    standard_tables = pd.read_html(file)
+    with standard_html_path.open("r", encoding="utf-8") as file:
+        standard_tables = pd.read_html(file)
 
-afc_df = standard_tables[1]
+    df = standard_tables[1]
 
-columns = [
-    "Date",
-    "Comp",
-    "Venue",
-    "Result",
-    "GF",
-    "GA",
-    "Opponent",
-    "Poss",
-]
+    columns = [
+        "Date",
+        "Comp",
+        "Venue",
+        "Result",
+        "GF",
+        "GA",
+        "Opponent",
+        "Poss",
+    ]
 
-afc_df=afc_df[columns].copy()
+    return df[columns].copy()
 
-html_path = (
-    BASE_DIR.parent
-    / "raw"
-    / "Arsenal Match Logs (Shooting), All Competitions _ FBref.com.html"
-)
+def load_shooting_tables():
+    shooting_html_path = (
+        RAW_DIR
+        / "Arsenal Match Logs (Shooting), All Competitions _ FBref.com.html"
+    )
 
-with html_path.open("r", encoding="utf-8") as file:
-    tables = pd.read_html(file)
+    with shooting_html_path.open("r", encoding="utf-8") as file:
+        return pd.read_html(file)
 
 def load_shooting(df, tables):
     shooting_for = tables[0]
@@ -77,9 +78,6 @@ def load_shooting(df, tables):
 
     return df
 
-afc_df = load_shooting(afc_df, tables)
-
-
 def load_shooting_against(df, tables):
     shooting_against = tables[1]    
 
@@ -117,98 +115,133 @@ def load_shooting_against(df, tables):
 
     return df
 
-afc_df = load_shooting_against(afc_df, tables)
+def add_xg(df, team):
+    understat = UnderstatClient()
 
-afc_df = afc_df[afc_df["Comp"] == "Premier League"]
+    matches = (
+        understat
+        .league("EPL")
+        .get_match_data(season="2025")
+    )
 
-afc_df.rename(columns={"Venue_x": "Venue"}, inplace=True)
+    team_name_map = {
+        "Wolves": "Wolverhampton Wanderers",
+        "Leeds United": "Leeds",
+        "Nottingham": "Nottingham Forest",
+        "Manchester Utd": "Manchester United",
+        "Newcastle": "Newcastle United"
+    }
 
-afc_df["XG_for"] = 0
-afc_df["XG against"] = 0
+    xg_values = []
+    xga_values = []
 
-afc_df.to_csv('Arsenal.csv', index=False)
+    for _, row in df.iterrows():
+        opponent = row["Opponent"]
 
-afc_df = pd.read_csv("Arsenal.csv")
+        opponent = team_name_map.get(opponent, opponent)
 
-understat = UnderstatClient()
-
-matches = (
-    understat
-    .league("EPL")
-    .get_match_data(season="2025")
-)
-
-team_name_map = {
-    "Wolves": "Wolverhampton Wanderers",
-    "Leeds United": "Leeds",
-    "Nottingham": "Nottingham Forest",
-    "Manchester Utd": "Manchester United",
-    "Newcastle": "Newcastle United"
-}
-
-xg_values = []
-xga_values = []
-
-for _, row in afc_df.iterrows():
-    opponent = row["Opponent"]
-
-    opponent = team_name_map.get(opponent, opponent)
-
-    venue = row["Venue"]
-    comp = row["Comp"]
+        venue = row["Venue"]
+        comp = row["Comp"]
 
 
-    if venue == "Home" and comp == "Premier League":
-        game = None
+        if venue == "Home" and comp == "Premier League":
+            game = None
 
-        for m in matches:
-            if (m["h"]["title"] == "Arsenal" and m["a"]["title"] == opponent):
-                game = m
-                break
+            for m in matches:
+                if (m["h"]["title"] == team and m["a"]["title"] == opponent):
+                    game = m
+                    break
 
-        if game:
-            print(game)
-            print("\n")
+            if game:
+                print(game)
+                print("\n")
 
-            xg = float(game["xG"]["h"])
-            xga = float(game["xG"]["a"])
+                xg = float(game["xG"]["h"])
+                xga = float(game["xG"]["a"])
 
-            xg_values.append(xg)
-            xga_values.append(xga)
+                xg_values.append(xg)
+                xga_values.append(xga)
 
-        else:
-            print(f"Couldn't find Arsenal vs {opponent}")
+            else:
+                print(f"Couldn't find {team} vs {opponent}")
 
-    elif venue == "Away" and comp == "Premier League":
-        game = None
+        elif venue == "Away" and comp == "Premier League":
+            game = None
 
-        for m in matches:
-            if (m["h"]["title"] == opponent and m["a"]["title"] == "Arsenal"):
-                game = m
-                break
+            for m in matches:
+                if (m["h"]["title"] == opponent and m["a"]["title"] == team):
+                    game = m
+                    break
 
-        if game:
-            print(game)
-            print("\n")
+            if game:
+                print(game)
+                print("\n")
 
-            xga = float(game["xG"]["h"])
-            xg = float(game["xG"]["a"])
+                xga = float(game["xG"]["h"])
+                xg = float(game["xG"]["a"])
 
-            xg_values.append(xg)
-            xga_values.append(xga)
+                xg_values.append(xg)
+                xga_values.append(xga)
 
-        else:
-            print(f"Couldn't find Arsenal vs {opponent}")
+            else:
+                print(f"Couldn't find {team} vs {opponent}")
+
+    df["XG_for"] = xg_values
+    df["XG_against"] = xga_values
+
+    return df
+
+def preprocess_data(df):
+    df["Venue"] = df["Venue"].map({
+        "Home": 1,
+        "Away": 0
+    })
+
+    df["Result"] = df["Result"].map({
+        "W": 0,
+        "D": 1,
+        "L": 2
+    })
+
+    return df
 
 
-#print(xg_values)
-#print("\n")
-#print(xga_values)
+def main():
+    df = load_standard_data()
+    tables = load_shooting_tables()
 
-afc_df["XG_for"] = xg_values
-afc_df["XG against"] = xga_values
+    df = load_shooting(df, tables)
+    df = load_shooting_against(df, tables)
 
-afc_df.to_csv("Arsenal.csv", index=False)
+    df = df[df["Comp"] == "Premier League"].copy()
+
+    df.rename(
+        columns={"Venue_x": "Venue"},
+        inplace=True,
+    )
+
+    if "Venue_y" in df.columns:
+        df.drop(columns=["Venue_y"], inplace=True)
+
+    df = add_xg(df, "Arsenal")
+    df = preprocess_data(df)
+
+    output_path = BASE_DIR.parent / "processed" / "Arsenal.csv"
+    df.to_csv(output_path, index=False)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
 
  
         
