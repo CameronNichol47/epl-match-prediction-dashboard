@@ -123,6 +123,9 @@ afc_df = afc_df[afc_df["Comp"] == "Premier League"]
 
 afc_df.rename(columns={"Venue_x": "Venue"}, inplace=True)
 
+afc_df["XG_for"] = 0
+afc_df["XG against"] = 0
+
 afc_df.to_csv('Arsenal.csv', index=False)
 
 afc_df = pd.read_csv("Arsenal.csv")
@@ -143,6 +146,9 @@ team_name_map = {
     "Newcastle": "Newcastle United"
 }
 
+xg_values = []
+xga_values = []
+
 for _, row in afc_df.iterrows():
     opponent = row["Opponent"]
 
@@ -151,37 +157,62 @@ for _, row in afc_df.iterrows():
     venue = row["Venue"]
     comp = row["Comp"]
 
+
     if venue == "Home" and comp == "Premier League":
-        game = next(
-            (
-                m for m in matches
-                if m["h"]["title"] == "Arsenal"
-                and m["a"]["title"] == opponent
-            ),
-            None,
-        )
+        game = None
+
+        for m in matches:
+            if (m["h"]["title"] == "Arsenal" and m["a"]["title"] == opponent):
+                game = m
+                break
 
         if game:
             print(game)
             print("\n")
+
+            xg = float(game["xG"]["h"])
+            xga = float(game["xG"]["a"])
+
+            xg_values.append(xg)
+            xga_values.append(xga)
+
         else:
             print(f"Couldn't find Arsenal vs {opponent}")
 
     elif venue == "Away" and comp == "Premier League":
-        game = next(
-            (
-                m for m in matches
-                if m["h"]["title"] == opponent
-                and m["a"]["title"] == "Arsenal"
-            ),
-            None,
-        )
+        game = None
+
+        for m in matches:
+            if (m["h"]["title"] == opponent and m["a"]["title"] == "Arsenal"):
+                game = m
+                break
 
         if game:
             print(game)
             print("\n")
+
+            xga = float(game["xG"]["h"])
+            xg = float(game["xG"]["a"])
+
+            xg_values.append(xg)
+            xga_values.append(xga)
+
         else:
             print(f"Couldn't find Arsenal vs {opponent}")
+
+
+#print(xg_values)
+#print("\n")
+#print(xga_values)
+
+afc_df["XG_for"] = xg_values
+afc_df["XG against"] = xga_values
+
+afc_df.to_csv("Arsenal.csv", index=False)
+
+ 
+        
+
 
 
 
