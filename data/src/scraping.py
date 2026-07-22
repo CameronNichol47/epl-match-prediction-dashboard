@@ -254,9 +254,9 @@ def preprocess_data(df):
     })
 
     df["Result"] = df["Result"].map({
-        "W": 0,
+        "W": 3,
         "D": 1,
-        "L": 2
+        "L": 0
     })
 
     return df
@@ -268,7 +268,7 @@ def main():
     statistics, adding expected goals data, preprocessing the
     dataset, and exporting the final CSV files.
     """
-    
+
     teams = {
         "Arsenal": "Arsenal",
         "Aston Villa": "Aston_Villa",
