@@ -17,7 +17,7 @@ def roll_avg_three_poss(df):
     avg = 0
     lst = []
 
-    for row in df["Poss"]:
+    for _ in df["Poss"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'Poss'].astype(float),
                    df.loc[count - 2, 'Poss'].astype(float), 
@@ -36,7 +36,7 @@ def roll_avg_five_poss(df):
     avg = 0
     lst = []
 
-    for row in df["Poss"]:
+    for _ in df["Poss"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'Poss'].astype(float),
                    df.loc[count - 4, 'Poss'].astype(float), 
@@ -57,7 +57,7 @@ def roll_avg_three_shots_for(df):
     avg = 0
     lst = []
 
-    for row in df["Shots_For"]:
+    for _ in df["Shots_For"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'Shots_For'].astype(float),
                    df.loc[count - 2, 'Shots_For'].astype(float), 
@@ -76,7 +76,7 @@ def roll_avg_five_shots_for(df):
     avg = 0
     lst = []
 
-    for row in df["Shots_For"]:
+    for _ in df["Shots_For"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'Shots_For'].astype(float),
                    df.loc[count - 4, 'Shots_For'].astype(float), 
@@ -97,7 +97,7 @@ def roll_avg_three_shotsT_for(df):
     avg = 0
     lst = []
 
-    for row in df["SoT_For"]:
+    for _ in df["SoT_For"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'SoT_For'].astype(float),
                    df.loc[count - 2, 'SoT_For'].astype(float), 
@@ -116,7 +116,7 @@ def roll_avg_five_shotsT_for(df):
     avg = 0
     lst = []
 
-    for row in df["SoT_For"]:
+    for _ in df["SoT_For"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'SoT_For'].astype(float),
                    df.loc[count - 4, 'SoT_For'].astype(float), 
@@ -137,7 +137,7 @@ def roll_avg_three_shots_against(df):
     avg = 0
     lst = []
 
-    for row in df["Shots_Against"]:
+    for _ in df["Shots_Against"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'Shots_Against'].astype(float),
                    df.loc[count - 2, 'Shots_Against'].astype(float), 
@@ -156,7 +156,7 @@ def roll_avg_five_shots_against(df):
     avg = 0
     lst = []
 
-    for row in df["SoT_Against"]:
+    for _ in df["SoT_Against"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'SoT_Against'].astype(float),
                    df.loc[count - 4, 'SoT_Against'].astype(float), 
@@ -177,7 +177,7 @@ def roll_avg_three_shotsT_against(df):
     avg = 0
     lst = []
 
-    for row in df["SoT_Against"]:
+    for _ in df["SoT_Against"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'SoT_Against'].astype(float),
                    df.loc[count - 2, 'SoT_Against'].astype(float), 
@@ -196,7 +196,7 @@ def roll_avg_five_shotsT_against(df):
     avg = 0
     lst = []
 
-    for row in df["Shots_Against"]:
+    for _ in df["Shots_Against"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'Shots_Against'].astype(float),
                    df.loc[count - 4, 'Shots_Against'].astype(float), 
@@ -217,7 +217,7 @@ def roll_avg_three_xg_for(df):
     avg = 0
     lst = []
 
-    for row in df["XG_for"]:
+    for _ in df["XG_for"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'XG_for'].astype(float),
                    df.loc[count - 2, 'XG_for'].astype(float), 
@@ -236,7 +236,7 @@ def roll_avg_five_xg_for(df):
     avg = 0
     lst = []
 
-    for row in df["XG_for"]:
+    for _ in df["XG_for"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'XG_for'].astype(float),
                    df.loc[count - 4, 'XG_for'].astype(float), 
@@ -257,7 +257,7 @@ def roll_avg_three_xg_against(df):
     avg = 0
     lst = []
 
-    for row in df["XG_against"]:
+    for _ in df["XG_against"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'XG_against'].astype(float),
                    df.loc[count - 2, 'XG_against'].astype(float), 
@@ -276,7 +276,7 @@ def roll_avg_five_xg_against(df):
     avg = 0
     lst = []
 
-    for row in df["XG_against"]:
+    for _ in df["XG_against"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'XG_against'].astype(float),
                    df.loc[count - 4, 'XG_against'].astype(float), 
@@ -297,7 +297,7 @@ def roll_avg_three_gf(df):
     avg = 0
     lst = []
 
-    for row in df["GF"]:
+    for _ in df["GF"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'GF'].astype(float),
                    df.loc[count - 2, 'GF'].astype(float), 
@@ -316,7 +316,7 @@ def roll_avg_five_gf(df):
     avg = 0
     lst = []
 
-    for row in df["GF"]:
+    for _ in df["GF"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'GF'].astype(float),
                    df.loc[count - 4, 'GF'].astype(float), 
@@ -337,7 +337,7 @@ def roll_avg_three_ga(df):
     avg = 0
     lst = []
 
-    for row in df["GA"]:
+    for _ in df["GA"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'GA'].astype(float),
                    df.loc[count - 2, 'GA'].astype(float), 
@@ -356,7 +356,7 @@ def roll_avg_five_ga(df):
     avg = 0
     lst = []
 
-    for row in df["GA"]:
+    for _ in df["GA"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'GA'].astype(float),
                    df.loc[count - 4, 'GA'].astype(float), 
@@ -377,7 +377,7 @@ def roll_avg_three_points(df):
     avg = 0
     lst = []
 
-    for row in df["Result"]:
+    for _ in df["Result"]:
         if count >= 3:
             avg = np.mean([df.loc[count - 3, 'Result'].astype(float),
                    df.loc[count - 2, 'Result'].astype(float), 
@@ -396,7 +396,7 @@ def roll_avg_five_points(df):
     avg = 0
     lst = []
 
-    for row in df["Result"]:
+    for _ in df["Result"]:
         if count >= 5:
             avg = np.mean([df.loc[count - 5, 'Result'].astype(float),
                    df.loc[count - 4, 'Result'].astype(float), 
@@ -410,6 +410,62 @@ def roll_avg_five_points(df):
         count+=1
 
     df["Result_last5"] = lst
+    return df
+
+def roll_avg_hposs_three(df):
+    count = 0
+    avg = 0
+    lst = []
+    home_rows = []
+
+    for i in df.index:
+        if df.loc[i, "Venue"] == 1:
+            if count >= 3:
+                avg = np.mean([
+                    df.loc[home_rows[count - 3], "Poss"].astype(float),
+                    df.loc[home_rows[count - 2], "Poss"].astype(float),
+                    df.loc[home_rows[count - 1], "Poss"].astype(float)
+                ])
+
+                lst.append(float(round(avg, 4)))
+            else:
+                lst.append(np.nan)
+
+            home_rows.append(i)
+            count += 1
+
+        else:
+            lst.append(np.nan)
+
+    df["Home_Poss_last3"] = lst
+    return df
+
+def roll_avg_aposs_three(df):
+    count = 0
+    avg = 0
+    lst = []
+    away_rows = []
+
+    for i in df.index:
+        if df.loc[i, "Venue"] == 0:
+            if count >= 3:
+                avg = np.mean([
+                    df.loc[away_rows[count - 3], "Poss"].astype(float),
+                    df.loc[away_rows[count - 2], "Poss"].astype(float),
+                    df.loc[away_rows[count - 1], "Poss"].astype(float)
+                ])
+
+                lst.append(float(round(avg, 4)))
+            else:
+                lst.append(np.nan)
+
+            away_rows.append(i)
+            count += 1
+
+        else:
+            lst.append(np.nan)
+
+    df["Away_Poss_last3"] = lst
     return df
 
 def main():
@@ -458,6 +514,8 @@ def main():
         df = roll_avg_five_ga(df)
         df = roll_avg_three_points(df)
         df = roll_avg_five_points(df)
+        df = roll_avg_hposs_three(df)
+        df = roll_avg_aposs_three(df)
 
         output_path = BASE_DIR.parent / "processed" / f"{team}.csv"
         df.to_csv(output_path, index=False)
