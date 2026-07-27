@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from . import feature_engineering 
 
 BASE_DIR = Path(__file__).resolve().parent
 PRO_DIR = BASE_DIR.parent / "processed"
@@ -17,6 +18,7 @@ def load_team(team):
     return df
 
 def build(home, away):
+    feature_engineering.main()
     home_df = load_team(home)
     away_df = load_team(away)
 
@@ -95,9 +97,3 @@ def build(home, away):
     output_path = BASE_DIR.parent / "matches" / f"{home + "_VS_" + away}.csv"
     df.to_csv(output_path, index=False)
 
-def main():
-    build("Arsenal", "Everton")
-    
-
-if __name__ == "__main__":
-    main()

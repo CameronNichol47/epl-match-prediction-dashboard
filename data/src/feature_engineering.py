@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import numpy as np
-import scraping
+from . import scraping
 
 BASE_DIR = Path(__file__).resolve().parent
 PRO_DIR = BASE_DIR.parent / "processed"
