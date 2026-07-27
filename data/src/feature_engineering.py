@@ -169,7 +169,7 @@ def roll_avg_five_shots_against(df):
             lst.append(np.nan)
         count+=1
 
-    df["SoT_Against_last5"] = lst
+    df["Shots_Against_last5"] = lst
     return df
     
 def roll_avg_three_shotsT_against(df):
@@ -188,7 +188,7 @@ def roll_avg_three_shotsT_against(df):
             lst.append(np.nan)
         count+=1
 
-    df["SoT_Against_last3"] = lst
+    df["ShotsT_Against_last3"] = lst
     return df
     
 def roll_avg_five_shotsT_against(df):
@@ -209,7 +209,7 @@ def roll_avg_five_shotsT_against(df):
             lst.append(np.nan)
         count+=1
 
-    df["Shots_Against_last5"] = lst
+    df["ShotsT_Against_last5"] = lst
     return df
     
 def roll_avg_three_xg_for(df):
