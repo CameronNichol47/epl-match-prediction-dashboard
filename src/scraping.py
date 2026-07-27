@@ -3,7 +3,7 @@ import pandas as pd
 from understatapi import UnderstatClient
 
 BASE_DIR = Path(__file__).resolve().parent
-RAW_DIR = BASE_DIR.parent / "raw"
+RAW_DIR = BASE_DIR.parent / "data" / "raw"
 
 fbref_name_map = {
     "Brighton": "Brighton & Hove Albion",
@@ -309,7 +309,7 @@ def main():
         df = add_xg(df, team)
         df = preprocess_data(df)
 
-        output_path = BASE_DIR.parent / "processed" / f"{team}.csv"
+        output_path = BASE_DIR.parent / "data" / "processed" / f"{team}.csv"
         df.to_csv(output_path, index=False)
 
 

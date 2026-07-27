@@ -4,7 +4,7 @@ import numpy as np
 from . import scraping
 
 BASE_DIR = Path(__file__).resolve().parent
-PRO_DIR = BASE_DIR.parent / "processed"
+PRO_DIR = BASE_DIR.parent / "data" / "processed"
 
 
 def load_csv(team):
@@ -919,7 +919,7 @@ def main():
         df = roll_avg_hgoaldiff_three(df)
         df = roll_avg_agoaldiff_three(df)
 
-        output_path = BASE_DIR.parent / "processed" / f"{team}.csv"
+        output_path = BASE_DIR.parent / "data" / "processed" / f"{team}.csv"
         df.to_csv(output_path, index=False)
 
 

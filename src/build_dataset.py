@@ -3,12 +3,21 @@ import pandas as pd
 from . import feature_engineering 
 
 BASE_DIR = Path(__file__).resolve().parent
-PRO_DIR = BASE_DIR.parent / "processed"
+PRO_DIR = BASE_DIR.parent / "data" / "processed"
 
+TEAM_FILE_NAMES = {
+    "Newcastle United": "Newcastle",
+    "Manchester United": "Manchester Utd",
+    "Nottingham Forest": "Nottingham",
+    "Tottenham Hotspur": "Tottenham",
+    "Brighton and Hove Albion": "Brighton",
+    "Wolverhampton Wanderers": "Wolves",
+}
 
 def load_team(team):
-    file_path = PRO_DIR / f"{team}.csv"
-
+    file_team = TEAM_FILE_NAMES.get(team, team)
+    file_path = PRO_DIR / f"{file_team}.csv"
+    
     if not file_path.exists():
         raise FileNotFoundError(f"Could not find {file_path}")
 
@@ -94,6 +103,6 @@ def build(home, away):
     df.insert(1, "Away", away)
 
 
-    output_path = BASE_DIR.parent / "matches" / f"{home + "_VS_" + away}.csv"
+    output_path = BASE_DIR.parent / "data" / "matches" / f"{home + "_VS_" + away}.csv"
     df.to_csv(output_path, index=False)
 

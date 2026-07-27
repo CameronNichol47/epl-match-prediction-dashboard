@@ -2,9 +2,7 @@ import streamlit as st
 from fixtures_api import gameweek_one
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from data.src.build_dataset import build
-
-
+from src.build_dataset import build
 
 st.title('Premier League Matchweek 1')
 
