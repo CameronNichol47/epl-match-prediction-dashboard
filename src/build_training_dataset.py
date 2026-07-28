@@ -29,7 +29,7 @@ def load_team(team):
 
     return df
 
-def build_training(home, away, match_date):
+def build_training(home, away, match_date, result):
     home_df = load_team(home)
     away_df = load_team(away)
 
@@ -118,8 +118,7 @@ def build_training(home, away, match_date):
     df.insert(0, "Date", match_date)
     df.insert(1, "Home", home)
     df.insert(2, "Away", away)
-
-
+    df.insert(3, "Result", result)
 
     output_path = BASE_DIR.parent / "data" / "matches_historical" / f"{home + "_VS_" + away + "_training"}.csv"
     df.to_csv(output_path, index=False)
@@ -138,16 +137,29 @@ def main():
 
     for match in matches:
         if match['h']['title'] not in relegated_teams and match['a']['title'] not in relegated_teams:
+            home_goals = int(match["goals"]["h"])
+            away_goals = int(match["goals"]["a"])
+
+            if home_goals > away_goals:
+                result = 2  #Represent home win    
+            elif home_goals == away_goals:
+                result = 1     
+            else:
+                result = 0 #Represent away win
+
             games.append({
             "home": match['h']['title'],
             "away": match['a']['title'],
-            "date": pd.to_datetime(match["datetime"]).date()
+            "date": pd.to_datetime(match["datetime"]).date(),
+            "result": result
         })
             
     #print(games)
 
+         
+
     for game in games:
-        build_training(game['home'], game['away'], game['date'])
+        build_training(game['home'], game['away'], game['date'], game['result'])
         
 
 if __name__ == "__main__":
