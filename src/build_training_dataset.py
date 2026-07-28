@@ -115,8 +115,10 @@ def build_training(home, away, match_date):
                     away_features.reset_index(drop=True),]
                     ,axis=1,)
 
-    df.insert(0, "Home", home)
-    df.insert(1, "Away", away)
+    df.insert(0, "Date", match_date)
+    df.insert(1, "Home", home)
+    df.insert(2, "Away", away)
+
 
 
     output_path = BASE_DIR.parent / "data" / "matches_historical" / f"{home + "_VS_" + away + "_training"}.csv"
