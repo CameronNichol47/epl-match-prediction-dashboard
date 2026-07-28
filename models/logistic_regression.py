@@ -15,7 +15,7 @@ PROJECT_DIR = BASE_DIR.parent
 MODEL_PATH = BASE_DIR / "logistic_regression.pkl"
 
 
-df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset.csv")
+df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset_with_elo.csv")
 
 df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values("Date").reset_index(drop=True)

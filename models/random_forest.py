@@ -8,8 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
 
-df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset.csv")
-
+df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset_with_elo.csv")
 df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values("Date").reset_index(drop=True)
 
