@@ -6,12 +6,19 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
+import joblib
+
 
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
+MODEL_PATH = BASE_DIR / "logistic_regression.pkl"
+
 
 df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset.csv")
+
+df["Date"] = pd.to_datetime(df["Date"])
+df = df.sort_values("Date").reset_index(drop=True)
 
 X = df.drop(columns=["Date","Home","Away","Result"])
 y = df["Result"]
@@ -42,12 +49,26 @@ print(confusion_matrix(y_test, predict))
 print(classification_report(y_test, predict))
 
 
-corr = X.corr(numeric_only=True)
+# corr = X.corr(numeric_only=True)
 
-plt.figure(figsize=(20, 16))
-plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
-plt.colorbar()
-plt.xticks(range(len(corr.columns)), corr.columns, rotation=90, fontsize=8)
-plt.yticks(range(len(corr.columns)), corr.columns, fontsize=8)
-plt.tight_layout()
-plt.show()
+# plt.figure(figsize=(20, 16))
+# plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
+# plt.colorbar()
+# plt.xticks(range(len(corr.columns)), corr.columns, rotation=90, fontsize=8)
+# plt.yticks(range(len(corr.columns)), corr.columns, fontsize=8)
+# plt.tight_layout()
+# plt.show()
+
+model_data = {
+    "model": model,
+    "feature_names": X.columns.tolist(),
+    "class_labels": {
+        0: "Away Win",
+        1: "Draw",
+        2: "Home Win",
+    },
+}
+
+joblib.dump(model_data, MODEL_PATH)
+
+print(f"Model saved to: {MODEL_PATH}")

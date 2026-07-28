@@ -10,6 +10,9 @@ PROJECT_DIR = BASE_DIR.parent
 
 df = pd.read_csv(PROJECT_DIR / "data" / "training" / "training_dataset.csv")
 
+df["Date"] = pd.to_datetime(df["Date"])
+df = df.sort_values("Date").reset_index(drop=True)
+
 X = df.drop(columns=["Date","Home","Away","Result"])
 y = df["Result"]
 
