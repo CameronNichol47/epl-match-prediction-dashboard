@@ -12,7 +12,7 @@ df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values("Date").reset_index(drop=True)
 
 X = df.drop(columns=["Date","Home","Away","Result", "Home_Elo",
-        "Away_Elo", "Home_Poss_last3",
+    "Away_Elo", "Home_Poss_last3",
     "Home_Shots_For_last3",
     "Home_ShotsT_For_last3",
     "Home_Shots_Against_last3",
@@ -36,7 +36,20 @@ X = df.drop(columns=["Date","Home","Away","Result", "Home_Elo",
     "Away_GA_last3",
     "Away_Result_last3",
     "Away_XG_Diff_last3",
-    "Away_Goal_Diff_last3",])
+    "Away_Goal_Diff_last3",
+    "Home_Home_Poss_last3",
+    "Home_Home_XG_for_last3",
+    "Home_Home_XG_against_last3",
+    "Home_Home_Result_last3",
+    "Home_Home_XG_Diff_last3",
+    "Home_Home_Goal_Diff_last3",
+
+    "Away_Away_Poss_last3",
+    "Away_Away_XG_for_last3",
+    "Away_Away_XG_against_last3",
+    "Away_Away_Result_last3",
+    "Away_Away_XG_Diff_last3",
+    "Away_Away_Goal_Diff_last3",])
 y = df["Result"]
 
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

@@ -1,57 +1,147 @@
-# Premier League Match Predictor
+# ⚽ Premier League Match Outcome Predictor
 
-A machine learning project that predicts Premier League match outcomes using team statistics and rolling performance metrics.
+A machine learning project that predicts Premier League match outcomes (Home Win, Draw, Away Win) using historical match statistics, rolling averages, Elo ratings, and XGBoost.
+
+The project compares multiple machine learning models and demonstrates how feature engineering and feature selection can significantly improve predictive performance.
+
+---
 
 ## Features
 
-- Automated match data collection
-- Feature engineering pipeline
-- Rolling averages (last 3 and last 5 matches)
-- Home and away form features
-- Training dataset generation
-- Multiple machine learning models
+The model uses historical statistics from previous Premier League matches to generate rolling features for both teams.
 
-## Models
+### Match Statistics
+- Possession
+- Shots
+- Shots on Target
+- Goals For
+- Goals Against
+- Expected Goals (xG)
+- Expected Goals Against (xGA)
+- Goal Difference
+- xG Difference
+- Recent Match Results
+
+### Rolling Features
+
+The final model uses rolling averages over each team's **last 5 matches**.
+
+Examples include:
+
+- Home xG For (Last 5)
+- Home xG Against (Last 5)
+- Home Goal Difference (Last 5)
+- Away xG Difference (Last 5)
+- Away Shots on Target (Last 5)
+- Away Possession (Last 5)
+
+---
+
+## Elo Ratings
+
+An Elo rating system is implemented to capture each team's long-term strength.
+
+For every fixture the model uses:
+
+- Elo Difference (Home Elo − Away Elo)
+
+Feature selection experiments showed that using only the Elo difference produced better results than including separate Home and Away Elo ratings.
+
+---
+
+## Machine Learning Models
+
+The project compares multiple models:
 
 - Logistic Regression
 - Random Forest
 - XGBoost
 
-## Technologies
+---
+
+## Feature Selection
+
+Several feature engineering experiments were performed to improve model performance.
+
+Experiments included:
+
+- Removing redundant Last 3 rolling statistics
+- Removing venue-specific Last 3 statistics
+- Comparing Last 3 vs Last 5 rolling windows
+- Comparing multiple Elo representations
+- Analyzing XGBoost feature importance
+- Removing highly correlated features
+
+These experiments significantly improved model performance while reducing model complexity.
+
+---
+
+## Results
+
+| Model | Accuracy |
+|--------|----------|
+| Logistic Regression | 40.9% |
+| Random Forest | 34.1% |
+| Initial XGBoost | 38.6% |
+| Final XGBoost | **59.1%** |
+
+The final XGBoost model achieved approximately **59% accuracy** on a chronological hold-out test set.
+
+---
+
+## Technologies Used
 
 - Python
-- pandas
-- scikit-learn
+- Pandas
+- NumPy
 - XGBoost
-- Understat API
+- Scikit-learn
+
+---
 
 ## Project Structure
 
+```
 finance_project/
-├── app/
+│
 ├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── training/
+│
 ├── models/
-└── src/
+│   ├── logistic_regression.py
+│   ├── random_forest.py
+│   └── xgboost_model.py
+│
+├── src/
+│   ├── feature_engineering.py
+│   ├── elo.py
+│   ├── merge_elo.py
+│   └── predict_match.py
+│
+└── README.md
+```
 
-## Current Results
+---
 
-| Model | Accuracy |
-|-------|----------|
-| Logistic Regression | 45.5% |
-| XGBoost | 38.6% |
-| Random Forest | 34.1% |
+## Future Improvements
 
-*Evaluated using a chronological train/test split.*
+- Hyperparameter tuning
+- Multi-season training data
+- SHAP model explanations
+- Streamlit dashboard
+- Live fixture predictions
+- Polymarket odds comparison
+- Kelly Criterion value calculator
+- Injury and lineup adjustments
 
-## Roadmap
-
-- [ ] SHAP model explanations
-- [ ] Streamlit dashboard
-- [ ] Live fixture selection
-- [ ] Probability visualization
-- [ ] Kelly Criterion calculator
-- [ ] Injury and lineup adjustments
+---
 
 ## Author
 
-Cameron Nichol
+**Cameron Nichol**
+
+Computer Science & Applied Mathematics Student
+
+Interested in Machine Learning, Sports Analytics, Data Science, and Quantitative Finance.
