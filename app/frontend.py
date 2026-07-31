@@ -12,6 +12,7 @@ PROJECT_DIR = BASE_DIR.parent
 sys.path.insert(0, str(PROJECT_DIR))
 from src.build_dataset import build
 from src.predict_match import model
+from src.shap_explainer import explain
 
 st.title('Premier League Matchweek 1')
 
@@ -54,8 +55,14 @@ for match in gameweek_one:
         if st.button("Load Prediction", key=match["idEvent"]):
             st.write(f"Creating prediction for {home} vs {away}...")
             build(home, away)
-            prob = model(home, away)
+
+            prob, shap_figure = model(home, away)
+
             pie_chart(home, away, prob)
+
+            st.subheader("Why the model made this prediction")
+            st.pyplot(shap_figure)
+            
             
 
 

@@ -19,7 +19,7 @@ TEAM_FILE_NAMES = {
 def model(home, away):
     home = TEAM_FILE_NAMES.get(home, home)
     away = TEAM_FILE_NAMES.get(away, away)
-    
+
     MATCH_PATH = BASE_DIR / "data" / "matches" / f"{home}_VS_{away}.csv"
 
     model = joblib.load(MODEL_PATH)
@@ -70,7 +70,6 @@ def model(home, away):
     prediction = model.predict(X)[0]
     probabilities = model.predict_proba(X)[0]
 
-    print("Prediction:", prediction)
-    explain(X, prediction) 
-    return probabilities #[Away Win, Draw, Home Win]
+    print("Prediction:", prediction) 
+    return probabilities, explain(X, prediction) #[Away Win, Draw, Home Win]
 
