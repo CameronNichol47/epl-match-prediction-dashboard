@@ -1,4 +1,5 @@
 from pathlib import Path
+from joblib import dump
 import pandas as pd
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
@@ -76,6 +77,18 @@ model = XGBClassifier(
     colsample_bytree=0.8,
 )
 model.fit(X_train, y_train)
+
+model_data = {
+    "model": model,
+    "feature_names": X.columns.tolist(),
+    "class_labels": model.classes_.tolist(),
+}
+
+dump(
+    model_data,
+    PROJECT_DIR / "models" / "xgboost_model.pkl"
+)
+
 predictions = model.predict(X_test)
 
 print("Accuracy:", accuracy_score(y_test, predictions))

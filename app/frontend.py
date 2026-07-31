@@ -1,8 +1,16 @@
-import streamlit as st
+import streamlit as st 
+from pathlib import Path
 from fixtures_api import gameweek_one
 from datetime import datetime
 from zoneinfo import ZoneInfo
+import sys
+
+BASE_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = BASE_DIR.parent
+
+sys.path.insert(0, str(PROJECT_DIR))
 from src.build_dataset import build
+from src.predict_match import model
 
 st.title('Premier League Matchweek 1')
 
@@ -45,6 +53,8 @@ for match in gameweek_one:
         if st.button("Load Prediction", key=match["idEvent"]):
             st.write(f"Creating prediction for {home} vs {away}...")
             build(home, away)
+            model(home, away)
+
 
 
 
