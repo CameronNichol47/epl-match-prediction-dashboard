@@ -1,12 +1,25 @@
 from pathlib import Path
 import pandas as pd
 import joblib
+from src.shap_explainer import explain
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MODEL_PATH = BASE_DIR / "models" / "xgboost_model.pkl"
 
+TEAM_FILE_NAMES = {
+    "Newcastle United": "Newcastle",
+    "Manchester United": "Manchester Utd",
+    "Nottingham Forest": "Nottingham",
+    "Tottenham Hotspur": "Tottenham",
+    "Brighton and Hove Albion": "Brighton",
+    "Wolverhampton Wanderers": "Wolves",
+}
+
 def model(home, away):
+    home = TEAM_FILE_NAMES.get(home, home)
+    away = TEAM_FILE_NAMES.get(away, away)
+    
     MATCH_PATH = BASE_DIR / "data" / "matches" / f"{home}_VS_{away}.csv"
 
     model = joblib.load(MODEL_PATH)
@@ -58,4 +71,6 @@ def model(home, away):
     probabilities = model.predict_proba(X)[0]
 
     print("Prediction:", prediction)
-    print("Probabilities:", probabilities) #[Away Win, Draw, Home Win]
+    explain(X, prediction) 
+    return probabilities #[Away Win, Draw, Home Win]
+

@@ -17,6 +17,8 @@ TEAM_FILE_NAMES = {
 
 ELO_NAMES = {
     "Leeds United": "Leeds",
+    "Tottenham Hotspur": "Tottenham",
+    "Brighton and Hove Albion": "Brighton",
 }
 
 def load_latest_elos(df, home, away):
@@ -81,6 +83,12 @@ def load_team(team):
 
 def build(home, away):
     feature_engineering.main()
+
+    original_home = home
+    original_away = away
+
+    home = TEAM_FILE_NAMES.get(home, home)
+    away = TEAM_FILE_NAMES.get(away, away)
 
     home_df = load_team(home)
     away_df = load_team(away)
@@ -156,7 +164,7 @@ def build(home, away):
     df.insert(0, "Home", home)
     df.insert(1, "Away", away)
 
-    df = load_latest_elos(df, home, away)
+    df = load_latest_elos(df, original_home, original_away)
 
     output_path = BASE_DIR.parent / "data" / "matches" / f"{home + "_VS_" + away}.csv"
     df.to_csv(output_path, index=False)
