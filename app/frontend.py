@@ -4,6 +4,7 @@ from fixtures_api import gameweek_one
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import sys
+from visualizations import pie_chart
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
@@ -53,7 +54,9 @@ for match in gameweek_one:
         if st.button("Load Prediction", key=match["idEvent"]):
             st.write(f"Creating prediction for {home} vs {away}...")
             build(home, away)
-            model(home, away)
+            prob = model(home, away)
+            pie_chart(home, away, prob)
+            
 
 
 
