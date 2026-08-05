@@ -1,29 +1,44 @@
 from pathlib import Path
-import shap
+
 import joblib
 import matplotlib.pyplot as plt
-import streamlit as st
+import shap
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 MODEL_PATH = PROJECT_DIR / "models" / "xgboost_model.pkl"
 
 
-def load_model():
-    model = joblib.load(MODEL_PATH)
-    return model
+def load_model_data():
+    saved_data = joblib.load(MODEL_PATH)
+
+    if isinstance(saved_data, dict):
+        model = saved_data["model"]
+        feature_names = saved_data["feature_names"]
+        class_labels = saved_data["class_labels"]
+    else:
+        model = saved_data
+        feature_names = model.get_booster().feature_names
+        class_labels = model.classes_.tolist()
+
+    return model, feature_names, class_labels
+
 
 def create_explainer():
-    model = load_model()
-    explainer = shap.TreeExplainer(model)
+    model, _, _ = load_model_data()
+    return shap.TreeExplainer(model)
 
-    return explainer
 
 def explain(X_match, prediction):
-    ex = create_explainer()
-    shap_values = ex(X_match)
-    print(shap.__version__)
-    class_shap = shap_values[:, :, prediction]
+    _, _, class_labels = load_model_data()
+
+    explainer = create_explainer()
+    shap_values = explainer(X_match)
+
+    predicted_label = int(prediction)
+    class_index = class_labels.index(predicted_label)
+
+    class_shap = shap_values[:, :, class_index]
 
     plt.figure()
 
@@ -33,6 +48,4 @@ def explain(X_match, prediction):
         show=False,
     )
 
-    figure = plt.gcf()
-
-    return figure
+    return plt.gcf()
