@@ -13,6 +13,7 @@ sys.path.insert(0, str(PROJECT_DIR))
 from src.build_dataset import build
 from src.predict_match import model
 from src.shap_explainer import explain
+from src.polymarket_api import load_slug
 
 st.title('Premier League Matchweek 1')
 
@@ -57,11 +58,20 @@ for match in gameweek_one:
             build(home, away)
 
             prob, shap_figure = model(home, away)
-
-            pie_chart(home, away, prob)
+            name= "Model"
+            pie_chart(home, away, prob, name)
 
             st.subheader("Why the model made this prediction")
             st.pyplot(shap_figure)
+
+            polymarket = load_slug(home, away, date)
+            name = "Polymarket"
+            pie_chart(home, away, polymarket, name)
+
+
+
+
+
             
             
 
