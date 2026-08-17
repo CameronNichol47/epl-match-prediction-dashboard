@@ -11,7 +11,7 @@ from src import predict_match
 PRO_DIR = PROJECT_DIR / "data"
 
 def load_market_probability_csv():
-    df = pd.read_csv(f"{PRO_DIR}/simulated_market_probabilities.csv")
+    df = pd.read_csv(f"{PRO_DIR}/market_probabilities.csv")
     return df
 
 

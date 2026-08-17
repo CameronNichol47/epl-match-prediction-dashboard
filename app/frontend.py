@@ -14,6 +14,7 @@ from src.build_dataset import build
 from src.predict_match import model
 from src.shap_explainer import explain
 from src.polymarket_api import load_slug
+from src.build_market_probabilities import build_probabilities
 
 st.title('Premier League Matchweek 1')
 
@@ -67,6 +68,8 @@ for match in gameweek_one:
             polymarket = load_slug(home, away, date)
             name = "Polymarket"
             pie_chart(home, away, polymarket, name)
+
+            build_probabilities(home, away, polymarket)
 
 
 
