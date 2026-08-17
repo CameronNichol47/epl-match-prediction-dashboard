@@ -49,11 +49,11 @@ def recommended_bets(home, away):
     home_kelly = kelly_fraction(model_prob[0], market_prob[0])
     draw_kelly = kelly_fraction(model_prob[1], market_prob[1])
     away_kelly = kelly_fraction(model_prob[2], market_prob[2])
-
+    
     return {
-         "home": home_kelly,
-         "draw": draw_kelly,
-         "away": away_kelly
+         "home": float(home_kelly),
+         "draw": float(draw_kelly),
+         "away": float(away_kelly)
     }
 
 
