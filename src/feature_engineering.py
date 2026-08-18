@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import numpy as np
+import streamlit as st
 from . import scraping
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -856,8 +857,12 @@ def roll_avg_agoaldiff_three(df):
     df["Away_Goal_Diff_last3"] = lst
     return df
 
-def main():
+@st.cache_data
+def load_scraping():
     scraping.main()
+
+def main():
+    load_scraping()
 
     teams = [
         "Arsenal",

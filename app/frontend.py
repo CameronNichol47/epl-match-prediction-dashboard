@@ -33,6 +33,20 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+@st.cache_data
+def load_prediction_data(home, away, date):
+    build(home, away)
+
+    prob, shap_figure = model(home, away)
+
+    polymarket = load_slug(home, away, date)
+
+    build_probabilities(home, away, polymarket)
+
+    kelly = recommended_bets(home, away)
+
+    return prob, polymarket, kelly, shap_figure
+
 for match in gameweek_one:
     home = match["strHomeTeam"]
     away = match["strAwayTeam"]
@@ -62,22 +76,14 @@ for match in gameweek_one:
         if st.session_state.get(prediction_key, False):
             st.write(f"Creating prediction for {home} vs {away}...")
 
-            build(home, away)
-
-            prob, shap_figure = model(home, away)
+            prob, polymarket, kelly, shap_figure = load_prediction_data(home, away, date)
 
             pie_chart(home, away, prob, "Model")
 
             st.subheader("Why the model made this prediction")
             st.pyplot(shap_figure)
 
-            polymarket = load_slug(home, away, date)
-
             pie_chart(home, away, polymarket, "Polymarket")
-
-            build_probabilities(home, away, polymarket)
-
-            kelly = recommended_bets(home, away)
 
             best_kelly = max(
                 kelly["home"],
