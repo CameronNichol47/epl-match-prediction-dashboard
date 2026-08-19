@@ -7,6 +7,7 @@ PRO_DIR = BASE_DIR.parent / "data" / "full_gamelog"
 INITIAL_ELO = 1500.0
 K_FACTOR = 20.0
 HOME_ADVANTAGE = 65.0
+OFFSEASON_REGRESSION = 0.67
 
 ratings = {
     "Arsenal": INITIAL_ELO,
@@ -56,24 +57,60 @@ def update_elo(home_elo, away_elo, result):
 
         return new_home_elo, new_away_elo
 
+def regress_offseason(elo):
+    return (
+        OFFSEASON_REGRESSION * elo
+        + (1 - OFFSEASON_REGRESSION) * INITIAL_ELO
+    )
+
+def get_season(date):
+    year = date.year
+
+    if date.month >= 7:
+        return f"{year}-{year + 1}"
+
+    return f"{year - 1}-{year}"
+
 def add_elo_to_dataframe(df):
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.sort_values("Date").reset_index(drop=True)
 
-    teams = set(df["Home"]).union(set(df["Away"]))
-
-    ratings = {
-        team: INITIAL_ELO
-        for team in teams
-    }
+    ratings = {}
 
     home_elo_values = []
     away_elo_values = []
     elo_diff_values = []
+    home_elo_after_values = []
+    away_elo_after_values = []
+
+    previous_season = None
+    first_season = get_season(df.iloc[0]["Date"])
 
     for _, row in df.iterrows():
+        current_season = get_season(row["Date"])
+
+        if (
+            previous_season is not None
+            and current_season != previous_season
+        ):
+            for team in ratings:
+                ratings[team] = regress_offseason(ratings[team])
+
         home_team = row["Home"]
         away_team = row["Away"]
+
+        if home_team not in ratings:
+            if current_season == first_season:
+                ratings[home_team] = INITIAL_ELO
+            else:
+                ratings[home_team] = 1460
+
+        if away_team not in ratings:
+            if current_season == first_season:
+                ratings[away_team] = INITIAL_ELO
+            else:
+                ratings[away_team] = 1460
+
         result = row["Result"]
 
         home_elo = ratings[home_team]
@@ -83,13 +120,26 @@ def add_elo_to_dataframe(df):
         away_elo_values.append(away_elo)
         elo_diff_values.append(home_elo - away_elo)
 
-        new_home_elo, new_away_elo = update_elo(home_elo, away_elo, result)
+        new_home_elo, new_away_elo = update_elo(
+            home_elo,
+            away_elo,
+            result,
+        )
+
+        home_elo_after_values.append(new_home_elo)
+        away_elo_after_values.append(new_away_elo)
 
         ratings[home_team] = new_home_elo
         ratings[away_team] = new_away_elo
 
+        previous_season = current_season
+
     df["Home_Elo"] = home_elo_values
     df["Away_Elo"] = away_elo_values
+
+    df["Home_Elo_After"] = home_elo_after_values
+    df["Away_Elo_After"] = away_elo_after_values
+
     df["Elo_Diff"] = elo_diff_values
 
     return df

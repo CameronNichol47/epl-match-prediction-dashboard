@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 from . import feature_engineering
+from . import elo
 
 BASE_DIR = Path(__file__).resolve().parent
 PRO_DIR = BASE_DIR.parent / "data" / "processed"
@@ -21,7 +22,7 @@ ELO_NAMES = {
     "Brighton and Hove Albion": "Brighton",
 }
 
-def load_latest_elos(df, home, away):
+def load_latest_elos(df, home, away, date):
     elo_df = pd.read_csv(ELO_PATH)
 
     elo_df["Date"] = pd.to_datetime(elo_df["Date"])
@@ -39,23 +40,33 @@ def load_latest_elos(df, home, away):
 
         if row["Home"] == home:
             if home_latest_date is None or row_date > home_latest_date:
-                home_elo = row["Home_Elo"]
+                home_elo = row["Home_Elo_After"]
                 home_latest_date = row_date
 
         elif row["Away"] == home:
             if home_latest_date is None or row_date > home_latest_date:
-                home_elo = row["Away_Elo"]
+                home_elo = row["Away_Elo_After"]
                 home_latest_date = row_date
 
         if row["Home"] == away:
             if away_latest_date is None or row_date > away_latest_date:
-                away_elo = row["Home_Elo"]
+                away_elo = row["Home_Elo_After"]
                 away_latest_date = row_date
 
         elif row["Away"] == away:
             if away_latest_date is None or row_date > away_latest_date:
-                away_elo = row["Away_Elo"]
+                away_elo = row["Away_Elo_After"]
                 away_latest_date = row_date
+        
+    fixture_date = pd.to_datetime(date)
+
+    fixture_season = elo.get_season(fixture_date)
+
+    if elo.get_season(home_latest_date) != fixture_season:
+        home_elo = elo.regress_offseason(home_elo)
+
+    if elo.get_season(away_latest_date) != fixture_season:
+        away_elo = elo.regress_offseason(away_elo)
 
     df["Elo_Diff"] = float(home_elo) - float(away_elo)
 
@@ -81,8 +92,9 @@ def load_team(team):
 
     return df
 
-def build(home, away):
+def build(home, away, date):
     feature_engineering.main()
+    elo.main()
 
     original_home = home
     original_away = away
@@ -164,7 +176,7 @@ def build(home, away):
     df.insert(0, "Home", home)
     df.insert(1, "Away", away)
 
-    df = load_latest_elos(df, original_home, original_away)
+    df = load_latest_elos(df, original_home, original_away, date)
 
     output_path = BASE_DIR.parent / "data" / "matches" / f"{home + "_VS_" + away}.csv"
     df.to_csv(output_path, index=False)

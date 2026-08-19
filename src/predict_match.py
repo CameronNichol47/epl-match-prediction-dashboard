@@ -66,6 +66,8 @@ def model(home, away):
                                 "Away_Away_Result_last3",
                                 "Away_Away_XG_Diff_last3",
                                 "Away_Away_Goal_Diff_last3",])
+    
+    print("Elo used by model:", X["Elo_Diff"].iloc[0])
 
     prediction = model.predict(X)[0]
     probabilities = model.predict_proba(X)[0]

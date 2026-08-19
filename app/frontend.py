@@ -35,7 +35,7 @@ st.markdown(
 
 @st.cache_data
 def load_prediction_data(home, away, date):
-    build(home, away)
+    build(home, away, date)
 
     prob, shap_figure = model(home, away)
 
