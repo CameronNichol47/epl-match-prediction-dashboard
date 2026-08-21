@@ -282,3 +282,37 @@ This project is intended for educational, research, and machine-learning
 purposes. Market probability and Kelly Criterion components are used to
 analyze and compare probabilistic predictions and should not be interpreted as
 financial or wagering advice.
+
+## Current Predictions
+
+The model is currently being used to generate predictions for upcoming
+Premier League fixtures.
+
+Current predictions include:
+
+| Fixture | Model Prediction |
+|---|---|
+| Everton vs Crystal Palace | Draw |
+| Nottingham Forest vs Leeds United | Draw |
+| Brentford vs Tottenham Hotspur | Tottenham Win |
+| Manchester City vs Bournemouth | Manchester City Win |
+| Brighton vs Aston Villa | Brighton Win |
+| Newcastle United vs Liverpool | Newcastle United Win |
+| Fulham vs Chelsea | Chelsea Win |
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
