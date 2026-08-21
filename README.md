@@ -283,22 +283,30 @@ purposes. Market probability and Kelly Criterion components are used to
 analyze and compare probabilistic predictions and should not be interpreted as
 financial or wagering advice.
 
-## Current Predictions
+## Model vs Human Predictions
 
-The model is currently being used to generate predictions for upcoming
-Premier League fixtures.
+Alongside the machine learning model, I am recording my own Premier League
+predictions before each gameweek.
 
-Current predictions include:
+These predictions are made independently and will be compared against the
+model after the matches are completed. This provides a simple human benchmark
+for evaluating the model's classification performance throughout the season.
 
-| Fixture | Model Prediction |
-|---|---|
-| Everton vs Crystal Palace | Draw |
-| Nottingham Forest vs Leeds United | Draw |
-| Brentford vs Tottenham Hotspur | Tottenham Win |
-| Manchester City vs Bournemouth | Manchester City Win |
-| Brighton vs Aston Villa | Brighton Win |
-| Newcastle United vs Liverpool | Newcastle United Win |
-| Fulham vs Chelsea | Chelsea Win |
+### Matchweek Predictions
+
+| Fixture | Model Prediction | My Prediction | Actual Result |
+|---|---|---|---|
+| Everton vs Crystal Palace | Draw | Everton | TBD |
+| Nottingham Forest vs Leeds United | Draw | Leeds United | TBD |
+| Brentford vs Tottenham Hotspur | Tottenham | Tottenham | TBD |
+| Manchester City vs Bournemouth | Manchester City | Manchester City | TBD |
+| Brighton vs Aston Villa | Brighton | Brighton | TBD |
+| Newcastle United vs Liverpool | Newcastle United | Liverpool | TBD |
+| Fulham vs Chelsea | Chelsea | Chelsea | TBD |
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
 
 ### Prediction Limitations
 
