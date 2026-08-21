@@ -1,147 +1,284 @@
-# ⚽ Premier League Match Outcome Predictor
+# Premier League Match Prediction Platform
 
-A machine learning project that predicts Premier League match outcomes (Home Win, Draw, Away Win) using historical match statistics, rolling averages, Elo ratings, and XGBoost.
+An end-to-end machine learning platform for predicting Premier League match
+outcomes using historical match data, engineered team-performance features,
+Elo ratings, and XGBoost.
 
-The project compares multiple machine learning models and demonstrates how feature engineering and feature selection can significantly improve predictive performance.
+The application generates probabilities for a home win, draw, and away win,
+explains individual predictions using SHAP, and compares the model's
+probabilities with prediction-market probabilities from Polymarket.
 
----
+The project also includes a Kelly Criterion implementation for comparing model
+probabilities with market probabilities and estimating theoretical bankroll
+allocation.
 
 ## Features
 
-The model uses historical statistics from previous Premier League matches to generate rolling features for both teams.
+- Premier League match outcome prediction (Home Win / Draw / Away Win)
+- XGBoost multiclass classification model
+- Automated match-data processing pipeline
+- Rolling team performance statistics
+- Home and away specific features
+- Elo rating system
+- Offseason Elo regression
+- Support for newly promoted teams
+- SHAP explanations for individual predictions
+- Polymarket probability integration
+- Kelly Criterion calculations
+- Interactive Streamlit dashboard
+- Cached predictions and API results to avoid unnecessary repeated processing
 
-### Match Statistics
+## Machine Learning Pipeline
+
+The prediction pipeline follows the general structure:
+
+Raw Match Data
+      ↓
+Data Cleaning
+      ↓
+Feature Engineering
+      ↓
+Rolling Team Statistics
+      ↓
+Elo Ratings
+      ↓
+Match Feature Dataset
+      ↓
+XGBoost Model
+      ↓
+Prediction Probabilities
+      ↓
+SHAP Explanations
+      ↓
+Polymarket Comparison
+      ↓
+Kelly Criterion
+      ↓
+Streamlit Dashboard
+
+## Feature Engineering
+
+The model uses historical team performance rather than statistics from the
+match being predicted.
+
+Features currently include rolling 3-match and 5-match statistics such as:
+
 - Possession
 - Shots
-- Shots on Target
-- Goals For
-- Goals Against
-- Expected Goals (xG)
-- Expected Goals Against (xGA)
-- Goal Difference
-- xG Difference
-- Recent Match Results
+- Shots on target
+- Expected goals (xG)
+- Expected goals against (xGA)
+- Goals scored
+- Goals conceded
+- Match results
+- Goal difference
+- xG difference
 
-### Rolling Features
+The dataset also contains venue-specific rolling features to represent how
+teams perform specifically at home or away.
 
-The final model uses rolling averages over each team's **last 5 matches**.
+## Elo Rating System
 
-Examples include:
+An Elo rating system is used as an additional measure of team strength.
 
-- Home xG For (Last 5)
-- Home xG Against (Last 5)
-- Home Goal Difference (Last 5)
-- Away xG Difference (Last 5)
-- Away Shots on Target (Last 5)
-- Away Possession (Last 5)
+Each team's rating is updated after every match based on:
 
----
+- The team's current Elo rating
+- The opponent's Elo rating
+- Match result
+- Home-field advantage
 
-## Elo Ratings
+The current implementation uses:
 
-An Elo rating system is implemented to capture each team's long-term strength.
+- Initial Elo: `1500`
+- K-factor: `20`
+- Home advantage: `65`
 
-For every fixture the model uses:
+At the beginning of a new season, existing Premier League teams undergo
+offseason regression toward the league-average Elo:
 
-- Elo Difference (Home Elo − Away Elo)
+    new_elo = 0.67 * previous_elo + 0.33 * 1500
 
-Feature selection experiments showed that using only the Elo difference produced better results than including separate Home and Away Elo ratings.
+This prevents ratings from carrying over unchanged between seasons while still
+preserving information about team strength.
 
----
+Newly promoted teams that do not have an existing Premier League Elo history
+are initialized separately.
 
-## Machine Learning Models
+Both pre-match and post-match Elo ratings are stored so that the prediction
+pipeline can retrieve the latest available rating without introducing
+post-match information into historical training features.
 
-The project compares multiple models:
+## Model
 
-- Logistic Regression
-- Random Forest
-- XGBoost
+The primary model is an XGBoost multiclass classifier.
 
----
+For each fixture, the model outputs probabilities in the form:
 
-## Feature Selection
+    [Away Win, Draw, Home Win]
 
-Several feature engineering experiments were performed to improve model performance.
+Example:
 
-Experiments included:
+    Away Win: 18%
+    Draw:     24%
+    Home Win: 58%
 
-- Removing redundant Last 3 rolling statistics
-- Removing venue-specific Last 3 statistics
-- Comparing Last 3 vs Last 5 rolling windows
-- Comparing multiple Elo representations
-- Analyzing XGBoost feature importance
-- Removing highly correlated features
+The model uses engineered historical features and Elo differences to estimate
+the probability of each match outcome.
 
-These experiments significantly improved model performance while reducing model complexity.
+## SHAP Explanations
 
----
+SHAP is used to explain individual model predictions.
 
-## Results
+For each selected match, the dashboard displays which features contributed
+most strongly to the model's predicted outcome.
 
-| Model | Accuracy |
-|--------|----------|
-| Logistic Regression | 40.9% |
-| Random Forest | 34.1% |
-| Initial XGBoost | 38.6% |
-| Final XGBoost | **59.1%** |
+This makes it possible to inspect whether factors such as recent xG,
+possession, goal difference, venue performance, or Elo difference influenced
+a prediction.
 
-The final XGBoost model achieved approximately **59% accuracy** on a chronological hold-out test set.
+## Polymarket Comparison
 
----
+The project retrieves publicly available event probability data from the
+Polymarket Gamma API.
 
-## Technologies Used
+For supported Premier League fixtures, the dashboard compares:
 
-- Python
-- Pandas
-- NumPy
-- XGBoost
-- Scikit-learn
+    Model Probability
+            vs.
+    Polymarket Probability
 
----
+This makes it possible to examine differences between the machine learning
+model's estimated probabilities and prediction-market probabilities.
+
+Polymarket data is cached where appropriate to avoid unnecessary repeated API
+requests when Streamlit reruns the application.
+
+## Kelly Criterion
+
+The project includes a Kelly Criterion implementation that compares the
+model's estimated probability with the market-implied probability.
+
+For a model probability `p` and market probability `m`:
+
+    decimal_odds = 1 / m
+
+    b = decimal_odds - 1
+    q = 1 - p
+
+    Kelly Fraction = (b * p - q) / b
+
+Negative Kelly values are treated as zero.
+
+The Streamlit interface displays the calculated Kelly percentage and can
+convert the fraction into a theoretical dollar allocation based on an entered
+bankroll.
+
+This component is included for analytical and educational purposes.
+
+## Streamlit Dashboard
+
+The Streamlit frontend allows users to select Premier League fixtures and
+generate predictions interactively.
+
+For each match, the dashboard displays:
+
+1. Match information
+2. Model probability pie chart
+3. Home / Draw / Away probabilities
+4. SHAP prediction explanation
+5. Polymarket probability pie chart
+6. Kelly Criterion percentage
+7. Theoretical Kelly allocation
+
+Prediction results are cached so that changing interactive UI elements does
+not require the complete data/model pipeline to run again.
 
 ## Project Structure
 
-```
-finance_project/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── training/
-│
-├── models/
-│   ├── logistic_regression.py
-│   ├── random_forest.py
-│   └── xgboost_model.py
-│
-├── src/
-│   ├── feature_engineering.py
-│   ├── elo.py
-│   ├── merge_elo.py
-│   └── predict_match.py
-│
-└── README.md
-```
+    finance_project/
+    │
+    ├── data/
+    │   ├── raw/
+    │   ├── processed/
+    │   ├── matches/
+    │   └── full_gamelog/
+    │
+    ├── models/
+    │   └── xgboost_model.pkl
+    │
+    ├── src/
+    │   ├── feature_engineering.py
+    │   ├── build_dataset.py
+    │   ├── predict_match.py
+    │   ├── elo.py
+    │   ├── shap_explainer.py
+    │   ├── polymarket_api.py
+    │   ├── build_market_probabilities.py
+    │   └── kelly_criterion.py
+    │
+    ├── app/
+    │   ├── frontend.py
+    │   ├── fixtures_api.py
+    │   └── visualizations.py
+    │
+    └── README.md
 
----
+## Technologies
 
-## Future Improvements
+### Machine Learning
+- XGBoost
+- Scikit-learn
+- SHAP
 
-- Hyperparameter tuning
-- Multi-season training data
-- SHAP model explanations
-- Streamlit dashboard
-- Live fixture predictions
-- Polymarket odds comparison
-- Kelly Criterion value calculator
-- Injury and lineup adjustments
+### Data Processing
+- Python
+- Pandas
+- NumPy
 
----
+### Data / APIs
+- Football data APIs
+- Historical match data
+- Polymarket Gamma API
 
-## Author
+### Visualization / Frontend
+- Streamlit
+- Plotly
+- Matplotlib
 
-**Cameron Nichol**
+## Current Status
 
-Computer Science & Applied Mathematics Student
+The project currently supports:
 
-Interested in Machine Learning, Sports Analytics, Data Science, and Quantitative Finance.
+- Automated feature generation
+- Rolling team statistics
+- Elo-based team strength
+- Offseason Elo regression
+- XGBoost match predictions
+- SHAP explanations
+- Polymarket probability retrieval
+- Kelly Criterion calculations
+- Streamlit visualization
+- Prediction/API caching
+
+## Planned Improvements
+
+Future development may include:
+
+- Model probability calibration
+- More extensive backtesting
+- Comparison with Logistic Regression and Random Forest baselines
+- Improved treatment of promoted/relegated teams
+- Player availability and injury information
+- Starting lineup information
+- Additional team-strength metrics
+- Automated weekly data updates
+- Improved Streamlit UI
+- Historical model-vs-market evaluation
+
+## Disclaimer
+
+This project is intended for educational, research, and machine-learning
+purposes. Market probability and Kelly Criterion components are used to
+analyze and compare probabilistic predictions and should not be interpreted as
+financial or wagering advice.
