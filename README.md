@@ -296,13 +296,13 @@ for evaluating the model's classification performance throughout the season.
 
 | Fixture | Model Prediction | My Prediction | Actual Result |
 |---|---|---|---|
-| Everton vs Crystal Palace | Draw | Everton | TBD |
-| Nottingham Forest vs Leeds United | Draw | Leeds United | TBD |
-| Brentford vs Tottenham Hotspur | Tottenham | Tottenham | TBD |
-| Manchester City vs Bournemouth | Manchester City | Manchester City | TBD |
-| Brighton vs Aston Villa | Brighton | Brighton | TBD |
-| Newcastle United vs Liverpool | Newcastle United | Liverpool | TBD |
-| Fulham vs Chelsea | Chelsea | Chelsea | TBD |
+| Everton vs Crystal Palace | Draw | Everton | Everton |
+| Nottingham Forest vs Leeds United | Draw | Leeds United | Leeds United |
+| Brentford vs Tottenham Hotspur | Tottenham | Tottenham | Brentford |
+| Manchester City vs Bournemouth | Manchester City | Manchester City | Manchester City |
+| Brighton vs Aston Villa | Brighton | Brighton | Brighton |
+| Newcastle United vs Liverpool | Newcastle United | Liverpool | Draw |
+| Fulham vs Chelsea | Chelsea | Chelsea | Chelsea |
 
 \* Model prediction unavailable because the current model excludes fixtures
 involving newly promoted teams due to insufficient Premier League rolling
