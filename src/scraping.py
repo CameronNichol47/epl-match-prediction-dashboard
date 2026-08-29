@@ -10,7 +10,10 @@ fbref_name_map = {
     "Manchester Utd": "Manchester United",
     "Newcastle": "Newcastle United",
     "Nottingham": "Nottingham Forest",
-    "Tottenham": "Tottenham Hotspur"
+    "Tottenham": "Tottenham Hotspur",
+    "Coventry": "Coventry City",
+    "Hull": "Hull City",
+    "Ipswich": "Ipswich Town"
 }
 
 understat_name_map = {
@@ -18,8 +21,6 @@ understat_name_map = {
     "Manchester Utd": "Manchester United",
     "Newcastle": "Newcastle United",
     "Nottingham": "Nottingham Forest",
-
-
 }
 
 def load_standard_data(folder, team):
@@ -27,13 +28,16 @@ def load_standard_data(folder, team):
     Loads the standard FBref match log for a team and returns the
     core match statistics used throughout the data pipeline.
     """
+    fbref_name = fbref_name_map.get(team, team)
 
     standard_html_path = (
         RAW_DIR
         / folder
-        / f"{team} Stats, Premier League _ FBref.com.html"
+        / f"{fbref_name} Stats, Premier League _ FBref.com.html"
     )
 
+    print("LOOKING FOR:", standard_html_path)
+    
     with standard_html_path.open("r", encoding="utf-8") as file:
         standard_tables = pd.read_html(file)
 
@@ -57,11 +61,12 @@ def load_shooting_tables(folder, team):
     Loads the FBref shooting match log HTML and returns the
     'For' and 'Against' shooting tables.
     """
+    fbref_name = fbref_name_map.get(team, team)
 
     shooting_html_path = (
         RAW_DIR
         / folder
-        / f"{team} Match Logs (Shooting), All Competitions _ FBref.com.html"
+        / f"{fbref_name} Match Logs (Shooting), All Competitions _ FBref.com.html"
     )
 
     with shooting_html_path.open("r", encoding="utf-8") as file:
@@ -164,7 +169,7 @@ def load_shooting_against(df, tables, team):
 
     return df
 
-def add_xg(df, team):
+def add_xg(df, team, season):
     """
     Retrieves expected goals (xG) and expected goals against (xGA)
     for each Premier League match using the Understat API and
@@ -178,7 +183,7 @@ def add_xg(df, team):
     matches = (
         understat
         .league("EPL")
-        .get_match_data(season="2025")
+        .get_match_data(season=season)
     )
 
     team_name_map = {
@@ -186,7 +191,8 @@ def add_xg(df, team):
         "Leeds United": "Leeds",
         "Nottingham": "Nottingham Forest",
         "Manchester Utd": "Manchester United",
-        "Newcastle": "Newcastle United"
+        "Newcastle": "Newcastle United",
+        "Coventry City": "Coventry"
     }
 
     xg_values = []
@@ -209,7 +215,7 @@ def add_xg(df, team):
                     game = m
                     break
 
-            if game:
+            if (game and game["xG"]["h"] is not None and game["xG"]["a"] is not None):
                 xg = float(game["xG"]["h"])
                 xga = float(game["xG"]["a"])
 
@@ -217,7 +223,8 @@ def add_xg(df, team):
                 xga_values.append(xga)
 
             else:
-                print(f"Couldn't find {understat_name} vs {opponent}")
+                xg_values.append(float("nan"))
+                xga_values.append(float("nan"))
 
         elif venue == "Away" and comp == "Premier League":
             game = None
@@ -227,15 +234,16 @@ def add_xg(df, team):
                     game = m
                     break
 
-            if game:
-                xga = float(game["xG"]["h"])
+            if (game and game["xG"]["h"] is not None and game["xG"]["a"] is not None):
                 xg = float(game["xG"]["a"])
+                xga = float(game["xG"]["h"])
 
                 xg_values.append(xg)
                 xga_values.append(xga)
 
             else:
-                print(f"Couldn't find {understat_name} vs {opponent}")
+                xg_values.append(float("nan"))
+                xga_values.append(float("nan"))
 
     df["XG_for"] = xg_values
     df["XG_against"] = xga_values
@@ -269,6 +277,11 @@ def main():
     dataset, and exporting the final CSV files.
     """
 
+    seasons = {
+        "2025-26": "2025",
+        "2026-27": "2026",
+    }
+
     teams = {
         "Arsenal": "Arsenal",
         "Aston Villa": "Aston_Villa",
@@ -276,9 +289,12 @@ def main():
         "Brentford": "Brentford",
         "Brighton": "Brighton",
         "Chelsea": "Chelsea",
+        "Coventry": "Coventry_City",
         "Crystal Palace": "Crystal_Palace",
         "Everton": "Everton",
         "Fulham": "Fulham",
+        "Hull": "Hull_City",
+        "Ipswich": "Ipswich_Town",
         "Leeds United": "Leeds_United",
         "Liverpool": "Liverpool",
         "Manchester City": "Manchester_City",
@@ -289,28 +305,73 @@ def main():
         "Tottenham": "Tottenham"
     }
 
-    for team, folder in teams.items():
-        df = load_standard_data(folder, team)
-        tables = load_shooting_tables(folder, team)
+    for team, team_folder in teams.items():
 
-        df = load_shooting(df, tables, team)
-        df = load_shooting_against(df, tables, team)
+        team_seasons = []
 
-        df = df[df["Comp"] == "Premier League"].copy()
+        for season_folder, understat_season in seasons.items():
 
-        df.rename(
-            columns={"Venue_x": "Venue"},
-            inplace=True,
+            folder = Path(season_folder) / team_folder
+
+            full_folder = RAW_DIR / folder
+
+            if not full_folder.exists():
+                print(
+                    f"Skipping {team} for {season_folder} "
+                    "- no data folder"
+                )
+                continue
+
+            df = load_standard_data(folder, team)
+            tables = load_shooting_tables(folder, team)
+
+            df = load_shooting(df, tables, team)
+            df = load_shooting_against(df, tables, team)
+
+            df = df[(df["Comp"] == "Premier League") & (df["Result"].notna())].copy()
+
+            df.rename(
+                columns={"Venue_x": "Venue"},
+                inplace=True,
+            )
+
+            if "Venue_y" in df.columns:
+                df.drop(columns=["Venue_y"], inplace=True)
+
+            df = add_xg(
+                df,
+                team,
+                understat_season
+            )
+
+            df = preprocess_data(df)
+
+            team_seasons.append(df)
+
+        combined_df = pd.concat(
+            team_seasons,
+            ignore_index=True
         )
 
-        if "Venue_y" in df.columns:
-            df.drop(columns=["Venue_y"], inplace=True)
+        combined_df["Date"] = pd.to_datetime(
+            combined_df["Date"]
+        )
 
-        df = add_xg(df, team)
-        df = preprocess_data(df)
+        combined_df = combined_df.sort_values(
+            "Date"
+        ).reset_index(drop=True)
 
-        output_path = BASE_DIR.parent / "data" / "processed" / f"{team}.csv"
-        df.to_csv(output_path, index=False)
+        output_path = (
+            BASE_DIR.parent
+            / "data"
+            / "processed"
+            / f"{team}.csv"
+        )
+
+        combined_df.to_csv(
+            output_path,
+            index=False
+        )
 
 
 if __name__ == "__main__":
