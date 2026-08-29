@@ -19,36 +19,36 @@ Date,Home,Away,Result
 2025-08-24,Everton,Brighton,2
 2025-08-24,Fulham,Manchester United,1
 2025-08-25,Newcastle United,Liverpool,0
-2025-08-30,Chelsea,Fulham,2
-2025-08-30,Tottenham,Bournemouth,0
-2025-08-30,Wolverhampton Wanderers,Everton,0
-2025-08-30,Sunderland,Brentford,2
-2025-08-30,Manchester United,Burnley,2
 2025-08-30,Leeds,Newcastle United,1
+2025-08-30,Manchester United,Burnley,2
+2025-08-30,Sunderland,Brentford,2
+2025-08-30,Tottenham,Bournemouth,0
+2025-08-30,Chelsea,Fulham,2
+2025-08-30,Wolverhampton Wanderers,Everton,0
 2025-08-31,Nottingham Forest,West Ham,0
 2025-08-31,Brighton,Manchester City,2
 2025-08-31,Liverpool,Arsenal,2
 2025-08-31,Aston Villa,Crystal Palace,0
-2025-09-13,Arsenal,Nottingham Forest,2
-2025-09-13,Newcastle United,Wolverhampton Wanderers,2
-2025-09-13,Bournemouth,Brighton,2
-2025-09-13,Crystal Palace,Sunderland,1
-2025-09-13,Everton,Aston Villa,1
 2025-09-13,Fulham,Leeds,2
-2025-09-13,West Ham,Tottenham,0
 2025-09-13,Brentford,Chelsea,1
+2025-09-13,West Ham,Tottenham,0
+2025-09-13,Everton,Aston Villa,1
+2025-09-13,Bournemouth,Brighton,2
+2025-09-13,Newcastle United,Wolverhampton Wanderers,2
+2025-09-13,Arsenal,Nottingham Forest,2
+2025-09-13,Crystal Palace,Sunderland,1
 2025-09-14,Burnley,Liverpool,0
 2025-09-14,Manchester City,Manchester United,2
-2025-09-20,Liverpool,Everton,2
-2025-09-20,West Ham,Crystal Palace,0
-2025-09-20,Wolverhampton Wanderers,Leeds,0
-2025-09-20,Brighton,Tottenham,1
 2025-09-20,Burnley,Nottingham Forest,1
 2025-09-20,Manchester United,Chelsea,2
+2025-09-20,Brighton,Tottenham,1
 2025-09-20,Fulham,Brentford,2
-2025-09-21,Bournemouth,Newcastle United,1
-2025-09-21,Sunderland,Aston Villa,1
+2025-09-20,West Ham,Crystal Palace,0
+2025-09-20,Liverpool,Everton,2
+2025-09-20,Wolverhampton Wanderers,Leeds,0
 2025-09-21,Arsenal,Manchester City,1
+2025-09-21,Sunderland,Aston Villa,1
+2025-09-21,Bournemouth,Newcastle United,1
 2025-09-27,Brentford,Manchester United,2
 2025-09-27,Chelsea,Brighton,0
 2025-09-27,Crystal Palace,Liverpool,2
@@ -69,46 +69,46 @@ Date,Home,Away,Result
 2025-10-05,Newcastle United,Nottingham Forest,2
 2025-10-05,Wolverhampton Wanderers,Brighton,1
 2025-10-05,Brentford,Manchester City,0
-2025-10-18,Nottingham Forest,Chelsea,0
-2025-10-18,Brighton,Newcastle United,2
-2025-10-18,Burnley,Leeds,2
-2025-10-18,Crystal Palace,Bournemouth,1
-2025-10-18,Manchester City,Everton,2
-2025-10-18,Sunderland,Wolverhampton Wanderers,2
 2025-10-18,Fulham,Arsenal,0
+2025-10-18,Sunderland,Wolverhampton Wanderers,2
+2025-10-18,Manchester City,Everton,2
+2025-10-18,Burnley,Leeds,2
+2025-10-18,Brighton,Newcastle United,2
+2025-10-18,Nottingham Forest,Chelsea,0
+2025-10-18,Crystal Palace,Bournemouth,1
 2025-10-19,Tottenham,Aston Villa,0
 2025-10-19,Liverpool,Manchester United,0
 2025-10-20,West Ham,Brentford,0
 2025-10-24,Leeds,West Ham,2
-2025-10-25,Chelsea,Sunderland,0
 2025-10-25,Newcastle United,Fulham,2
+2025-10-25,Chelsea,Sunderland,0
 2025-10-25,Manchester United,Brighton,2
 2025-10-25,Brentford,Liverpool,2
+2025-10-26,Everton,Tottenham,0
+2025-10-26,Wolverhampton Wanderers,Burnley,0
 2025-10-26,Bournemouth,Nottingham Forest,2
 2025-10-26,Arsenal,Crystal Palace,2
 2025-10-26,Aston Villa,Manchester City,2
-2025-10-26,Wolverhampton Wanderers,Burnley,0
-2025-10-26,Everton,Tottenham,0
-2025-11-01,Brighton,Leeds,2
-2025-11-01,Burnley,Arsenal,0
-2025-11-01,Crystal Palace,Brentford,2
-2025-11-01,Fulham,Wolverhampton Wanderers,2
 2025-11-01,Nottingham Forest,Manchester United,1
+2025-11-01,Fulham,Wolverhampton Wanderers,2
 2025-11-01,Tottenham,Chelsea,0
+2025-11-01,Burnley,Arsenal,0
+2025-11-01,Brighton,Leeds,2
+2025-11-01,Crystal Palace,Brentford,2
 2025-11-01,Liverpool,Aston Villa,2
-2025-11-02,West Ham,Newcastle United,2
 2025-11-02,Manchester City,Bournemouth,2
+2025-11-02,West Ham,Newcastle United,2
 2025-11-03,Sunderland,Everton,1
 2025-11-08,Tottenham,Manchester United,1
 2025-11-08,Everton,Fulham,2
 2025-11-08,West Ham,Burnley,2
 2025-11-08,Sunderland,Arsenal,1
 2025-11-08,Chelsea,Wolverhampton Wanderers,2
+2025-11-09,Nottingham Forest,Leeds,2
+2025-11-09,Crystal Palace,Brighton,1
+2025-11-09,Manchester City,Liverpool,2
 2025-11-09,Aston Villa,Bournemouth,2
 2025-11-09,Brentford,Newcastle United,2
-2025-11-09,Crystal Palace,Brighton,1
-2025-11-09,Nottingham Forest,Leeds,2
-2025-11-09,Manchester City,Liverpool,2
 2025-11-22,Burnley,Chelsea,0
 2025-11-22,Bournemouth,West Ham,1
 2025-11-22,Brighton,Brentford,2
@@ -119,11 +119,11 @@ Date,Home,Away,Result
 2025-11-23,Leeds,Aston Villa,0
 2025-11-23,Arsenal,Tottenham,2
 2025-11-24,Manchester United,Everton,0
-2025-11-29,Brentford,Burnley,2
-2025-11-29,Manchester City,Leeds,2
-2025-11-29,Sunderland,Bournemouth,2
-2025-11-29,Everton,Newcastle United,0
 2025-11-29,Tottenham,Fulham,0
+2025-11-29,Everton,Newcastle United,0
+2025-11-29,Sunderland,Bournemouth,2
+2025-11-29,Manchester City,Leeds,2
+2025-11-29,Brentford,Burnley,2
 2025-11-30,Crystal Palace,Manchester United,0
 2025-11-30,Aston Villa,Wolverhampton Wanderers,2
 2025-11-30,Nottingham Forest,Brighton,0
@@ -132,22 +132,22 @@ Date,Home,Away,Result
 2025-12-02,Bournemouth,Everton,0
 2025-12-02,Fulham,Manchester City,0
 2025-12-02,Newcastle United,Tottenham,1
-2025-12-03,Arsenal,Brentford,2
-2025-12-03,Brighton,Aston Villa,0
-2025-12-03,Burnley,Crystal Palace,0
-2025-12-03,Wolverhampton Wanderers,Nottingham Forest,0
-2025-12-03,Leeds,Chelsea,2
 2025-12-03,Liverpool,Sunderland,1
+2025-12-03,Leeds,Chelsea,2
+2025-12-03,Wolverhampton Wanderers,Nottingham Forest,0
+2025-12-03,Burnley,Crystal Palace,0
+2025-12-03,Brighton,Aston Villa,0
+2025-12-03,Arsenal,Brentford,2
 2025-12-04,Manchester United,West Ham,1
 2025-12-06,Aston Villa,Arsenal,2
 2025-12-06,Bournemouth,Chelsea,1
 2025-12-06,Everton,Nottingham Forest,2
 2025-12-06,Manchester City,Sunderland,2
 2025-12-06,Newcastle United,Burnley,2
-2025-12-06,Tottenham,Brentford,2
 2025-12-06,Leeds,Liverpool,1
-2025-12-07,Brighton,West Ham,1
+2025-12-06,Tottenham,Brentford,2
 2025-12-07,Fulham,Crystal Palace,0
+2025-12-07,Brighton,West Ham,1
 2025-12-08,Wolverhampton Wanderers,Manchester United,0
 2025-12-13,Chelsea,Everton,2
 2025-12-13,Liverpool,Brighton,2
@@ -159,46 +159,46 @@ Date,Home,Away,Result
 2025-12-14,West Ham,Aston Villa,0
 2025-12-14,Brentford,Leeds,1
 2025-12-15,Manchester United,Bournemouth,1
-2025-12-20,Newcastle United,Chelsea,1
+2025-12-20,Leeds,Crystal Palace,2
+2025-12-20,Everton,Arsenal,0
+2025-12-20,Tottenham,Liverpool,0
+2025-12-20,Wolverhampton Wanderers,Brentford,0
 2025-12-20,Bournemouth,Burnley,1
 2025-12-20,Brighton,Sunderland,1
+2025-12-20,Newcastle United,Chelsea,1
 2025-12-20,Manchester City,West Ham,2
-2025-12-20,Wolverhampton Wanderers,Brentford,0
-2025-12-20,Tottenham,Liverpool,0
-2025-12-20,Everton,Arsenal,0
-2025-12-20,Leeds,Crystal Palace,2
 2025-12-21,Aston Villa,Manchester United,2
 2025-12-22,Fulham,Nottingham Forest,2
 2025-12-26,Manchester United,Newcastle United,2
-2025-12-27,Nottingham Forest,Manchester City,0
-2025-12-27,Arsenal,Brighton,2
-2025-12-27,Brentford,Bournemouth,2
-2025-12-27,Burnley,Everton,1
-2025-12-27,Liverpool,Wolverhampton Wanderers,2
 2025-12-27,West Ham,Fulham,0
 2025-12-27,Chelsea,Aston Villa,0
+2025-12-27,Liverpool,Wolverhampton Wanderers,2
+2025-12-27,Nottingham Forest,Manchester City,0
+2025-12-27,Brentford,Bournemouth,2
+2025-12-27,Arsenal,Brighton,2
+2025-12-27,Burnley,Everton,1
 2025-12-28,Sunderland,Leeds,1
 2025-12-28,Crystal Palace,Tottenham,0
-2025-12-30,Burnley,Newcastle United,0
-2025-12-30,Chelsea,Bournemouth,1
-2025-12-30,Nottingham Forest,Everton,0
+2025-12-30,Manchester United,Wolverhampton Wanderers,1
 2025-12-30,West Ham,Brighton,1
 2025-12-30,Arsenal,Aston Villa,2
-2025-12-30,Manchester United,Wolverhampton Wanderers,1
+2025-12-30,Chelsea,Bournemouth,1
+2025-12-30,Burnley,Newcastle United,0
+2025-12-30,Nottingham Forest,Everton,0
 2026-01-01,Crystal Palace,Fulham,1
 2026-01-01,Liverpool,Leeds,1
 2026-01-01,Brentford,Tottenham,1
 2026-01-01,Sunderland,Manchester City,1
+2026-01-03,Brighton,Burnley,2
 2026-01-03,Aston Villa,Nottingham Forest,2
 2026-01-03,Wolverhampton Wanderers,West Ham,2
-2026-01-03,Brighton,Burnley,2
 2026-01-03,Bournemouth,Arsenal,0
-2026-01-04,Leeds,Manchester United,1
-2026-01-04,Newcastle United,Crystal Palace,2
-2026-01-04,Tottenham,Sunderland,1
-2026-01-04,Everton,Brentford,0
 2026-01-04,Fulham,Liverpool,1
 2026-01-04,Manchester City,Chelsea,1
+2026-01-04,Everton,Brentford,0
+2026-01-04,Newcastle United,Crystal Palace,2
+2026-01-04,Tottenham,Sunderland,1
+2026-01-04,Leeds,Manchester United,1
 2026-01-06,West Ham,Nottingham Forest,0
 2026-01-07,Everton,Wolverhampton Wanderers,1
 2026-01-07,Bournemouth,Tottenham,2
@@ -219,45 +219,45 @@ Date,Home,Away,Result
 2026-01-18,Wolverhampton Wanderers,Newcastle United,1
 2026-01-18,Aston Villa,Everton,0
 2026-01-19,Brighton,Bournemouth,1
+2026-01-24,Bournemouth,Liverpool,2
+2026-01-24,Manchester City,Wolverhampton Wanderers,2
 2026-01-24,West Ham,Sunderland,2
 2026-01-24,Burnley,Tottenham,1
 2026-01-24,Fulham,Brighton,2
-2026-01-24,Manchester City,Wolverhampton Wanderers,2
-2026-01-24,Bournemouth,Liverpool,2
 2026-01-25,Brentford,Nottingham Forest,0
 2026-01-25,Crystal Palace,Chelsea,0
 2026-01-25,Newcastle United,Aston Villa,0
 2026-01-25,Arsenal,Manchester United,0
 2026-01-26,Everton,Leeds,1
-2026-01-31,Brighton,Everton,1
-2026-01-31,Leeds,Arsenal,0
+2026-01-31,Liverpool,Newcastle United,2
 2026-01-31,Wolverhampton Wanderers,Bournemouth,0
 2026-01-31,Chelsea,West Ham,2
-2026-01-31,Liverpool,Newcastle United,2
+2026-01-31,Brighton,Everton,1
+2026-01-31,Leeds,Arsenal,0
 2026-02-01,Aston Villa,Brentford,0
 2026-02-01,Manchester United,Fulham,2
 2026-02-01,Nottingham Forest,Crystal Palace,1
 2026-02-01,Tottenham,Manchester City,1
 2026-02-02,Sunderland,Burnley,2
 2026-02-06,Leeds,Nottingham Forest,2
-2026-02-07,Manchester United,Tottenham,2
-2026-02-07,Bournemouth,Aston Villa,1
-2026-02-07,Arsenal,Sunderland,2
-2026-02-07,Burnley,West Ham,0
-2026-02-07,Fulham,Everton,0
 2026-02-07,Wolverhampton Wanderers,Chelsea,0
 2026-02-07,Newcastle United,Brentford,0
+2026-02-07,Burnley,West Ham,0
+2026-02-07,Fulham,Everton,0
+2026-02-07,Arsenal,Sunderland,2
+2026-02-07,Bournemouth,Aston Villa,1
+2026-02-07,Manchester United,Tottenham,2
 2026-02-08,Brighton,Crystal Palace,0
 2026-02-08,Liverpool,Manchester City,0
 2026-02-10,Chelsea,Leeds,1
 2026-02-10,Everton,Bournemouth,0
 2026-02-10,Tottenham,Newcastle United,0
 2026-02-10,West Ham,Manchester United,1
-2026-02-11,Aston Villa,Brighton,2
-2026-02-11,Crystal Palace,Burnley,0
-2026-02-11,Manchester City,Fulham,2
-2026-02-11,Nottingham Forest,Wolverhampton Wanderers,1
 2026-02-11,Sunderland,Liverpool,0
+2026-02-11,Nottingham Forest,Wolverhampton Wanderers,1
+2026-02-11,Manchester City,Fulham,2
+2026-02-11,Crystal Palace,Burnley,0
+2026-02-11,Aston Villa,Brighton,2
 2026-02-12,Brentford,Arsenal,1
 2026-02-18,Wolverhampton Wanderers,Arsenal,1
 2026-02-21,Aston Villa,Leeds,1
@@ -265,10 +265,10 @@ Date,Home,Away,Result
 2026-02-21,Chelsea,Burnley,1
 2026-02-21,West Ham,Bournemouth,1
 2026-02-21,Manchester City,Newcastle United,2
-2026-02-22,Crystal Palace,Wolverhampton Wanderers,2
-2026-02-22,Nottingham Forest,Liverpool,0
-2026-02-22,Sunderland,Fulham,0
 2026-02-22,Tottenham,Arsenal,0
+2026-02-22,Sunderland,Fulham,0
+2026-02-22,Nottingham Forest,Liverpool,0
+2026-02-22,Crystal Palace,Wolverhampton Wanderers,2
 2026-02-23,Everton,Manchester United,0
 2026-02-27,Wolverhampton Wanderers,Aston Villa,2
 2026-02-28,Bournemouth,Sunderland,1
@@ -276,47 +276,47 @@ Date,Home,Away,Result
 2026-02-28,Liverpool,West Ham,2
 2026-02-28,Newcastle United,Everton,0
 2026-02-28,Leeds,Manchester City,0
+2026-03-01,Arsenal,Chelsea,2
+2026-03-01,Manchester United,Crystal Palace,2
 2026-03-01,Brighton,Nottingham Forest,2
 2026-03-01,Fulham,Tottenham,2
-2026-03-01,Manchester United,Crystal Palace,2
-2026-03-01,Arsenal,Chelsea,2
 2026-03-03,Bournemouth,Brentford,1
 2026-03-03,Everton,Burnley,2
 2026-03-03,Leeds,Sunderland,0
 2026-03-03,Wolverhampton Wanderers,Liverpool,2
+2026-03-04,Newcastle United,Manchester United,2
 2026-03-04,Aston Villa,Chelsea,0
 2026-03-04,Brighton,Arsenal,0
 2026-03-04,Fulham,West Ham,0
 2026-03-04,Manchester City,Nottingham Forest,1
-2026-03-04,Newcastle United,Manchester United,2
 2026-03-05,Tottenham,Crystal Palace,0
-2026-03-14,Burnley,Bournemouth,1
-2026-03-14,Sunderland,Brighton,0
-2026-03-14,Arsenal,Everton,2
-2026-03-14,Chelsea,Newcastle United,0
 2026-03-14,West Ham,Manchester City,1
+2026-03-14,Chelsea,Newcastle United,0
+2026-03-14,Arsenal,Everton,2
+2026-03-14,Sunderland,Brighton,0
+2026-03-14,Burnley,Bournemouth,1
 2026-03-15,Crystal Palace,Leeds,1
 2026-03-15,Manchester United,Aston Villa,2
 2026-03-15,Nottingham Forest,Fulham,1
 2026-03-15,Liverpool,Tottenham,1
 2026-03-16,Brentford,Wolverhampton Wanderers,1
 2026-03-20,Bournemouth,Manchester United,1
+2026-03-21,Leeds,Brentford,1
+2026-03-21,Everton,Chelsea,2
 2026-03-21,Brighton,Liverpool,2
 2026-03-21,Fulham,Burnley,2
-2026-03-21,Everton,Chelsea,2
-2026-03-21,Leeds,Brentford,1
 2026-03-22,Newcastle United,Sunderland,0
 2026-03-22,Aston Villa,West Ham,2
 2026-03-22,Tottenham,Nottingham Forest,0
 2026-04-10,West Ham,Wolverhampton Wanderers,2
+2026-04-11,Liverpool,Fulham,2
 2026-04-11,Arsenal,Bournemouth,0
 2026-04-11,Brentford,Everton,1
 2026-04-11,Burnley,Brighton,0
-2026-04-11,Liverpool,Fulham,2
-2026-04-12,Nottingham Forest,Aston Villa,1
-2026-04-12,Sunderland,Tottenham,2
 2026-04-12,Crystal Palace,Newcastle United,2
 2026-04-12,Chelsea,Manchester City,0
+2026-04-12,Nottingham Forest,Aston Villa,1
+2026-04-12,Sunderland,Tottenham,2
 2026-04-13,Manchester United,Leeds,0
 2026-04-18,Brentford,Fulham,1
 2026-04-18,Leeds,Wolverhampton Wanderers,2
@@ -339,20 +339,20 @@ Date,Home,Away,Result
 2026-04-25,Arsenal,Newcastle United,2
 2026-04-27,Manchester United,Brentford,2
 2026-05-01,Leeds,Burnley,2
-2026-05-02,Brentford,West Ham,2
-2026-05-02,Newcastle United,Brighton,2
-2026-05-02,Wolverhampton Wanderers,Sunderland,1
 2026-05-02,Arsenal,Fulham,2
+2026-05-02,Wolverhampton Wanderers,Sunderland,1
+2026-05-02,Newcastle United,Brighton,2
+2026-05-02,Brentford,West Ham,2
 2026-05-03,Bournemouth,Crystal Palace,2
 2026-05-03,Manchester United,Liverpool,2
 2026-05-03,Aston Villa,Tottenham,0
 2026-05-04,Chelsea,Nottingham Forest,0
 2026-05-04,Everton,Manchester City,1
-2026-05-09,Liverpool,Chelsea,1
-2026-05-09,Brighton,Wolverhampton Wanderers,2
+2026-05-09,Manchester City,Brentford,2
 2026-05-09,Fulham,Bournemouth,0
 2026-05-09,Sunderland,Manchester United,1
-2026-05-09,Manchester City,Brentford,2
+2026-05-09,Liverpool,Chelsea,1
+2026-05-09,Brighton,Wolverhampton Wanderers,2
 2026-05-10,Burnley,Aston Villa,1
 2026-05-10,Crystal Palace,Everton,1
 2026-05-10,Nottingham Forest,Newcastle United,1
@@ -360,22 +360,33 @@ Date,Home,Away,Result
 2026-05-11,Tottenham,Leeds,1
 2026-05-13,Manchester City,Crystal Palace,2
 2026-05-15,Aston Villa,Liverpool,2
-2026-05-17,Manchester United,Nottingham Forest,2
-2026-05-17,Brentford,Crystal Palace,1
-2026-05-17,Everton,Sunderland,0
+2026-05-17,Newcastle United,West Ham,2
 2026-05-17,Leeds,Brighton,2
 2026-05-17,Wolverhampton Wanderers,Fulham,1
-2026-05-17,Newcastle United,West Ham,2
+2026-05-17,Brentford,Crystal Palace,1
+2026-05-17,Manchester United,Nottingham Forest,2
+2026-05-17,Everton,Sunderland,0
 2026-05-18,Arsenal,Burnley,2
 2026-05-19,Bournemouth,Manchester City,1
 2026-05-19,Chelsea,Tottenham,2
-2026-05-24,Brighton,Manchester United,0
-2026-05-24,Burnley,Wolverhampton Wanderers,1
-2026-05-24,Crystal Palace,Arsenal,0
-2026-05-24,Fulham,Newcastle United,2
-2026-05-24,Liverpool,Brentford,1
+2026-05-24,West Ham,Leeds,2
+2026-05-24,Tottenham,Everton,2
+2026-05-24,Sunderland,Chelsea,2
 2026-05-24,Manchester City,Aston Villa,0
 2026-05-24,Nottingham Forest,Bournemouth,1
-2026-05-24,Sunderland,Chelsea,2
-2026-05-24,Tottenham,Everton,2
-2026-05-24,West Ham,Leeds,2
+2026-05-24,Fulham,Newcastle United,2
+2026-05-24,Crystal Palace,Arsenal,0
+2026-05-24,Burnley,Wolverhampton Wanderers,1
+2026-05-24,Brighton,Manchester United,0
+2026-05-24,Liverpool,Brentford,1
+2026-08-21,Arsenal,Coventry,2
+2026-08-22,Hull,Manchester United,2
+2026-08-22,Everton,Crystal Palace,2
+2026-08-22,Ipswich,Sunderland,2
+2026-08-22,Nottingham Forest,Leeds,0
+2026-08-22,Brentford,Tottenham,2
+2026-08-23,Manchester City,Bournemouth,2
+2026-08-23,Brighton,Aston Villa,2
+2026-08-23,Newcastle United,Liverpool,1
+2026-08-24,Fulham,Chelsea,0
+2026-08-28,Crystal Palace,Manchester City,0

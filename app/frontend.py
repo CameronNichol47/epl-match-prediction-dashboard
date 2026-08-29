@@ -1,6 +1,6 @@
 import streamlit as st 
 from pathlib import Path
-from fixtures_api import gameweek_one
+from fixtures_api import gameweek
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import sys
@@ -16,7 +16,7 @@ from src.shap_explainer import explain
 from src.polymarket_api import load_slug
 from src.build_market_probabilities import build_probabilities
 from src.kelly_criterion import recommended_bets
-st.title('Premier League Matchweek 1')
+st.title('Premier League Matchweek 2')
 
 st.markdown(
     """
@@ -47,7 +47,7 @@ def load_prediction_data(home, away, date):
 
     return prob, polymarket, kelly, shap_figure
 
-for match in gameweek_one:
+for match in gameweek:
     home = match["strHomeTeam"]
     away = match["strAwayTeam"]
     date = match["dateEvent"]
