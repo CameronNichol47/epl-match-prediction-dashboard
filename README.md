@@ -292,7 +292,7 @@ These predictions are made independently and will be compared against the
 model after the matches are completed. This provides a simple human benchmark
 for evaluating the model's classification performance throughout the season.
 
-### Matchweek Predictions
+### Matchweek 1 Predictions
 
 | Fixture | Model Prediction | My Prediction | Actual Result |
 |---|---|---|---|
@@ -303,6 +303,40 @@ for evaluating the model's classification performance throughout the season.
 | Brighton vs Aston Villa | Brighton | Brighton | Brighton |
 | Newcastle United vs Liverpool | Newcastle United | Liverpool | Draw |
 | Fulham vs Chelsea | Chelsea | Chelsea | Chelsea |
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
+
+### Matchweek 2 Predictions
+
+| Fixture | Model Prediction | My Prediction | Actual Result |
+|---|---|---|---|
+| Crystal Palace vs Manchester City | Manchester City | Manchester City | TBD |
+| Liverpool vs Nottingham Forest | Draw | Liverpool | TBD |
+| Bournemouth vs Everton | Draw | Everton | TBD |
+| Tottenham Hotspur vs Newcastle United | Tottenham Hotspur | Tottenham Hotspur | TBD |
+| Chelsea vs Brighton | Brighton | Chelsea | TBD |
+| Leeds United vs Brentford | Draw | Draw | TBD |
+| Sunderland vs Fulham | Fulham | Fulham | TBD |
+| Aston Villa vs Arsenal | Aston Villa | Arsenal | TBD |
 
 \* Model prediction unavailable because the current model excludes fixtures
 involving newly promoted teams due to insufficient Premier League rolling

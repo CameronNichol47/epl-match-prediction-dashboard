@@ -40,9 +40,13 @@ def load_prediction_data(home, away, date):
     prob, shap_figure = model(home, away)
 
     polymarket = load_slug(home, away, date)
-
+    print("HOME:", home)
+    print("AWAY:", away)
+    print("DATE:", date)
+    print("RETURNED:", polymarket)
+    print("TYPE:", type(polymarket))
     build_probabilities(home, away, polymarket)
-
+    
     kelly = recommended_bets(home, away)
 
     return prob, polymarket, kelly, shap_figure
