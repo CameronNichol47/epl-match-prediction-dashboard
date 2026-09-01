@@ -329,14 +329,14 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture | Model Prediction | My Prediction | Actual Result |
 |---|---|---|---|
-| Crystal Palace vs Manchester City | Manchester City | Manchester City | TBD |
-| Liverpool vs Nottingham Forest | Draw | Liverpool | TBD |
-| Bournemouth vs Everton | Draw | Everton | TBD |
-| Tottenham Hotspur vs Newcastle United | Tottenham Hotspur | Tottenham Hotspur | TBD |
-| Chelsea vs Brighton | Brighton | Chelsea | TBD |
-| Leeds United vs Brentford | Draw | Draw | TBD |
-| Sunderland vs Fulham | Fulham | Fulham | TBD |
-| Aston Villa vs Arsenal | Aston Villa | Arsenal | TBD |
+| Crystal Palace vs Manchester City | Manchester City | Manchester City | Manchester City |
+| Liverpool vs Nottingham Forest | Draw | Liverpool | Draw |
+| Bournemouth vs Everton | Draw | Everton | Draw |
+| Tottenham Hotspur vs Newcastle United | Tottenham Hotspur | Tottenham Hotspur | Newcastle United |
+| Chelsea vs Brighton | Brighton | Chelsea | Chelsea |
+| Leeds United vs Brentford | Draw | Draw | Draw |
+| Sunderland vs Fulham | Fulham | Fulham | Sunderland |
+| Aston Villa vs Arsenal | Aston Villa | Arsenal | Arsenal |
 
 \* Model prediction unavailable because the current model excludes fixtures
 involving newly promoted teams due to insufficient Premier League rolling
