@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from src import build_match_history
 
 BASE_DIR = Path(__file__).resolve().parent
 PRO_DIR = BASE_DIR.parent / "data" / "full_gamelog"
@@ -145,6 +146,7 @@ def add_elo_to_dataframe(df):
     return df
 
 def main():
+    build_match_history.main()
     df = pd.read_csv(PRO_DIR / "all_matches.csv")
 
     output_path = PRO_DIR / "all_matches_with_elo.csv"

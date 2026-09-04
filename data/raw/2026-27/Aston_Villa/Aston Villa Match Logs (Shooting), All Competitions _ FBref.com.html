@@ -41,13 +41,13 @@
 <script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
 <script>if (!document.srdev && (location.hostname === 'sup.fb.srdevel.com')) { document.srdev = 'aw'; }/* sf: hardcode this in for sup.fb.srdevel.com for testing purposes. */</script>
 <link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
-<link rel="preload"    href="https://cdn.ssref.net/req/202608261/icons/sr_icons-min.svg?fb" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202609041/icons/sr_icons-min.svg?fb" as="fetch" crossorigin>
 <link rel="preload"    href="https://fbref.com/short/inc/main_nav_menu.json" as="fetch" crossorigin>
 <link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
-<link rel="preload"    href="https://cdn.ssref.net/req/202608261/css/fb/sr-min.css" as="style"    crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202609041/css/fb/sr-min.css" as="style"    crossorigin>
 
 <!-- CSS start -->
-<link rel="stylesheet" href="https://cdn.ssref.net/req/202608261/css/fb/sr-min.css" type="text/css" crossorigin
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202609041/css/fb/sr-min.css" type="text/css" crossorigin
       onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,15),'/css/fb/sr.css'); }" />
 <!-- CSS END -->
 
@@ -56,7 +56,7 @@
 function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="en",vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")?document.srdev=vjs_getUrlParameter("srdev"):"sup"===window.location.host.substr(0,3)&&(document.srdev="aw");var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),(()=>{var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,r=document.createElement("div"),n=r.getElementsByTagName("i");r.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",n[0];);return 4<t&&t})()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(s,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,r,n){var o,i,s,a,l="modernizr",c=T("div");(a=d.body)||((a=T(m?"svg":"body")).fake=!0);if(parseInt(r,10))for(;r--;)(i=T("div")).id=n?n[r]:l+(r+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(a.fake?a:c).appendChild(o),a.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,a.fake&&(a.style.background="",a.style.overflow="hidden",s=u.style.overflow,u.style.overflow="hidden",u.appendChild(a)),o=t(c,e),a.fake?(a.parentNode.removeChild(a),u.style.overflow=s,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,r){return t+r.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var r=e.length;if("CSS"in s&&"supports"in s.CSS){for(;r--;)if(s.CSS.supports(D(e[r]),t))return!0;return!1}if("CSSSupportsRule"in s){for(var n=[];r--;)n.push("("+D(e[r])+":"+t+")");return R("@supports ("+(n=n.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,r="position","getComputedStyle"in s?(n=getComputedStyle.call(s,e,t),o=s.console,null!==n?r&&(n=n.getPropertyValue(r)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):n=!t&&e.currentStyle&&e.currentStyle[r],n);var t,r,n,o})}return S}function n(e,t,r,n,o){var i,s,a=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+ne.join(a+" ")+a).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=n,m=o;function p(){f&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){l=q(c,u);if(void 0!==l)return l}for(var f,h,v,g,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)f=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(v=c.length,h=0;h<v;h++)if(g=c[h],_=L.style[g],~(""+g).indexOf("-")&&(g=U(g)),L.style[g]!==S){if(m||void 0===u)return p(),"pfx"!=d||g;try{L.style[g]=u}catch(e){}if(L.style[g]!=_)return p(),"pfx"!=d||g}p()}else{var w=(e+" "+P.join(a+" ")+a).split(" "),M=t,x=r;for(s in w)if(w[s]in M)if(!1===x)return w[s];else{i=M[w[s]];if(E(i,"function")){var b=i;var z=x||M;return function(){return b.apply(z,arguments)};return}else return i}}return!1}function F(e,t,r){return n(e,S,S,t,r)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var r=this;setTimeout(function(){t(r[e])},0)},addTest:function(e,t,r){o.push({name:e,fn:t,options:r})},addAsyncTest:function(e){o.push({name:null,fn:e})}},r=function(){},a=(r.prototype=e,(r=new r).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),r.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),r.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),r.addTest("cors","XMLHttpRequest"in s&&"withCredentials"in new XMLHttpRequest),r.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&s.history&&"pushState"in s.history}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=a,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==s?s:this,l=d;function I(e,t){var r=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return r.innerHTML="x<style>"+t+"</style>",e.insertBefore(r.lastChild,e.firstChild)}function p(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function f(e){var t=X[e[G]];return t||(t={},g++,e[G]=g,X[g]=t),t}function W(e,t,r){return t=t||l,h?t.createElement(e):!(t=(r=r||f(t)).cache[e]?r.cache[e].cloneNode():V.test(e)?(r.cache[e]=r.createElem(e)).cloneNode():r.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:r.frag.appendChild(t)}function i(e){var t,r,n=f(e=e||l);return!y.shivCSS||c||n.hasCSS||(n.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(r=n).cache||(r.cache={},r.createElem=t.createElement,r.createFrag=t.createDocumentFragment,r.frag=r.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,r):r.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+p().join().replace(/[\w\-:]+/g,function(e){return r.createElem(e),r.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,r.frag)),e}function H(e){for(var t,r=e.getElementsByTagName("*"),n=r.length,o=RegExp("^(?:"+p().join("|")+")$","i"),i=[];n--;)t=r[n],o.test(t.nodeName)&&i.push(t.applyElement((e=>{for(var t,r=e.attributes,n=r.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);n--;)(t=r[n]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o})(t)));return i}function B(a){function l(){clearTimeout(r._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,r=f(a),e=a.namespaces,t=a.parentWindow;return!K||a.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,r,n=a.styleSheets,o=[],i=n.length,s=Array(i);i--;)s[i]=n[i];for(;r=s.pop();)if(!r.disabled&&Z.test(r.media)){try{t=(e=r.imports).length}catch(e){t=0}for(i=0;i<t;i++)s.push(e[i]);try{o.push(r.cssText)}catch(e){}}o=(e=>{for(var t,r=e.split("{"),n=r.length,o=RegExp("(^|[\\s,>+~])("+p().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";n--;)(t=r[n]=r[n].split("}"))[t.length-1]=t[t.length-1].replace(o,i),r[n]=t.join("}");return r.join("{")})(o.reverse().join("")),d=H(a),c=I(a,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(r._removeSheetTimer),r._removeSheetTimer=setTimeout(l,500)}),a.printShived=!0),a}var c,h,v=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",g=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(A=l.createDocumentFragment()).cloneNode)||void 0===A.createDocumentFragment||void 0===A.createElement}catch(e){h=c=!0}var y={elements:v.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==v.shivCSS,supportsUnknownElements:h,shivMethods:!1!==v.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var r=(t=t||f(e)).frag.cloneNode(),n=0,o=p(),i=o.length;n<i;n++)r.createElement(o[n]);return r},addElements:function(e,t){var r=y.elements;"string"!=typeof r&&(r=r.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=r+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces)||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent);y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}r.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+a.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,r=a.length,n=s.CSSRule;if(void 0===n)return S;if(e){if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in n)return"@"+e;for(var o=0;o<r;o++){var i=a[o];if(i.toUpperCase()+"_"+t in n)return"@-"+i.toLowerCase()+"-"+e}}return!1}Y=!("onblur"in d.documentElement);var Y,M,x,b,z,C,N,j,ee,k,O,te=function(e,t){var r;return!!e&&(!(r=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),r="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),r)},re=(e.hasEvent=te,e.testStyles=R),A=(r.addTest("touchevents",function(){var t,e;return"ontouchstart"in s||s.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",a.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),re(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?A.toLowerCase().split(" "):[],ne=(e._domPrefixes=P,r.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=r.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?A.split(" "):[]),oe=(e._cssomPrefixes=ne,e.atRule=Q,{elem:T("modernizr")}),L=(r._q.push(function(){delete oe.elem}),{style:oe.elem.style}),v=(r._q.unshift(function(){delete L.style}),e.testAllProps=n,e.prefixed=function(e,t,r){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?n(e,t,r):n(e,"pfx"))});for(j in r.addTest("matchmedia",!!v("matchMedia",s)),e.testAllProps=F,r.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(M=[],(x=o[j]).name&&(M.push(x.name.toLowerCase()),x.options)&&x.options.aliases&&x.options.aliases.length)for(b=0;b<x.options.aliases.length;b++)M.push(x.options.aliases[b].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<M.length;C++)1===(N=M[C].split(".")).length?r[N[0]]=z:(!r[N[0]]||r[N[0]]instanceof Boolean||(r[N[0]]=new Boolean(r[N[0]])),r[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,O=r._config.classPrefix||"",m&&(k=k.baseVal),r._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+O+"no-js(\\s|$)"),k=k.replace(ee,"$1"+O+"js$2")),r._config.enableClasses&&(k+=" "+O+t.join(" "+O),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<r._q.length;ie++)r._q[ie]();s.Modernizr=r}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_path_parts=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),window.location.pathname.split("/")),sr_logger=(Modernizr.is_stathead=!1,("sr"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"sports-reference"===sr_host_parts[0]&&"stathead"===sr_path_parts[1]||"www"===sr_host_parts[0]&&"sports-reference"===sr_host_parts[1]&&"stathead"===sr_path_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),(()=>{var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t})()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang="",Modernizr.srdev=document.srdev,Modernizr.is_reduced_motion=!0===window.matchMedia("(prefers-reduced-motion: reduce)")||!0===window.matchMedia("(prefers-reduced-motion: reduce)").matches,[]);function vjs_readCookie(e){for(var t=e+"=",r=document.cookie.split(";"),n=0;n<r.length;n++){for(var o=r[n];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,r){var n,o="",o=r?((n=new Date).setTime(n.getTime()+24*r*60*60*1e3),"; expires="+n.toGMTString()):"",r=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=r}(o=>{function e(e,t){var r=o.document.getElementsByTagName("script")[0],n=o.document.createElement("script");return n.src=e,n.async=!0,n.crossOrigin="anonymous",r.parentNode.insertBefore(n,r),t&&"function"==typeof t&&(n.onload=t),n}"undefined"!=typeof module?module.exports=e:o.loadJS=e})("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
 </script>
 <script>
-let server = (document.srdev) ? 'https://cdn.ssref.net/nocdn/dev/' + document.srdev.substring(0, 15) : "https://cdn.ssref.net/req/202608261";
+let server = (document.srdev) ? 'https://cdn.ssref.net/nocdn/dev/' + document.srdev.substring(0, 15) : "https://cdn.ssref.net/req/202609041";
 let _sr_modern_url = server 
 	+ "/js/fb" 
 	+ "/sr"+ ((document.srdev) ? "" : "-min")	+ ".js"
@@ -70,7 +70,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 
 
 
-    <meta name="revised" content="22:15:19 28-Aug-2026" />
+    <meta name="revised" content="16:00:42 04-Sep-2026" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="generated-by"     content="/home/fb/deploy/www/teams/team_season.fcgi" />
@@ -104,6 +104,11 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
             {
                 "@type": "SportsOrganization",
                 "name": "UEFA Super Cup"
+            },
+        
+            {
+                "@type": "SportsOrganization",
+                "name": "UEFA Champions League"
             },
         
             {
@@ -150,6 +155,11 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
         
             {
                 "@type": "Person",
+                "name": "Tammy Abraham"
+            },
+        
+            {
+                "@type": "Person",
                 "name": "Pau Torres"
             },
         
@@ -161,6 +171,11 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
             {
                 "@type": "Person",
                 "name": "Boubacar Kamara"
+            },
+        
+            {
+                "@type": "Person",
+                "name": "Aaron Wan-Bissaka"
             },
         
             {
@@ -181,6 +196,11 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
             {
                 "@type": "Person",
                 "name": "João Gomes"
+            },
+        
+            {
+                "@type": "Person",
+                "name": "Nicolas Jackson"
             },
         
             {
@@ -236,11 +256,6 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
             {
                 "@type": "Person",
                 "name": "Modou Cissé"
-            },
-        
-            {
-                "@type": "Person",
-                "name": "Tammy Abraham"
             },
         
             {
@@ -364,6 +379,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"competitor": [
 			{
 			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Club Brugge"
+			}
+		],
+		"description": "Club Brugge vs Aston Villa on September 8th, 2026",
+		"endDate": "",
+		"name": "Aston Villa @ Club Brugge",
+			"sport": "Association Football",
+		"startDate": "September 8th, 2026",
+			"url": "https://fbref.com/en/matches/2061d538/Club-Brugge-Aston-Villa-September-8-2026-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Jan Breydelstadion"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
 			"name": "Nottingham"
 			},
 			{
@@ -402,7 +443,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"name": "Aston Villa @ Coventry City",
 			"sport": "Association Football",
 		"startDate": "September 16th, 2026",
-			"url": "https://fbref.com/en/matches/aaff0aa4/Coventry-City-Aston-Villa-September-8-2026-EFL-Cup",
+			"url": "https://fbref.com/en/matches/aaff0aa4/Coventry-City-Aston-Villa-September-16-2026-EFL-Cup",
 		"eventStatus": "https://schema.org/EventScheduled",
 		"location": {
 			"@type": "Place",
@@ -468,6 +509,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"competitor": [
 			{
 			"@type": "SportsTeam",
+			"name": "Fenerbahçe"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			}
+		],
+		"description": "Aston Villa vs Fenerbahçe on October 14th, 2026",
+		"endDate": "",
+		"name": "Fenerbahçe @ Aston Villa",
+			"sport": "Association Football",
+		"startDate": "October 14th, 2026",
+			"url": "https://fbref.com/en/matches/ec7741bb/Aston-Villa-Fenerbahce-October-14-2026-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Villa Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
 			"name": "Aston Villa"
 			},
 			{
@@ -485,6 +552,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"location": {
 			"@type": "Place",
 			"name": "St James' Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
+			"name": "Viking"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			}
+		],
+		"description": "Aston Villa vs Viking on October 21st, 2026",
+		"endDate": "",
+		"name": "Viking @ Aston Villa",
+			"sport": "Association Football",
+		"startDate": "October 21st, 2026",
+			"url": "https://fbref.com/en/matches/bbbc8d22/Aston-Villa-Viking-October-21-2026-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Villa Park"
 		}
 	},
     
@@ -527,16 +620,42 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 			"name": "Aston Villa"
 			}
 		],
-		"description": "Aston Villa vs Fulham on November 1st, 2026",
+		"description": "Aston Villa vs Fulham on October 31st, 2026",
 		"endDate": "",
 		"name": "Fulham @ Aston Villa",
 			"sport": "Association Football",
-		"startDate": "November 1st, 2026",
-			"url": "https://fbref.com/en/matches/b42a6e10/Aston-Villa-Fulham-November-1-2026-Premier-League",
+		"startDate": "October 31st, 2026",
+			"url": "https://fbref.com/en/matches/b42a6e10/Aston-Villa-Fulham-October-31-2026-Premier-League",
 		"eventStatus": "https://schema.org/EventScheduled",
 		"location": {
 			"@type": "Place",
 			"name": "Villa Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Barcelona"
+			}
+		],
+		"description": "Barcelona vs Aston Villa on November 3rd, 2026",
+		"endDate": "",
+		"name": "Aston Villa @ Barcelona",
+			"sport": "Association Football",
+		"startDate": "November 3rd, 2026",
+			"url": "https://fbref.com/en/matches/ad6864db/Barcelona-Aston-Villa-November-3-2026-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Spotify Camp Nou"
 		}
 	},
     
@@ -589,6 +708,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"location": {
 			"@type": "Place",
 			"name": "Villa Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Galatasaray"
+			}
+		],
+		"description": "Galatasaray vs Aston Villa on November 24th, 2026",
+		"endDate": "",
+		"name": "Aston Villa @ Galatasaray",
+			"sport": "Association Football",
+		"startDate": "November 24th, 2026",
+			"url": "https://fbref.com/en/matches/07db5c65/Galatasaray-Aston-Villa-November-24-2026-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "RAMS Park"
 		}
 	},
     
@@ -663,6 +808,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 			"sport": "Association Football",
 		"startDate": "December 5th, 2026",
 			"url": "https://fbref.com/en/matches/1c50836c/Aston-Villa-Crystal-Palace-December-5-2026-Premier-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Villa Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
+			"name": "PSG"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			}
+		],
+		"description": "Aston Villa vs PSG on December 8th, 2026",
+		"endDate": "",
+		"name": "PSG @ Aston Villa",
+			"sport": "Association Football",
+		"startDate": "December 8th, 2026",
+			"url": "https://fbref.com/en/matches/035742e7/Aston-Villa-Paris-Saint-Germain-December-8-2026-Champions-League",
 		"eventStatus": "https://schema.org/EventScheduled",
 		"location": {
 			"@type": "Place",
@@ -858,6 +1029,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"competitor": [
 			{
 			"@type": "SportsTeam",
+			"name": "Dortmund"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			}
+		],
+		"description": "Aston Villa vs Dortmund on January 19th, 2027",
+		"endDate": "",
+		"name": "Dortmund @ Aston Villa",
+			"sport": "Association Football",
+		"startDate": "January 19th, 2027",
+			"url": "https://fbref.com/en/matches/871e598a/Aston-Villa-Dortmund-January-19-2027-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Villa Park"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
 			"name": "Aston Villa"
 			},
 			{
@@ -875,6 +1072,32 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 		"location": {
 			"@type": "Place",
 			"name": "Craven Cottage"
+		}
+	},
+    
+	{
+		"@context": "http://www.schema.org",
+		"@type": "SportsEvent",
+		"competitor": [
+			{
+			"@type": "SportsTeam",
+			"name": "Aston Villa"
+			},
+			{
+			"@type": "SportsTeam",
+			"name": "Slavia Prague"
+			}
+		],
+		"description": "Slavia Prague vs Aston Villa on January 27th, 2027",
+		"endDate": "",
+		"name": "Aston Villa @ Slavia Prague",
+			"sport": "Association Football",
+		"startDate": "January 27th, 2027",
+			"url": "https://fbref.com/en/matches/828108cd/Slavia-Prague-Aston-Villa-January-27-2027-Champions-League",
+		"eventStatus": "https://schema.org/EventScheduled",
+		"location": {
+			"@type": "Place",
+			"name": "Fortuna Arena"
 		}
 	},
     
@@ -1423,7 +1646,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://www.sports-reference.com/profile/?utm_source=fb&amp;utm_medium=sr_xsite&amp;utm_campaign=2023_01_srnav_account">Your Account</a></li>
 <li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '?redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/logout.cgi">Logout</a></li>
 <li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/login.cgi?token=1">Ad-Free Login</a></li>
-<li class="user not_logged_in"><a href="https://www.sports-reference.com/stathead/signup.cgi">Create Account</a></li>
+<li class="user not_logged_in"><a onclick="if(!this.href.match('redirect=')){this.href += '&amp;redirect='+escape(document.location.href)}" href="https://www.sports-reference.com/account/sign-up?product=reference">Create Account</a></li>
 
 </ul>
 
@@ -1454,7 +1677,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://www.sports-reference.com/profile/?utm_source=fb&amp;utm_medium=sr_xsite&amp;utm_campaign=2023_01_srnav_account">Your Account</a></li>
 <li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '?redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/logout.cgi">Logout</a></li>
 <li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/login.cgi?token=1">Ad-Free Login</a></li>
-<li class="user not_logged_in"><a href="https://www.sports-reference.com/stathead/signup.cgi">Create Account</a></li>
+<li class="user not_logged_in"><a onclick="if(!this.href.match('redirect=')){this.href += '&amp;redirect='+escape(document.location.href)}" href="https://www.sports-reference.com/account/sign-up?product=reference">Create Account</a></li>
 	</ul><!-- ul.user -->
 </div><!-- div#nav -->
 <script>
@@ -1538,7 +1761,7 @@ sr_menus_setupMainNav_button_inline();
 
 
 	<div class="media-item logo loader">
-		<img class="teamlogo"				src="https://cdn.ssref.net/req/202608270/tlogo/fb/8602292d.png"			alt="Aston Villa Club Crest">
+		<img class="teamlogo"				src="https://cdn.ssref.net/req/202609010/tlogo/fb/8602292d.png"			alt="Aston Villa Club Crest">
 		 
 	</div>
 
@@ -1561,7 +1784,7 @@ sr_menus_setupMainNav_button_inline();
 
     <p>
     <strong>Record:</strong>
-    0-0-1, 
+    0-0-2, 
     0 point
     (0.00 per game),
     19th
@@ -1575,7 +1798,7 @@ sr_menus_setupMainNav_button_inline();
 
     <p>
     <strong>Home Record:</strong> 
-    0-0-0, 
+    0-0-1, 
     0 point
     
     <strong>Away Record:</strong>
@@ -1586,18 +1809,18 @@ sr_menus_setupMainNav_button_inline();
     
     
         <p><a href="/en/squads/8602292d/2026-2027/goallogs/all_comps/Aston-Villa-Goal-Logs-All-Competitions"><strong>Goals</strong></a>: 0 (0.00 per game), 
-        <a href="/en/squads/8602292d/2026-2027/goallogs/all_comps/Aston-Villa-Goal-Logs-All-Competitions"><strong>Goals Against</strong></a>: 4 (4.00 per game),
-        <strong>Diff:</strong> -4</p>
+        <a href="/en/squads/8602292d/2026-2027/goallogs/all_comps/Aston-Villa-Goal-Logs-All-Competitions"><strong>Goals Against</strong></a>: 5 (2.50 per game),
+        <strong>Diff:</strong> -5</p>
     
 
     
 
 
 
-    <p><strong>Last Match:</strong> Loss 0&ndash;4 <a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">at Brighton & Hove Albion</a></p>
+    <p><strong>Last Match:</strong> Loss 0&ndash;1 <a href="/en/matches/e95b1641/Aston-Villa-Arsenal-August-31-2026-Premier-League">vs Arsenal</a></p>
 
 
-    <p><strong>Next Match:</strong> Monday, Aug 31 <a href="/en/stathead/matchup/teams/8602292d/18bb7c10/Aston-Villa-vs-Arsenal-History">vs Arsenal</a></p>
+    <p><strong>Next Match:</strong> Saturday, Sep 5 <a href="/en/stathead/matchup/teams/bd8769d1/8602292d/Hull-City-vs-Aston-Villa-History">at Hull City</a></p>
 
 
 
@@ -1617,6 +1840,8 @@ sr_menus_setupMainNav_button_inline();
 
     
         <p><b><a href="/en/comps/122/UEFA-Super-Cup-Stats">UEFA Super Cup</a></b>: Lost to <a href="/en/squads/e2d8892c/Paris-Saint-Germain-Stats">Paris Saint-Germain</a></p>
+    
+        <p><b><a href="/en/comps/8/Champions-League-Stats">Champions League</a></b>: 1st place in League phase</p>
     
         <p><b><a href="/en/comps/690/EFL-Cup-Stats">EFL Cup</a></b>: Facing <a href="/en/squads/f7e3dfe9/Coventry-City-Stats">Coventry City</a> in Third round</p>
     
@@ -1710,6 +1935,8 @@ var sr_menus_checkInfoCookie_run_inline = true;
 						
 						<p><a href="/en/squads/8602292d/2026-2027/c122/Aston-Villa-Stats-UEFA-Super-Cup">UEFA Super Cup Stats</a></p>
 						
+						<p><a href="/en/squads/8602292d/2026-2027/c8/Aston-Villa-Stats-Champions-League">Champions League Stats</a></p>
+						
 						<p><a href="/en/squads/8602292d/2026-2027/c690/Aston-Villa-Stats-EFL-Cup">EFL Cup Stats</a></p>
 						
 						<p><a href="/en/squads/8602292d/2026-2027/roster/Aston-Villa-Roster-Details">Player Career Details</a></p>
@@ -1738,6 +1965,11 @@ var sr_menus_checkInfoCookie_run_inline = true;
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/schedule/Aston-Villa-Scores-and-Fixtures-UEFA-Super-Cup" >Scores & Fixtures</a></li>
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/shooting/Aston-Villa-Match-Logs-UEFA-Super-Cup" >Shooting</a></li>
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/keeper/Aston-Villa-Match-Logs-UEFA-Super-Cup" >Goalkeeping</a></li>
+					</ul>
+
+<p class="listhead">Match Logs (Champions League)</p>
+					<ul class="">
+						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c8/schedule/Aston-Villa-Scores-and-Fixtures-Champions-League" >Scores & Fixtures</a></li>
 					</ul>
 
 <p class="listhead">Match Logs (EFL Cup)</p>
@@ -1769,6 +2001,9 @@ var sr_menus_checkInfoCookie_run_inline = true;
 			class="full "><a href="/en/squads/8602292d/2026-2027/c122/Aston-Villa-Stats-UEFA-Super-Cup">UEFA Super Cup Stats</a>
 			   		</li>
 		<li
+			class="full "><a href="/en/squads/8602292d/2026-2027/c8/Aston-Villa-Stats-Champions-League">Champions League Stats</a>
+			   		</li>
+		<li
 			class="full "><a href="/en/squads/8602292d/2026-2027/c690/Aston-Villa-Stats-EFL-Cup">EFL Cup Stats</a>
 			   		</li>
 		<li
@@ -1797,6 +2032,11 @@ var sr_menus_checkInfoCookie_run_inline = true;
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/schedule/Aston-Villa-Scores-and-Fixtures-UEFA-Super-Cup" >Scores & Fixtures</a></li>
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/shooting/Aston-Villa-Match-Logs-UEFA-Super-Cup" >Shooting</a></li>
 						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/keeper/Aston-Villa-Match-Logs-UEFA-Super-Cup" >Goalkeeping</a></li>
+					</ul>
+
+<p class="listhead">Champions League</p>
+					<ul class="">
+						<li><a href="/en/squads/8602292d/2026-2027/matchlogs/c8/schedule/Aston-Villa-Scores-and-Fixtures-Champions-League" >Scores & Fixtures</a></li>
 					</ul>
 
 <p class="listhead">EFL Cup</p>
@@ -1941,6 +2181,8 @@ var sr_menus_checkInfoCookie_run_inline = true;
 </div><div class="">
 	<a href="/en/squads/8602292d/2026-2027/matchlogs/c9/shooting/Aston-Villa-Match-Logs-Premier-League">Premier League</a>
 </div><div class="">
+	<a href="/en/squads/8602292d/2026-2027/matchlogs/c8/shooting/Aston-Villa-Match-Logs-Champions-League">Champions League</a>
+</div><div class="">
 	<a href="/en/squads/8602292d/2026-2027/matchlogs/c690/shooting/Aston-Villa-Match-Logs-EFL-Cup">EFL Cup</a>
 </div><div class="">
 	<a href="/en/squads/8602292d/2026-2027/matchlogs/c122/shooting/Aston-Villa-Match-Logs-UEFA-Super-Cup">UEFA Super Cup</a>
@@ -2014,7 +2256,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
 
 	<div class="table_container tabbed current" id="div_matchlogs_for">
 		
-		<table class="stats_table sortable min_width" id="matchlogs_for" data-cols-to-freeze=",1"> <caption>Shooting <span style="color: #666; font-size:smaller">2026-2027 Aston Villa: All Competitions</span> Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr class="over_header"> <th aria-label="" data-stat="header_for_against" colspan="10" class=" over_header center" >For Aston Villa</th> <th aria-label="" data-stat="header_standard" colspan="8" class=" over_header center group_start" >Standard</th><th></th> </tr> <tr> <th aria-label="Date" data-stat="date" scope="col" class=" poptip sort_default_asc center" data-tip="Date listed is local to the match" data-over-header="For Aston Villa" >Date</th> <th aria-label="Time" data-stat="start_time" scope="col" class=" poptip sort_default_asc center" data-tip="Time listed is local to the match venue<br>Time is written in the 24-hour notation<br>Your local time is in (&#183;) " data-over-header="For Aston Villa" >Time</th> <th aria-label="Competition" data-stat="comp" scope="col" class=" poptip sort_default_asc center" data-tip="<strong>Competition</strong><br>Competition<br>Number next to competition states which level in the country's league pyramid this league occupies." data-over-header="For Aston Villa" >Comp</th> <th aria-label="Round" data-stat="round" scope="col" class=" poptip center" data-tip="Round or Phase of Competition" data-over-header="For Aston Villa" >Round</th> <th aria-label="Day" data-stat="dayofweek" scope="col" class=" poptip sort_default_asc center" data-tip="Day of week" data-over-header="For Aston Villa" >Day</th> <th aria-label="Venue" data-stat="venue" scope="col" class=" poptip sort_default_asc center" data-over-header="For Aston Villa" >Venue</th> <th aria-label="Result" data-stat="result" scope="col" class=" poptip center" data-over-header="For Aston Villa" >Result</th> <th aria-label="Goals For" data-stat="goals_for" scope="col" class=" poptip center" data-tip="<strong>Goals For</strong><br>Goals For" data-over-header="For Aston Villa" >GF</th> <th aria-label="Goals Against" data-stat="goals_against" scope="col" class=" poptip center" data-tip="<strong>Goals Against</strong><br>Goals Against" data-over-header="For Aston Villa" >GA</th> <th aria-label="Opponent" data-stat="opponent" scope="col" class=" poptip sort_default_asc center" data-over-header="For Aston Villa" >Opponent</th> <th aria-label="Goals" data-stat="goals" scope="col" class=" poptip center group_start" data-tip="<strong>Goals</strong><br>Goals scored or allowed" data-over-header="Standard" >Gls</th> <th aria-label="Shots Total" data-stat="shots" scope="col" class=" poptip center" data-tip="<strong>Shots Total</strong><br>Shots Total" data-over-header="Standard" >Sh</th> <th aria-label="Shots on Target" data-stat="shots_on_target" scope="col" class=" poptip center" data-tip="<strong>Shots on Target</strong><br>Shots on Target" data-over-header="Standard" >SoT</th> <th aria-label="Shots on Target %" data-stat="shots_on_target_pct" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Shots on Target %</strong><br>Percentage of shots that are on target<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Shots on Target %" >SoT%</th> <th aria-label="Goals/Shot" data-stat="goals_per_shot" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot</strong><br>Goals per shot<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot" >G/Sh</th> <th aria-label="Goals/Shot on Target" data-stat="goals_per_shot_on_target" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot on Target</strong><br>Goals per shot on target<br>Minimum .111 shots on target per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot on Target" >G/SoT</th> <th aria-label="Penalty Kicks Made" data-stat="pens_made" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Made</strong><br>Penalty Kicks Made" data-over-header="Standard" >PK</th> <th aria-label="Penalty Kicks Attempted" data-stat="pens_att" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Attempted</strong><br>Penalty Kicks Attempted" data-over-header="Standard" >PKatt</th> <th aria-label="Match Report" data-stat="match_report" scope="col" class=" poptip center group_start" >Match Report</th> </tr> </thead> <tbody> <tr ><th scope="row" class="left " data-stat="date" csk="20260812" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">2026-08-12</a></th><td class="right " data-stat="start_time" csk="21:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1786561200" data-venue-time="21:00">21:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">Super Cup</a></td><td class="left " data-stat="round" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">UEFA Super Cup</a></td><td class="left " data-stat="dayofweek" csk="4" >Wed</td><td class="left " data-stat="venue" >Neutral</td><td class="center " style="color:red; font-weight: bold;" data-stat="result" csk="0" >L</td><td class="right " data-stat="goals_for" csk="1" >1</td><td class="right " data-stat="goals_against" csk="2" >2</td><td class="left " data-stat="opponent" ><span title="France"><span class="f-i f-fr" style="">fr</span></span> <a href="/en/squads/e2d8892c/Paris-Saint-Germain-Stats">PSG</a></td><td class="right group_start" data-stat="goals" >1</td><td class="right " data-stat="shots" >15</td><td class="right " data-stat="shots_on_target" >4</td><td class="right " data-stat="shots_on_target_pct" >26.7</td><td class="right " data-stat="goals_per_shot" >0.07</td><td class="right " data-stat="goals_per_shot_on_target" >0.25</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260823" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">2026-08-23</a></th><td class="right " data-stat="start_time" csk="14:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1787490000" data-venue-time="14:00">14:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 1</a></td><td class="left " data-stat="dayofweek" csk="1" >Sun</td><td class="left " data-stat="venue" >Away</td><td class="center " style="color:red; font-weight: bold;" data-stat="result" csk="0" >L</td><td class="right iz" data-stat="goals_for" csk="0" >0</td><td class="right " data-stat="goals_against" csk="4" >4</td><td class="left " data-stat="opponent" ><a href="/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats">Brighton</a></td><td class="right iz group_start" data-stat="goals" >0</td><td class="right " data-stat="shots" >6</td><td class="right iz" data-stat="shots_on_target" >0</td><td class="right iz" data-stat="shots_on_target_pct" >0.0</td><td class="right iz" data-stat="goals_per_shot" >0.00</td><td class="right iz" data-stat="goals_per_shot_on_target" ></td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">Match Report</a></td></tr> </tbody> <tfoot><tr ><th scope="row" class="left iz" data-stat="date" ></th><td class="right iz" data-stat="start_time" ></td><td class="left iz" data-stat="comp" ></td><td class="left iz" data-stat="round" ></td><td class="left iz" data-stat="dayofweek" ></td><td class="left iz" data-stat="venue" ></td><td class="center " data-stat="result" >--</td><td class="right iz" data-stat="goals_for" ></td><td class="right iz" data-stat="goals_against" ></td><td class="left iz" data-stat="opponent" ></td><td class="right group_start" data-stat="goals" >1</td><td class="right " data-stat="shots" >21</td><td class="right " data-stat="shots_on_target" >4</td><td class="right " data-stat="shots_on_target_pct" >19.0</td><td class="right " data-stat="goals_per_shot" >0.05</td><td class="right " data-stat="goals_per_shot_on_target" >0.25</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left iz group_start" data-stat="match_report" ></td></tr> </tfoot> </table>
+		<table class="stats_table sortable min_width" id="matchlogs_for" data-cols-to-freeze=",1"> <caption>Shooting <span style="color: #666; font-size:smaller">2026-2027 Aston Villa: All Competitions</span> Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr class="over_header"> <th aria-label="" data-stat="header_for_against" colspan="10" class=" over_header center" >For Aston Villa</th> <th aria-label="" data-stat="header_standard" colspan="8" class=" over_header center group_start" >Standard</th><th></th> </tr> <tr> <th aria-label="Date" data-stat="date" scope="col" class=" poptip sort_default_asc center" data-tip="Date listed is local to the match" data-over-header="For Aston Villa" >Date</th> <th aria-label="Time" data-stat="start_time" scope="col" class=" poptip sort_default_asc center" data-tip="Time listed is local to the match venue<br>Time is written in the 24-hour notation<br>Your local time is in (&#183;) " data-over-header="For Aston Villa" >Time</th> <th aria-label="Competition" data-stat="comp" scope="col" class=" poptip sort_default_asc center" data-tip="<strong>Competition</strong><br>Competition<br>Number next to competition states which level in the country's league pyramid this league occupies." data-over-header="For Aston Villa" >Comp</th> <th aria-label="Round" data-stat="round" scope="col" class=" poptip center" data-tip="Round or Phase of Competition" data-over-header="For Aston Villa" >Round</th> <th aria-label="Day" data-stat="dayofweek" scope="col" class=" poptip sort_default_asc center" data-tip="Day of week" data-over-header="For Aston Villa" >Day</th> <th aria-label="Venue" data-stat="venue" scope="col" class=" poptip sort_default_asc center" data-over-header="For Aston Villa" >Venue</th> <th aria-label="Result" data-stat="result" scope="col" class=" poptip center" data-over-header="For Aston Villa" >Result</th> <th aria-label="Goals For" data-stat="goals_for" scope="col" class=" poptip center" data-tip="<strong>Goals For</strong><br>Goals For" data-over-header="For Aston Villa" >GF</th> <th aria-label="Goals Against" data-stat="goals_against" scope="col" class=" poptip center" data-tip="<strong>Goals Against</strong><br>Goals Against" data-over-header="For Aston Villa" >GA</th> <th aria-label="Opponent" data-stat="opponent" scope="col" class=" poptip sort_default_asc center" data-over-header="For Aston Villa" >Opponent</th> <th aria-label="Goals" data-stat="goals" scope="col" class=" poptip center group_start" data-tip="<strong>Goals</strong><br>Goals scored or allowed" data-over-header="Standard" >Gls</th> <th aria-label="Shots Total" data-stat="shots" scope="col" class=" poptip center" data-tip="<strong>Shots Total</strong><br>Shots Total" data-over-header="Standard" >Sh</th> <th aria-label="Shots on Target" data-stat="shots_on_target" scope="col" class=" poptip center" data-tip="<strong>Shots on Target</strong><br>Shots on Target" data-over-header="Standard" >SoT</th> <th aria-label="Shots on Target %" data-stat="shots_on_target_pct" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Shots on Target %</strong><br>Percentage of shots that are on target<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Shots on Target %" >SoT%</th> <th aria-label="Goals/Shot" data-stat="goals_per_shot" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot</strong><br>Goals per shot<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot" >G/Sh</th> <th aria-label="Goals/Shot on Target" data-stat="goals_per_shot_on_target" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot on Target</strong><br>Goals per shot on target<br>Minimum .111 shots on target per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot on Target" >G/SoT</th> <th aria-label="Penalty Kicks Made" data-stat="pens_made" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Made</strong><br>Penalty Kicks Made" data-over-header="Standard" >PK</th> <th aria-label="Penalty Kicks Attempted" data-stat="pens_att" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Attempted</strong><br>Penalty Kicks Attempted" data-over-header="Standard" >PKatt</th> <th aria-label="Match Report" data-stat="match_report" scope="col" class=" poptip center group_start" >Match Report</th> </tr> </thead> <tbody> <tr ><th scope="row" class="left " data-stat="date" csk="20260812" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">2026-08-12</a></th><td class="right " data-stat="start_time" csk="21:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1786561200" data-venue-time="21:00">21:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">Super Cup</a></td><td class="left " data-stat="round" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">UEFA Super Cup</a></td><td class="left " data-stat="dayofweek" csk="4" >Wed</td><td class="left " data-stat="venue" >Neutral</td><td class="center " style="color:red; font-weight: bold;" data-stat="result" csk="0" >L</td><td class="right " data-stat="goals_for" csk="1" >1</td><td class="right " data-stat="goals_against" csk="2" >2</td><td class="left " data-stat="opponent" ><span title="France"><span class="f-i f-fr" style="">fr</span></span> <a href="/en/squads/e2d8892c/Paris-Saint-Germain-Stats">PSG</a></td><td class="right group_start" data-stat="goals" >1</td><td class="right " data-stat="shots" >15</td><td class="right " data-stat="shots_on_target" >4</td><td class="right " data-stat="shots_on_target_pct" >26.7</td><td class="right " data-stat="goals_per_shot" >0.07</td><td class="right " data-stat="goals_per_shot_on_target" >0.25</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260823" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">2026-08-23</a></th><td class="right " data-stat="start_time" csk="14:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1787490000" data-venue-time="14:00">14:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 1</a></td><td class="left " data-stat="dayofweek" csk="1" >Sun</td><td class="left " data-stat="venue" >Away</td><td class="center " style="color:red; font-weight: bold;" data-stat="result" csk="0" >L</td><td class="right iz" data-stat="goals_for" csk="0" >0</td><td class="right " data-stat="goals_against" csk="4" >4</td><td class="left " data-stat="opponent" ><a href="/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats">Brighton</a></td><td class="right iz group_start" data-stat="goals" >0</td><td class="right " data-stat="shots" >6</td><td class="right iz" data-stat="shots_on_target" >0</td><td class="right iz" data-stat="shots_on_target_pct" >0.0</td><td class="right iz" data-stat="goals_per_shot" >0.00</td><td class="right iz" data-stat="goals_per_shot_on_target" ></td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260831" ><a href="/en/matches/e95b1641/Aston-Villa-Arsenal-August-31-2026-Premier-League">2026-08-31</a></th><td class="right " data-stat="start_time" csk="20:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1788202800" data-venue-time="20:00">20:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 2</a></td><td class="left " data-stat="dayofweek" csk="2" >Mon</td><td class="left " data-stat="venue" >Home</td><td class="center " style="color:red; font-weight: bold;" data-stat="result" csk="0" >L</td><td class="right iz" data-stat="goals_for" csk="0" >0</td><td class="right " data-stat="goals_against" csk="1" >1</td><td class="left " data-stat="opponent" ><a href="/en/squads/18bb7c10/Arsenal-Stats">Arsenal</a></td><td class="right iz group_start" data-stat="goals" >0</td><td class="right " data-stat="shots" >7</td><td class="right iz" data-stat="shots_on_target" >0</td><td class="right iz" data-stat="shots_on_target_pct" >0.0</td><td class="right iz" data-stat="goals_per_shot" >0.00</td><td class="right iz" data-stat="goals_per_shot_on_target" ></td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/e95b1641/Aston-Villa-Arsenal-August-31-2026-Premier-League">Match Report</a></td></tr> </tbody> <tfoot><tr ><th scope="row" class="left iz" data-stat="date" ></th><td class="right iz" data-stat="start_time" ></td><td class="left iz" data-stat="comp" ></td><td class="left iz" data-stat="round" ></td><td class="left iz" data-stat="dayofweek" ></td><td class="left iz" data-stat="venue" ></td><td class="center " data-stat="result" >--</td><td class="right iz" data-stat="goals_for" ></td><td class="right iz" data-stat="goals_against" ></td><td class="left iz" data-stat="opponent" ></td><td class="right group_start" data-stat="goals" >1</td><td class="right " data-stat="shots" >28</td><td class="right " data-stat="shots_on_target" >4</td><td class="right " data-stat="shots_on_target_pct" >14.3</td><td class="right " data-stat="goals_per_shot" >0.04</td><td class="right " data-stat="goals_per_shot_on_target" >0.25</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left iz group_start" data-stat="match_report" ></td></tr> </tfoot> </table>
 		
 
  		<div class="footer no_hide_long" id="tfooter_matchlogs_for">
@@ -2023,7 +2265,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
 	</div>
 	<div class="table_container tabbed" id="div_matchlogs_against">
 		
-		<table class="stats_table sortable min_width" id="matchlogs_against" data-cols-to-freeze=",1"> <caption>Shooting <span style="color: #666; font-size:smaller">2026-2027 Aston Villa: All Competitions</span> Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr class="over_header"> <th aria-label="" data-stat="header_for_against" colspan="10" class=" over_header center" >Against Aston Villa</th> <th aria-label="" data-stat="header_standard" colspan="8" class=" over_header center group_start" >Standard</th><th></th> </tr> <tr> <th aria-label="Date" data-stat="date" scope="col" class=" poptip sort_default_asc center" data-tip="Date listed is local to the match" data-over-header="Against Aston Villa" >Date</th> <th aria-label="Time" data-stat="start_time" scope="col" class=" poptip sort_default_asc center" data-tip="Time listed is local to the match venue<br>Time is written in the 24-hour notation<br>Your local time is in (&#183;) " data-over-header="Against Aston Villa" >Time</th> <th aria-label="Competition" data-stat="comp" scope="col" class=" poptip sort_default_asc center" data-tip="<strong>Competition</strong><br>Competition<br>Number next to competition states which level in the country's league pyramid this league occupies." data-over-header="Against Aston Villa" >Comp</th> <th aria-label="Round" data-stat="round" scope="col" class=" poptip center" data-tip="Round or Phase of Competition" data-over-header="Against Aston Villa" >Round</th> <th aria-label="Day" data-stat="dayofweek" scope="col" class=" poptip sort_default_asc center" data-tip="Day of week" data-over-header="Against Aston Villa" >Day</th> <th aria-label="Venue" data-stat="venue" scope="col" class=" poptip sort_default_asc center" data-over-header="Against Aston Villa" >Venue</th> <th aria-label="Result" data-stat="result" scope="col" class=" poptip center" data-over-header="Against Aston Villa" >Result</th> <th aria-label="Goals For" data-stat="goals_for" scope="col" class=" poptip center" data-tip="<strong>Goals For</strong><br>Goals For" data-over-header="Against Aston Villa" >GF</th> <th aria-label="Goals Against" data-stat="goals_against" scope="col" class=" poptip center" data-tip="<strong>Goals Against</strong><br>Goals Against" data-over-header="Against Aston Villa" >GA</th> <th aria-label="Opponent" data-stat="opponent" scope="col" class=" poptip sort_default_asc center" data-over-header="Against Aston Villa" >Opponent</th> <th aria-label="Goals" data-stat="goals" scope="col" class=" poptip center group_start" data-tip="<strong>Goals</strong><br>Goals scored or allowed" data-over-header="Standard" >Gls</th> <th aria-label="Shots Total" data-stat="shots" scope="col" class=" poptip center" data-tip="<strong>Shots Total</strong><br>Shots Total" data-over-header="Standard" >Sh</th> <th aria-label="Shots on Target" data-stat="shots_on_target" scope="col" class=" poptip center" data-tip="<strong>Shots on Target</strong><br>Shots on Target" data-over-header="Standard" >SoT</th> <th aria-label="Shots on Target %" data-stat="shots_on_target_pct" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Shots on Target %</strong><br>Percentage of shots that are on target<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Shots on Target %" >SoT%</th> <th aria-label="Goals/Shot" data-stat="goals_per_shot" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot</strong><br>Goals per shot<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot" >G/Sh</th> <th aria-label="Goals/Shot on Target" data-stat="goals_per_shot_on_target" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot on Target</strong><br>Goals per shot on target<br>Minimum .111 shots on target per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot on Target" >G/SoT</th> <th aria-label="Penalty Kicks Made" data-stat="pens_made" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Made</strong><br>Penalty Kicks Made" data-over-header="Standard" >PK</th> <th aria-label="Penalty Kicks Attempted" data-stat="pens_att" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Attempted</strong><br>Penalty Kicks Attempted" data-over-header="Standard" >PKatt</th> <th aria-label="Match Report" data-stat="match_report" scope="col" class=" poptip center group_start" >Match Report</th> </tr> </thead> <tbody> <tr ><th scope="row" class="left " data-stat="date" csk="20260812" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">2026-08-12</a></th><td class="right " data-stat="start_time" csk="21:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1786561200" data-venue-time="21:00">21:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">Super Cup</a></td><td class="left " data-stat="round" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">UEFA Super Cup</a></td><td class="left " data-stat="dayofweek" csk="4" >Wed</td><td class="left " data-stat="venue" >Neutral</td><td class="center " style="color:green; font-weight: bold;" data-stat="result" csk="3" >W</td><td class="right " data-stat="goals_for" csk="2" >2</td><td class="right " data-stat="goals_against" csk="1" >1</td><td class="left " data-stat="opponent" ><span title="France"><span class="f-i f-fr" style="">fr</span></span> <a href="/en/squads/e2d8892c/Paris-Saint-Germain-Stats">PSG</a></td><td class="right modified group_start" data-stat="goals" >2</td><td class="right modified" data-stat="shots" >12</td><td class="right modified" data-stat="shots_on_target" >6</td><td class="right modified" data-stat="shots_on_target_pct" >50.0</td><td class="right modified" data-stat="goals_per_shot" >0.17</td><td class="right modified" data-stat="goals_per_shot_on_target" >0.33</td><td class="right modified iz" data-stat="pens_made" >0</td><td class="right modified iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260823" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">2026-08-23</a></th><td class="right " data-stat="start_time" csk="14:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1787490000" data-venue-time="14:00">14:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 1</a></td><td class="left " data-stat="dayofweek" csk="1" >Sun</td><td class="left " data-stat="venue" >Home</td><td class="center " style="color:green; font-weight: bold;" data-stat="result" csk="3" >W</td><td class="right " data-stat="goals_for" csk="4" >4</td><td class="right iz" data-stat="goals_against" csk="0" >0</td><td class="left " data-stat="opponent" ><a href="/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats">Brighton</a></td><td class="right modified group_start" data-stat="goals" >3</td><td class="right modified" data-stat="shots" >21</td><td class="right modified" data-stat="shots_on_target" >6</td><td class="right modified" data-stat="shots_on_target_pct" >28.6</td><td class="right modified" data-stat="goals_per_shot" >0.14</td><td class="right modified" data-stat="goals_per_shot_on_target" >0.50</td><td class="right modified iz" data-stat="pens_made" >0</td><td class="right modified iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">Match Report</a></td></tr> </tbody> <tfoot><tr ><th scope="row" class="left iz" data-stat="date" ></th><td class="right iz" data-stat="start_time" ></td><td class="left iz" data-stat="comp" ></td><td class="left iz" data-stat="round" ></td><td class="left iz" data-stat="dayofweek" ></td><td class="left iz" data-stat="venue" ></td><td class="center " data-stat="result" >--</td><td class="right iz" data-stat="goals_for" ></td><td class="right iz" data-stat="goals_against" ></td><td class="left iz" data-stat="opponent" ></td><td class="right group_start" data-stat="goals" >5</td><td class="right " data-stat="shots" >33</td><td class="right " data-stat="shots_on_target" >12</td><td class="right " data-stat="shots_on_target_pct" >36.4</td><td class="right " data-stat="goals_per_shot" >0.15</td><td class="right " data-stat="goals_per_shot_on_target" >0.42</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left iz group_start" data-stat="match_report" ></td></tr> </tfoot> </table>
+		<table class="stats_table sortable min_width" id="matchlogs_against" data-cols-to-freeze=",1"> <caption>Shooting <span style="color: #666; font-size:smaller">2026-2027 Aston Villa: All Competitions</span> Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr class="over_header"> <th aria-label="" data-stat="header_for_against" colspan="10" class=" over_header center" >Against Aston Villa</th> <th aria-label="" data-stat="header_standard" colspan="8" class=" over_header center group_start" >Standard</th><th></th> </tr> <tr> <th aria-label="Date" data-stat="date" scope="col" class=" poptip sort_default_asc center" data-tip="Date listed is local to the match" data-over-header="Against Aston Villa" >Date</th> <th aria-label="Time" data-stat="start_time" scope="col" class=" poptip sort_default_asc center" data-tip="Time listed is local to the match venue<br>Time is written in the 24-hour notation<br>Your local time is in (&#183;) " data-over-header="Against Aston Villa" >Time</th> <th aria-label="Competition" data-stat="comp" scope="col" class=" poptip sort_default_asc center" data-tip="<strong>Competition</strong><br>Competition<br>Number next to competition states which level in the country's league pyramid this league occupies." data-over-header="Against Aston Villa" >Comp</th> <th aria-label="Round" data-stat="round" scope="col" class=" poptip center" data-tip="Round or Phase of Competition" data-over-header="Against Aston Villa" >Round</th> <th aria-label="Day" data-stat="dayofweek" scope="col" class=" poptip sort_default_asc center" data-tip="Day of week" data-over-header="Against Aston Villa" >Day</th> <th aria-label="Venue" data-stat="venue" scope="col" class=" poptip sort_default_asc center" data-over-header="Against Aston Villa" >Venue</th> <th aria-label="Result" data-stat="result" scope="col" class=" poptip center" data-over-header="Against Aston Villa" >Result</th> <th aria-label="Goals For" data-stat="goals_for" scope="col" class=" poptip center" data-tip="<strong>Goals For</strong><br>Goals For" data-over-header="Against Aston Villa" >GF</th> <th aria-label="Goals Against" data-stat="goals_against" scope="col" class=" poptip center" data-tip="<strong>Goals Against</strong><br>Goals Against" data-over-header="Against Aston Villa" >GA</th> <th aria-label="Opponent" data-stat="opponent" scope="col" class=" poptip sort_default_asc center" data-over-header="Against Aston Villa" >Opponent</th> <th aria-label="Goals" data-stat="goals" scope="col" class=" poptip center group_start" data-tip="<strong>Goals</strong><br>Goals scored or allowed" data-over-header="Standard" >Gls</th> <th aria-label="Shots Total" data-stat="shots" scope="col" class=" poptip center" data-tip="<strong>Shots Total</strong><br>Shots Total" data-over-header="Standard" >Sh</th> <th aria-label="Shots on Target" data-stat="shots_on_target" scope="col" class=" poptip center" data-tip="<strong>Shots on Target</strong><br>Shots on Target" data-over-header="Standard" >SoT</th> <th aria-label="Shots on Target %" data-stat="shots_on_target_pct" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Shots on Target %</strong><br>Percentage of shots that are on target<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Shots on Target %" >SoT%</th> <th aria-label="Goals/Shot" data-stat="goals_per_shot" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot</strong><br>Goals per shot<br>Minimum .395 shots per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot" >G/Sh</th> <th aria-label="Goals/Shot on Target" data-stat="goals_per_shot_on_target" scope="col" class=" poptip hide_non_quals center" data-tip="<strong>Goals/Shot on Target</strong><br>Goals per shot on target<br>Minimum .111 shots on target per squad game to qualify as a leader" data-over-header="Standard" data-filter="1" data-name="Goals/Shot on Target" >G/SoT</th> <th aria-label="Penalty Kicks Made" data-stat="pens_made" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Made</strong><br>Penalty Kicks Made" data-over-header="Standard" >PK</th> <th aria-label="Penalty Kicks Attempted" data-stat="pens_att" scope="col" class=" poptip center" data-tip="<strong>Penalty Kicks Attempted</strong><br>Penalty Kicks Attempted" data-over-header="Standard" >PKatt</th> <th aria-label="Match Report" data-stat="match_report" scope="col" class=" poptip center group_start" >Match Report</th> </tr> </thead> <tbody> <tr ><th scope="row" class="left " data-stat="date" csk="20260812" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">2026-08-12</a></th><td class="right " data-stat="start_time" csk="21:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1786561200" data-venue-time="21:00">21:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">Super Cup</a></td><td class="left " data-stat="round" ><a href="/en/comps/122/schedule/UEFA-Super-Cup-Scores-and-Fixtures">UEFA Super Cup</a></td><td class="left " data-stat="dayofweek" csk="4" >Wed</td><td class="left " data-stat="venue" >Neutral</td><td class="center " style="color:green; font-weight: bold;" data-stat="result" csk="3" >W</td><td class="right " data-stat="goals_for" csk="2" >2</td><td class="right " data-stat="goals_against" csk="1" >1</td><td class="left " data-stat="opponent" ><span title="France"><span class="f-i f-fr" style="">fr</span></span> <a href="/en/squads/e2d8892c/Paris-Saint-Germain-Stats">PSG</a></td><td class="right modified group_start" data-stat="goals" >2</td><td class="right modified" data-stat="shots" >12</td><td class="right modified" data-stat="shots_on_target" >6</td><td class="right modified" data-stat="shots_on_target_pct" >50.0</td><td class="right modified" data-stat="goals_per_shot" >0.17</td><td class="right modified" data-stat="goals_per_shot_on_target" >0.33</td><td class="right modified iz" data-stat="pens_made" >0</td><td class="right modified iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/7b161b8b/Paris-Saint-Germain-Aston-Villa-August-12-2026-UEFA-Super-Cup">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260823" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">2026-08-23</a></th><td class="right " data-stat="start_time" csk="14:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1787490000" data-venue-time="14:00">14:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 1</a></td><td class="left " data-stat="dayofweek" csk="1" >Sun</td><td class="left " data-stat="venue" >Home</td><td class="center " style="color:green; font-weight: bold;" data-stat="result" csk="3" >W</td><td class="right " data-stat="goals_for" csk="4" >4</td><td class="right iz" data-stat="goals_against" csk="0" >0</td><td class="left " data-stat="opponent" ><a href="/en/squads/d07537b9/Brighton-and-Hove-Albion-Stats">Brighton</a></td><td class="right modified group_start" data-stat="goals" >3</td><td class="right modified" data-stat="shots" >21</td><td class="right modified" data-stat="shots_on_target" >6</td><td class="right modified" data-stat="shots_on_target_pct" >28.6</td><td class="right modified" data-stat="goals_per_shot" >0.14</td><td class="right modified" data-stat="goals_per_shot_on_target" >0.50</td><td class="right modified iz" data-stat="pens_made" >0</td><td class="right modified iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/cc39f2ef/Brighton-and-Hove-Albion-Aston-Villa-August-23-2026-Premier-League">Match Report</a></td></tr> <tr ><th scope="row" class="left " data-stat="date" csk="20260831" ><a href="/en/matches/e95b1641/Aston-Villa-Arsenal-August-31-2026-Premier-League">2026-08-31</a></th><td class="right " data-stat="start_time" csk="20:00:00" ><span class="venuetime" data-venue-time-only="1" data-venue-epoch="1788202800" data-venue-time="20:00">20:00</span> <span class="localtime" data-label="your time"></span></td><td class="left " data-stat="comp" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Premier League</a></td><td class="left " data-stat="round" ><a href="/en/comps/9/schedule/Premier-League-Scores-and-Fixtures">Matchweek 2</a></td><td class="left " data-stat="dayofweek" csk="2" >Mon</td><td class="left " data-stat="venue" >Away</td><td class="center " style="color:green; font-weight: bold;" data-stat="result" csk="3" >W</td><td class="right " data-stat="goals_for" csk="1" >1</td><td class="right iz" data-stat="goals_against" csk="0" >0</td><td class="left " data-stat="opponent" ><a href="/en/squads/18bb7c10/Arsenal-Stats">Arsenal</a></td><td class="right modified group_start" data-stat="goals" >1</td><td class="right modified" data-stat="shots" >7</td><td class="right modified" data-stat="shots_on_target" >2</td><td class="right modified" data-stat="shots_on_target_pct" >28.6</td><td class="right modified" data-stat="goals_per_shot" >0.14</td><td class="right modified" data-stat="goals_per_shot_on_target" >0.50</td><td class="right modified iz" data-stat="pens_made" >0</td><td class="right modified iz" data-stat="pens_att" >0</td><td class="left group_start" data-stat="match_report" ><a href="/en/matches/e95b1641/Aston-Villa-Arsenal-August-31-2026-Premier-League">Match Report</a></td></tr> </tbody> <tfoot><tr ><th scope="row" class="left iz" data-stat="date" ></th><td class="right iz" data-stat="start_time" ></td><td class="left iz" data-stat="comp" ></td><td class="left iz" data-stat="round" ></td><td class="left iz" data-stat="dayofweek" ></td><td class="left iz" data-stat="venue" ></td><td class="center " data-stat="result" >--</td><td class="right iz" data-stat="goals_for" ></td><td class="right iz" data-stat="goals_against" ></td><td class="left iz" data-stat="opponent" ></td><td class="right group_start" data-stat="goals" >6</td><td class="right " data-stat="shots" >40</td><td class="right " data-stat="shots_on_target" >14</td><td class="right " data-stat="shots_on_target_pct" >35.0</td><td class="right " data-stat="goals_per_shot" >0.15</td><td class="right " data-stat="goals_per_shot_on_target" >0.43</td><td class="right iz" data-stat="pens_made" >0</td><td class="right iz" data-stat="pens_att" >0</td><td class="left iz group_start" data-stat="match_report" ></td></tr> </tfoot> </table>
 		
 
  		<div class="footer no_hide_long" id="tfooter_matchlogs_against">
@@ -2089,6 +2331,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
           <p><a href="/en/squads/8602292d/2026-2027/all_comps/Aston-Villa-Stats-All-Competitions">All Competitions</a></p>
           <p><a href="/en/squads/8602292d/2026-2027/c9/Aston-Villa-Stats-Premier-League">Premier League Stats</a></p>
           <p><a href="/en/squads/8602292d/2026-2027/c122/Aston-Villa-Stats-UEFA-Super-Cup">UEFA Super Cup Stats</a></p>
+          <p><a href="/en/squads/8602292d/2026-2027/c8/Aston-Villa-Stats-Champions-League">Champions League Stats</a></p>
           <p><a href="/en/squads/8602292d/2026-2027/c690/Aston-Villa-Stats-EFL-Cup">EFL Cup Stats</a></p>
           <p><a href="/en/squads/8602292d/2026-2027/roster/Aston-Villa-Roster-Details">Player Career Details</a></p>
           <p><a href="/en/squads/8602292d/2026-2027/wages/Aston-Villa-Wage-Details">Wages</a></p>        </section><p class="listhead">Match Logs (All Competitions)</p>
@@ -2106,6 +2349,9 @@ var sr_menus_checkInfoCookie_run_inline = true;
           <li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/schedule/Aston-Villa-Scores-and-Fixtures-UEFA-Super-Cup">Scores & Fixtures</a></li>
           <li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/shooting/Aston-Villa-Match-Logs-UEFA-Super-Cup">Shooting</a></li>
           <li><a href="/en/squads/8602292d/2026-2027/matchlogs/c122/keeper/Aston-Villa-Match-Logs-UEFA-Super-Cup">Goalkeeping</a></li>
+        </ul><p class="listhead">Match Logs (Champions League)</p>
+        <ul class="">
+          <li><a href="/en/squads/8602292d/2026-2027/matchlogs/c8/schedule/Aston-Villa-Scores-and-Fixtures-Champions-League">Scores & Fixtures</a></li>
         </ul><p class="listhead">Match Logs (EFL Cup)</p>
         <ul class="">
           <li><a href="/en/squads/8602292d/2026-2027/matchlogs/c690/schedule/Aston-Villa-Scores-and-Fixtures-EFL-Cup">Scores & Fixtures</a></li>
@@ -2158,7 +2404,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
 		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://www.sports-reference.com/profile/?utm_source=fb&amp;utm_medium=sr_xsite&amp;utm_campaign=2023_01_srnav_account">Your Account</a></li>
 <li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '?redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/logout.cgi">Logout</a></li>
 <li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://www.sports-reference.com/users/login.cgi?token=1">Ad-Free Login</a></li>
-<li class="user not_logged_in"><a href="https://www.sports-reference.com/stathead/signup.cgi">Create Account</a></li>
+<li class="user not_logged_in"><a onclick="if(!this.href.match('redirect=')){this.href += '&amp;redirect='+escape(document.location.href)}" href="https://www.sports-reference.com/account/sign-up?product=reference">Create Account</a></li>
 </ul>
 		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/en/"><span itemprop="name">FB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/en/squads/"><span itemprop="name">Squads</span></a> <meta itemprop="position" content="2" /></span> &gt; <strong>Aston Villa Match Logs (Shooting), All Competitions</strong></div>
 	</div><!-- div#footer_header -->
@@ -2190,21 +2436,21 @@ var sr_menus_checkInfoCookie_run_inline = true;
     <li>
         <a href="/en/players/">Players</a>
         <div>
-<a href="/en/players/819b3158/Ilkay-Gundogan">İlkay Gündoğan</a>, 
-<a href="/en/players/16ceb862/Olivier-Giroud">Olivier Giroud</a>, 
-<a href="/en/players/aae0d96d/Katie-Bowen">Katie Bowen</a>, 
-<a href="/en/players/f3746547/Ria-Percival">Ria Percival</a>, 
-<a href="/en/players/c0c5ee74/Thierry-Henry">Thierry Henry</a>, 
-<a href="/en/players/d705ba44/Andrea-Belotti">Andrea Belotti</a>, 
-<a href="/en/players/a39bb753/Eden-Hazard">Eden Hazard</a>, 
+<a href="/en/players/c65fc5cf/Ali-Riley">Ali Riley</a>, 
+<a href="/en/players/2d298b13/Abby-Wambach">Abby Wambach</a>, 
+<a href="/en/players/55126f3b/Koke">Koke</a>, 
 <a href="/en/players/89143f59/Birgit-Prinz">Birgit Prinz</a>, 
-<a href="/en/players/a5296e55/Piotr-Zielinski">Piotr Zieliński</a>, 
-<a href="/en/players/527f063d/Edinson-Cavani">Edinson Cavani</a>, 
-<a href="/en/players/483fb7c0/Francisca-Ordega">Francisca Ordega</a>, 
-<a href="/en/players/e7f502bc/Betsy-Hassett">Betsy Hassett</a>, 
+<a href="/en/players/ce5143da/Danny-Welbeck">Danny Welbeck</a>, 
+<a href="/en/players/06420c93/Samuel-Etoo">Samuel Eto'o</a>, 
+<a href="/en/players/b400bde0/Raheem-Sterling">Raheem Sterling</a>, 
+<a href="/en/players/268df6b1/Frank-Lampard">Frank Lampard</a>, 
+<a href="/en/players/facfa8cb/Kadidiatou-Diani">Kadidiatou Diani</a>, 
+<a href="/en/players/d70ce98e/Lionel-Messi">Lionel Messi</a>, 
 <a href="/en/players/832b7d61/Cristiane">Cristiane</a>, 
+<a href="/en/players/f61c7c4e/Franck-Ribery">Franck Ribéry</a>, 
+<a href="/en/players/dea698d9/Cristiano-Ronaldo">Cristiano Ronaldo</a>, 
+<a href="/en/players/1d994521/Kosovare-Asllani">Kosovare Asllani</a>, 
 <a href="/en/players/3bb7f478/Edin-Dzeko">Edin Džeko</a>, 
-<a href="/en/players/45f26945/Antonio-Di-Natale">Antonio Di Natale</a>, 
 <a href="/en/players/">...</a>        </div>
         <div>
             <a href="/en/friv/players-who-played-for-multiple-clubs-countries.fcgi">Players who played for multiple squads</a>
@@ -2258,7 +2504,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
 <a href="/en/squads/d86248bd/BodoGlimt-Stats">Bodø/Glimt (M)</a>, 
 <a href="/en/squads/ea339fbc/Brann-Women-Stats">Brann (F)</a>, 
 <a href="/en/squads/e4cd6f9a/Cerro-Porteno-Stats">Cerro Porteño (M)</a>, 
-<a href="/en/squads/cdbccdc1/Alianza-Lima-Stats">Alianza Lima (M)</a>, 
+<a href="/en/squads/e4108102/Universitario-Stats">Universitario (M)</a>, 
 <a href="/en/squads/fdba14df/Lech-Poznan-Stats">Lech Poznań (M)</a>, 
 <a href="/en/squads/13dc44fd/Sporting-CP-Stats">Sporting CP (M)</a>, 
 <a href="/en/squads/aed59852/FCSB-Stats">FCSB (M)</a>, 
@@ -2387,11 +2633,11 @@ var sr_menus_checkInfoCookie_run_inline = true;
     <li>
         <a href="/en/matches/">Scores & Fixtures</a>
         <div>
-<a href="/en/matches/2026-08-27">Thursday August 27, 2026</a>, 
-<a href="/en/matches/2026-08-28">Friday August 28, 2026</a>, 
-<a href="/en/matches/2026-08-29">Saturday August 29, 2026</a>, 
-<a href="/en/matches/2026-08-30">Sunday August 30, 2026</a>, 
-<a href="/en/matches/2026-08-31">Monday August 31, 2026</a>        </div>
+<a href="/en/matches/2026-09-02">Wednesday September 2, 2026</a>, 
+<a href="/en/matches/2026-09-03">Thursday September 3, 2026</a>, 
+<a href="/en/matches/2026-09-04">Friday September 4, 2026</a>, 
+<a href="/en/matches/2026-09-05">Saturday September 5, 2026</a>, 
+<a href="/en/matches/2026-09-06">Sunday September 6, 2026</a>        </div>
     </li>
     <li>
         <a href="/en/awards/">Awards</a>
@@ -2527,7 +2773,7 @@ var sr_menus_checkInfoCookie_run_inline = true;
 		<a href="https://bsky.app/profile/fbref.com" data-tip="FBref.com at Bluesky" data-label="Bluesky" aria-label="Bluesky" class="poptip"><svg class="icon bluesky"><use xlink:href="#ic-bluesky"></use></svg></a>
 
 <p></p>
-<p><strong>Site Last Updated:</strong> Friday, August 28,  9:10PM
+<p><strong>Site Last Updated:</strong> Friday, September  4,  1:02PM
 </p>
 <p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
 
@@ -2668,7 +2914,7 @@ Sports Reference Purpose: We will be the trusted source of information and tools
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
 <!-- End of HubSpot Embed Code -->
 
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"e4b4f9155f05483494faa3d260e4875f"}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"e4b4f9155f05483494faa3d260e4875f","spa":2}' crossorigin="anonymous"></script>
 </body>
 <!-- SR -->
 </html>
