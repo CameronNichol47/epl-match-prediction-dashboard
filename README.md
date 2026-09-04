@@ -358,3 +358,37 @@ matches, they can be incorporated into the prediction pipeline.
 The Elo system itself supports newly promoted teams by assigning them an
 initial rating, but the lack of historical rolling features is currently the
 main limitation preventing full predictions for these fixtures.
+
+### Matchweek 3 Predictions
+
+| Fixture | Model Prediction | My Prediction | Actual Result |
+|---|---|---|---|
+| Newcastle United vs Bournemouth | Draw | Newcastle United | TBD |
+| Fulham vs Crystal Palace | Draw | Draw | TBD |
+| Brighton vs Leeds United| Brighton | Brighton | TBD |
+| Brentford vs Sunderland | Brentford | Draw | TBD |
+| Nottingham Forest vs Tottenham Hotspur | Tottenham Hotspur | Draw | TBD |
+| Everton vs Manchester United | Manchester United | Manchester United | TBD |
+| Arsenal vs Chelsea | Arsenal | Arsenal | TBD |
+
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.

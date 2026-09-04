@@ -1,6 +1,13 @@
 import json
 import requests
 
+def normalize_team_name(name):
+    return (
+        name.lower()
+        .replace("&", "and")
+        .replace(" fc", "")
+        .strip()
+    )
 
 def fetch_polymarket_probabilities(slug, home, away):
     url = f"https://gamma-api.polymarket.com/events/slug/{slug}"
@@ -23,6 +30,9 @@ def fetch_polymarket_probabilities(slug, home, away):
 
     markets = event.get("markets", [])
 
+    home_normalized = normalize_team_name(home)
+    away_normalized = normalize_team_name(away)
+
     if not markets:
         return None
 
@@ -31,12 +41,15 @@ def fetch_polymarket_probabilities(slug, home, away):
     away_prob = None
 
     for market in markets:
-
-        # Useful fields for figuring out what this market represents
         question = (market.get("question") or "").lower()
         title = (market.get("groupItemTitle") or "").lower()
 
+        print("QUESTION:", question)
+        print("TITLE:", title)
+        print("----------------")
+
         market_text = f"{question} {title}"
+        text_normalized = normalize_team_name(market_text)
 
         raw_outcomes = market.get("outcomes", "[]")
         outcomes = (
@@ -52,7 +65,6 @@ def fetch_polymarket_probabilities(slug, home, away):
             else raw_prices
         )
 
-        # Find the YES probability for this market
         yes_price = None
 
         for outcome, price in zip(outcomes, prices):
@@ -63,14 +75,14 @@ def fetch_polymarket_probabilities(slug, home, away):
         if yes_price is None:
             continue
 
-        # Determine what outcome this market represents
-        if "draw" in market_text:
+        # Use NORMALIZED names here
+        if "draw" in text_normalized:
             draw_prob = yes_price
 
-        elif home.lower() in market_text:
+        elif home_normalized in text_normalized:
             home_prob = yes_price
 
-        elif away.lower() in market_text:
+        elif away_normalized in text_normalized:
             away_prob = yes_price
 
     print("HOME:", home_prob)
@@ -119,6 +131,7 @@ def load_slug(home, away, date):
 
     slug = f"epl-{home_slug}-{away_slug}-{date}"
 
+    print(slug)
     return fetch_polymarket_probabilities(
         slug,
         original_home,
