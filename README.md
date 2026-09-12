@@ -363,13 +363,48 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture | Model Prediction | My Prediction | Actual Result |
 |---|---|---|---|
-| Newcastle United vs Bournemouth | Draw | Newcastle United | TBD |
-| Fulham vs Crystal Palace | Draw | Draw | TBD |
-| Brighton vs Leeds United| Brighton | Brighton | TBD |
-| Brentford vs Sunderland | Brentford | Draw | TBD |
-| Nottingham Forest vs Tottenham Hotspur | Tottenham Hotspur | Draw | TBD |
-| Everton vs Manchester United | Manchester United | Manchester United | TBD |
-| Arsenal vs Chelsea | Arsenal | Arsenal | TBD |
+| Newcastle United vs Bournemouth | Draw | Newcastle United | Draw |
+| Fulham vs Crystal Palace | Draw | Draw | Crystal Palace |
+| Brighton vs Leeds United| Brighton | Brighton | Draw |
+| Brentford vs Sunderland | Brentford | Draw | Draw |
+| Nottingham Forest vs Tottenham Hotspur | Tottenham Hotspur | Draw | Draw |
+| Everton vs Manchester United | Manchester United | Manchester United | Draw |
+| Arsenal vs Chelsea | Arsenal | Arsenal | Arsenal |
+
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
+
+### Matchweek 4 Predictions
+
+| Fixture                              | Home Win |      Draw | Away Win | Model Pick | My Prediction   | Actual |
+| ------------------------------------ | -------: | --------: | -------: | ---------- | --------------- | ------ |
+| Bournemouth vs Brentford             |    11.7% | **74.4%** |    14.0% | Draw       | Draw            | TBD    |
+| Liverpool vs Fulham                  |     7.6% | **58.4%** |    34.0% | Draw       | Liverpool       | TBD    |
+| Aston Villa vs Nottingham Forest     |     3.8% | **51.3%** |    45.0% | Draw       | Aston Villa     | TBD    |
+| Tottenham Hotspur vs Everton         |    21.4% | **68.5%** |    10.1% | Draw       | Draw            | TBD    |
+| Sunderland vs Arsenal                |    11.5% | 22.5% |    **65.5%** | Arsenal       | Arsenal         | TBD    |
+| Manchester United vs Manchester City |    13.2% | **82.9%** |    3.8% | Draw       | Manchester City | TBD    |
+| Leeds United vs Newcastle United     |    15.5% | **45.1%** |    39.5% | Draw       | Leeds United    | TBD    |
+
 
 
 \* Model prediction unavailable because the current model excludes fixtures

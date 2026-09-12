@@ -16,7 +16,7 @@ from src.shap_explainer import explain
 from src.polymarket_api import load_slug
 from src.build_market_probabilities import build_probabilities
 from src.kelly_criterion import recommended_bets
-st.title('Premier League Matchweek 2')
+st.title('Premier League Matchweek 4')
 
 st.markdown(
     """

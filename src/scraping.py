@@ -17,6 +17,8 @@ fbref_name_map = {
 }
 
 understat_name_map = {
+    "Hull City": "Hull",
+    "Ipswich Town": "Ipswich",
     "Leeds United": "Leeds",
     "Manchester Utd": "Manchester United",
     "Newcastle": "Newcastle United",
@@ -187,6 +189,8 @@ def add_xg(df, team, season):
     )
 
     team_name_map = {
+        "Hull City": "Hull",
+        "Ipswich Town": "Ipswich",
         "Wolves": "Wolverhampton Wanderers",
         "Leeds United": "Leeds",
         "Nottingham": "Nottingham Forest",
@@ -223,6 +227,31 @@ def add_xg(df, team, season):
                 xga_values.append(xga)
 
             else:
+                if game is None:
+                    print(
+                        "MATCH NOT FOUND:",
+                        team,
+                        "vs",
+                        opponent,
+                        "| venue:",
+                        venue,
+                        "| season:",
+                        season,
+                        "| date:",
+                        row["Date"]
+                    )
+                else:
+                    print(
+                        "MATCH FOUND BUT XG MISSING:",
+                        game["h"]["title"],
+                        "vs",
+                        game["a"]["title"],
+                        "| date:",
+                        game["datetime"],
+                        "| xG:",
+                        game["xG"]
+                    )
+
                 xg_values.append(float("nan"))
                 xga_values.append(float("nan"))
 
