@@ -397,13 +397,13 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture                              | Home Win |      Draw | Away Win | Model Pick | My Prediction   | Actual |
 | ------------------------------------ | -------: | --------: | -------: | ---------- | --------------- | ------ |
-| Bournemouth vs Brentford             |    11.7% | **74.4%** |    14.0% | Draw       | Draw            | TBD    |
-| Liverpool vs Fulham                  |     7.6% | **58.4%** |    34.0% | Draw       | Liverpool       | TBD    |
-| Aston Villa vs Nottingham Forest     |     3.8% | **51.3%** |    45.0% | Draw       | Aston Villa     | TBD    |
-| Tottenham Hotspur vs Everton         |    21.4% | **68.5%** |    10.1% | Draw       | Draw            | TBD    |
-| Sunderland vs Arsenal                |    11.5% | 22.5% |    **65.5%** | Arsenal       | Arsenal         | TBD    |
-| Manchester United vs Manchester City |    13.2% | **82.9%** |    3.8% | Draw       | Manchester City | TBD    |
-| Leeds United vs Newcastle United     |    15.5% | **45.1%** |    39.5% | Draw       | Leeds United    | TBD    |
+| Bournemouth vs Brentford             |    11.7% | **74.4%** |    14.0% | Draw       | Draw            | Draw 2-2    |
+| Liverpool vs Fulham                  |     7.6% | **58.4%** |    34.0% | Draw       | Liverpool       | Draw 0-0    |
+| Aston Villa vs Nottingham Forest     |     3.8% | **51.3%** |    45.0% | Draw       | Aston Villa     | Nottingham Forest 1-2    |
+| Tottenham Hotspur vs Everton         |    21.4% | **68.5%** |    10.1% | Draw       | Draw            | Draw 0-0    |
+| Sunderland vs Arsenal                |    11.5% | 22.5% |    **65.5%** | Arsenal       | Arsenal         | Arsenal 0-2    |
+| Manchester United vs Manchester City |    13.2% | **82.9%** |    3.8% | Draw       | Manchester City | Manchester City 0-1    |
+| Leeds United vs Newcastle United     |    15.5% | **45.1%** |    39.5% | Draw       | Leeds United    | Leeds United 4-1    |
 
 
 
