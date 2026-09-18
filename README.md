@@ -427,3 +427,40 @@ matches, they can be incorporated into the prediction pipeline.
 The Elo system itself supports newly promoted teams by assigning them an
 initial rating, but the lack of historical rolling features is currently the
 main limitation preventing full predictions for these fixtures.
+
+### Matchweek 5 Predictions
+
+| Fixture                             |  Home Win |      Draw |  Away Win | Model Pick        | My Prediction | Actual Result |
+| ----------------------------------- | --------: | --------: | --------: | ----------------- | ------------- | ------------- |
+| Brentford vs Chelsea                |     11.7% | **85.0%** |      3.3% | Draw              | Chelsea           | TBD           |
+| Tottenham Hotspur vs Aston Villa    |      6.2% | **83.3%** |     10.6% | Draw              | Draw           | TBD           |
+| Brighton and Hove Albion vs Arsenal | **36.0%** |     33.2% |     30.8% | Brighton          | Arsenal           | TBD           |
+| Bournemouth vs Liverpool            | **42.0%** |     23.1% |     34.9% | Bournemouth       | Liverpool           | TBD           |
+| Manchester City vs Sunderland       | **97.9%** |      1.0% |      1.1% | Manchester City   | Manchester City           | TBD           |
+| Leeds United vs Crystal Palace      |     41.2% | **49.9%** |      8.9% | Draw              | Leeds United           | TBD           |
+| Fulham vs Manchester United         |      4.2% |     17.7% | **78.1%** | Manchester United | Draw           | TBD           |
+
+
+
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
+
