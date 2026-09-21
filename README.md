@@ -432,13 +432,13 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture                             |  Home Win |      Draw |  Away Win | Model Pick        | My Prediction | Actual Result |
 | ----------------------------------- | --------: | --------: | --------: | ----------------- | ------------- | ------------- |
-| Brentford vs Chelsea                |     11.7% | **85.0%** |      3.3% | Draw              | Chelsea           | TBD           |
-| Tottenham Hotspur vs Aston Villa    |      6.2% | **83.3%** |     10.6% | Draw              | Draw           | TBD           |
-| Brighton and Hove Albion vs Arsenal | **36.0%** |     33.2% |     30.8% | Brighton          | Arsenal           | TBD           |
-| Bournemouth vs Liverpool            | **42.0%** |     23.1% |     34.9% | Bournemouth       | Liverpool           | TBD           |
-| Manchester City vs Sunderland       | **97.9%** |      1.0% |      1.1% | Manchester City   | Manchester City           | TBD           |
-| Leeds United vs Crystal Palace      |     41.2% | **49.9%** |      8.9% | Draw              | Leeds United           | TBD           |
-| Fulham vs Manchester United         |      4.2% |     17.7% | **78.1%** | Manchester United | Draw           | TBD           |
+| Brentford vs Chelsea                |     11.7% | **85.0%** |      3.3% | Draw              | Chelsea           | Brentford 3-0          |
+| Tottenham Hotspur vs Aston Villa    |      6.2% | **83.3%** |     10.6% | Draw              | Draw           | Aston Villa 2-3           |
+| Brighton and Hove Albion vs Arsenal | **36.0%** |     33.2% |     30.8% | Brighton          | Arsenal           | Brighton 3-0           |
+| Bournemouth vs Liverpool            | **42.0%** |     23.1% |     34.9% | Bournemouth       | Liverpool           | Liverpool 0-1           |
+| Manchester City vs Sunderland       | **97.9%** |      1.0% |      1.1% | Manchester City   | Manchester City           | Manchester City 5-3           |
+| Leeds United vs Crystal Palace      |     41.2% | **49.9%** |      8.9% | Draw              | Leeds United           | Draw 0-0           |
+| Fulham vs Manchester United         |      4.2% |     17.7% | **78.1%** | Manchester United | Draw           | Draw 1-1           |
 
 
 
