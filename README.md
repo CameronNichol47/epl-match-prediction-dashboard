@@ -468,13 +468,13 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture                             |  Home Win |      Draw |  Away Win | Model Pick        | My Prediction | Actual Result |
 | ----------------------------------- | --------: | --------: | --------: | ----------------- | ------------- | ------------- |
-| Arsenal vs Leeds United            |     **74.4%** | 17.4% |      8.1% | Arsenal              | Arsenal           | TBD       |
-| Chelsea vs Bournemouth   |      9.5% | **57.1%** |     33.4% | Draw              | Draw           | TBD          |
-| Aston Villa vs Brentford | 19.2% |     33.5% |     **47.3%**| Brentford          | Brentford           | TBD          |
-| Sunderland vs Brighton           | **56.7%**|     10.7% |     32.6% | Sunderland       | Brighton           | TBD          |
-| Manchester United vs Tottenham      | 4.4% |     45.2% |      **50.4%** | Tottenham   |  Draw           | TBD         |
-| Crystal Palace vs Nottingham Forest     |     **57.3%** | 21.3% |     21.4% | Crystal Palace              | Crystal Palace          | TBD          |
-| Liverpool vs Manchester City     |      **40.6%** |     36.6% | 22.8% | Liverpool | Manchester City           | TBD           |
+| Arsenal vs Leeds United            |     **74.4%** | 17.4% |      8.1% | Arsenal              | Arsenal           | Arsenal 2-1       |
+| Chelsea vs Bournemouth   |      9.5% | **57.1%** |     33.4% | Draw              | Draw           | Chelsea 5-1          |
+| Aston Villa vs Brentford | 19.2% |     33.5% |     **47.3%**| Brentford          | Brentford           | Draw 2-2          |
+| Sunderland vs Brighton           | **56.7%**|     10.7% |     32.6% | Sunderland       | Brighton           | Brighton 0-2          |
+| Manchester United vs Tottenham      | 4.4% |     45.2% |      **50.4%** | Tottenham   |  Draw           | Draw 1-1         |
+| Crystal Palace vs Nottingham Forest     |     **57.3%** | 21.3% |     21.4% | Crystal Palace              | Crystal Palace          | Crystal Palace 3-1          |
+| Liverpool vs Manchester City     |      **40.6%** |     36.6% | 22.8% | Liverpool | Manchester City           | Manchester City 0-3           |
 
 
 
