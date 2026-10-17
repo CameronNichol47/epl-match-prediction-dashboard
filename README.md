@@ -500,3 +500,40 @@ The Elo system itself supports newly promoted teams by assigning them an
 initial rating, but the lack of historical rolling features is currently the
 main limitation preventing full predictions for these fixtures.
 
+### Matchweek 7 Predictions
+
+| Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
+|---|---:|---:|---:|---|---|---|
+| Everton vs Chelsea | 31.0% | **65.9%** | 3.1% | Draw | Chelsea | TBD |
+| Brentford vs Liverpool | 27.5% | **69.5%** | 3.0% | Draw | Liverpool | TBD |
+| Newcastle United vs Aston Villa | **45.0%** | 40.1% | 14.9% | Newcastle United | Draw | TBD |
+| Bournemouth vs Sunderland | **47.4%** | 38.5% | 14.1% | Bournemouth | Draw | TBD |
+| Brighton vs Crystal Palace | 5.4% | **90.6%** | 4.0% | Draw | Brighton | TBD |
+| Leeds United vs Manchester United | 8.5% | **60.7%** | 30.8% | Draw | Draw | TBD |
+| Nottingham Forest vs Arsenal | **55.4%** | 13.9% | 30.7% | Nottingham Forest | Arsenal | TBD |
+
+
+
+
+\* Model prediction unavailable because the current model excludes fixtures
+involving newly promoted teams due to insufficient Premier League rolling
+match data.
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
+
+
