@@ -33,31 +33,6 @@ def classify_players(players):
 
     return results
 
-
-def classify_sentences(text):
-    sentences = [
-        sentence.strip()
-        for sentence in text.replace("\n", " ").split(".")
-        if sentence.strip()
-    ]
-
-    results = []
-
-    for sentence in sentences:
-        prediction = classifier(
-            sentence,
-            candidate_labels=labels,
-            hypothesis_template="{}"
-        )
-
-        results.append({
-            "sentence": sentence,
-            "status": prediction["labels"][0],
-            "score": round(prediction["scores"][0], 3)
-        })
-
-    return results
-
 players = [
     {
         "player": "Pedro Porro",

@@ -1,82 +1,184 @@
-
-import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from classify_availability import classify_sentences
+from ddgs import DDGS
+from ddgs.exceptions import DDGSException
+from datetime import datetime, timedelta
+from extract_names import analyze_player_availability
 
-def extract_injuries(text, team):
-    injuries = []
+def get_article_date(soup):
 
-    injury_types = [
-        "knee", "ankle", "calf",
-        "hamstring", "quad", "muscle",
-        "fitness"
+    # First try the publication metadata
+    published = soup.find("meta", property="article:published_time")
+
+    if published is not None:
+        article_date = published.get("content")
+
+    else:
+        # Fallback to a time element
+        published = soup.find("time")
+
+        if published is None:
+            return None
+
+        article_date = published.get("datetime")
+
+    if article_date is None:
+        return None
+
+    try:
+        return datetime.fromisoformat(
+            article_date.replace("Z", "+00:00")
+        ).date()
+
+    except ValueError:
+        return None
+
+
+def get_bbc_url(team, opponent, match_date):
+
+    date = datetime.strptime(match_date, "%Y-%m-%d").date()
+    start_date = date - timedelta(days=3)
+
+    queries = [
+        f"BBC Sport {team} {opponent} team news {date.strftime('%B %Y')}",
+        f"BBC Sport {team} injury news {date.strftime('%B %Y')}",
+        f"BBC Sport {team} press conference injuries {date.strftime('%B %Y')}"
     ]
 
-    text = text.replace("\n", " ")
-    text = text.replace(" and ", ", ")
+    for query in queries:
 
-    players = text.split(",")
+        print("\nSearching:", query)
 
-    for player in players:
-        player = player.strip()
+        try:
+            results = DDGS().text(query, max_results=10)
 
-        if "(" not in player or ")" not in player:
+        except DDGSException as e:
+            print("Search failed:", e)
             continue
 
-        name = player.split("(")[0].strip()
-        injury = player.split("(")[1].split(")")[0].strip()
+        for result in results:
 
-        if injury.lower() in injury_types:
-            injuries.append({
-                "team": team,
-                "player": name,
-                "injury": injury.lower(),
-                "status": "unknown"
-            })
+            url = result["href"]
 
-    return injuries
+            # Only accept BBC Sport football articles
+            if "/sport/football/articles/" not in url:
+                continue
+
+            if not (
+                "bbc.com/sport/" in url
+                or "bbc.co.uk/sport/" in url
+            ):
+                continue
+
+            print("\nCandidate:", result["title"])
+            print("URL:", url)
+
+            try:
+                response = requests.get(
+                    url,
+                    headers={"User-Agent": "MySoccerResearch/1.0"},
+                    timeout=15
+                )
+
+                if response.status_code != 200:
+                    print("HTTP status:", response.status_code)
+                    continue
+
+            except requests.RequestException as e:
+                print("Request failed:", e)
+                continue
+
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            article_date = get_article_date(soup)
+
+            if article_date is None:
+                print("Publication date not found")
+                continue
+
+            print("Article date:", article_date)
+            print("Match date:", date)
+
+            if start_date <= article_date <= date:
+                print("Date matched!")
+                return url
+
+            else:
+                print("Article outside date range")
+
+    return None
+
 
 def get_team_news(url):
-    response = requests.get(url, timeout=15)
-    response.raise_for_status()
+
+    if url is None:
+        return None
+
+    try:
+        response = requests.get(
+            url,
+            headers={"User-Agent": "MySoccerResearch/1.0"},
+            timeout=15
+        )
+
+        response.raise_for_status()
+
+    except requests.RequestException as e:
+        print("Could not retrieve article:", e)
+        return None
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    heading = soup.find(
-        lambda tag: tag.name in ["h2", "h3"]
-        and tag.get_text(" ", strip=True).lower() == "team news"
-    )
+    article = soup.find("article")
 
-    if heading is None:
-        raise ValueError("Team News heading not found")
+    if article is None:
+        print("Article element not found")
+        return None
 
     paragraphs = []
 
-    for element in heading.find_all_next():
-        if element.name in ["h2", "h3"]:
-            break
+    for p in article.find_all(["p", "li"]):
 
-        if element.name == "p":
-            paragraphs.append(
-                element.get_text(" ", strip=True)
-            )
+        sentence = p.get_text(" ", strip=True)
 
-    return "\n".join(paragraphs)
+        if sentence:
+            paragraphs.append(sentence)
+
+    return paragraphs
 
 
+# -------------------------------
+# MAIN
+# -------------------------------
 
-url = (
-    "https://www.sportsmole.co.uk/football/spurs/preview/"
-    "spurs-vs-coventry-prediction-team-news-lineups_607110.html"
-)
+team = "Tottenham"
+opponent = "Coventry City"
+match_date = "2026-10-19"
 
-text = get_team_news(url)
+url = get_bbc_url(team, opponent, match_date)
 
-results = classify_sentences(text)
+print("\nArticle URL:", url)
 
-for result in results:
-    print("Status:", result["status"])
-    print("Score:", result["score"])
-    print("Sentence:", result["sentence"])
-    print()
+p = ""
+
+if url:
+    team_news = get_team_news(url)
+
+    if team_news:
+        print("\n--- TEAM NEWS ---\n")
+
+        for paragraph in team_news:
+            p += paragraph + " "
+
+        print(p)
+
+        results = analyze_player_availability(p)
+
+        for result in results:
+            print(result)
+
+    else:
+        print("No team news found in the article.")
+
+else:
+    print("No matching BBC Sport article found.")
