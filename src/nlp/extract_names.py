@@ -306,7 +306,7 @@ def get_player_context(names, text):
         for sentence in sentences:
             clauses = [sentence]
 
-            # Split sentences into smaller clauses
+            
             for separator in separators:
                 new_clauses = []
 
@@ -316,7 +316,7 @@ def get_player_context(names, text):
 
                 clauses = new_clauses
 
-            # Find clauses mentioning the player
+           
             for clause in clauses:
                 if name.lower() in clause.lower():
                     matching.append(clause.strip())
