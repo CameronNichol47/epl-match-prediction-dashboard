@@ -4,6 +4,12 @@ from ddgs import DDGS
 from ddgs.exceptions import DDGSException
 from datetime import datetime, timedelta
 from extract_names import analyze_player_availability
+from player_teams import (
+    get_fpl_data,
+    get_player_team,
+    normalize_team_name,
+    format_team_name
+)
 
 def get_article_date(soup):
 
@@ -34,13 +40,13 @@ def get_article_date(soup):
         return None
 
 
-def get_bbc_url(team, opponent, match_date):
+def get_bbc_url(team, away, match_date):
 
     date = datetime.strptime(match_date, "%Y-%m-%d").date()
     start_date = date - timedelta(days=3)
 
     queries = [
-        f"BBC Sport {team} {opponent} team news {date.strftime('%B %Y')}",
+        f"BBC Sport {team} {away} team news {date.strftime('%B %Y')}",
         f"BBC Sport {team} injury news {date.strftime('%B %Y')}",
         f"BBC Sport {team} press conference injuries {date.strftime('%B %Y')}"
     ]
@@ -151,11 +157,11 @@ def get_team_news(url):
 # MAIN
 # -------------------------------
 
-team = "Nottingham Forest"
-opponent = "Arsenal"
+home = "Nottingham Forest"
+away = "Arsenal"
 match_date = "2026-10-18"
 
-url = get_bbc_url(team, opponent, match_date)
+url = get_bbc_url(home, away, match_date)
 
 print("\nArticle URL:", url)
 
@@ -176,6 +182,33 @@ if url:
 
         for result in results:
             print(result)
+
+        data = get_fpl_data()
+
+        fixture = [
+            normalize_team_name(home),
+            normalize_team_name(away)
+        ]
+
+        for result in results:
+            player_team = get_player_team(result["name"], data, fixture)
+
+            result["team"] = format_team_name(player_team)
+
+            print(result)
+
+        home_status = []
+        away_status = []
+
+        for result in results:
+            if result["team"] == home:
+                home_status.append(result)
+
+            elif result["team"] == away:
+                away_status.append(result)
+
+        print(home_status)
+        print(away_status)
 
     else:
         print("No team news found in the article.")

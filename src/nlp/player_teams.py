@@ -3,15 +3,6 @@ import unicodedata
 
 URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
 
-test_names = [
-    "Mateo Kovacic",
-    "Rayan Ait-Nouri",
-    "Matheus Nunes",
-    "Nunes",
-    "Erling Haaland",
-    "Rodri"
-]
-
 def get_fpl_data():
     response = requests.get(
         URL,
@@ -21,6 +12,35 @@ def get_fpl_data():
     response.raise_for_status()
     return response.json()
 
+def format_team_name(team_name):
+    aliases = {
+        "Nott'm Forest": "Nottingham Forest",
+        "Man City": "Manchester City",
+        "Man Utd": "Manchester United",
+        "Spurs": "Tottenham",
+        "Newcastle": "Newcastle United",
+        "Coventry City": "Coventry",
+        "Hull City": "Hull",
+        "Ipswich Town": "Ipswich"
+    }
+
+    return aliases.get(team_name, team_name)
+
+def normalize_team_name(team_name):
+    aliases = {
+        "Manchester City": "Man City",
+        "Manchester United": "Man Utd",
+        "Nottingham Forest": "Nott'm Forest",
+        "Tottenham Hotspur": "Spurs",
+        "Wolverhampton Wanderers": "Wolves",
+        "Newcastle United": "Newcastle",
+        "Leeds United": "Leeds",
+        "Brighton and Hove Albion": "Brighton",
+        "Brighton & Hove Albion": "Brighton",
+        "AFC Bournemouth": "Bournemouth"
+    }
+
+    return aliases.get(team_name, team_name)
 
 def normalize_name(name):
     name = unicodedata.normalize("NFKD", name)
@@ -98,11 +118,3 @@ def get_player_team(player_name, data, fixture_teams=None):
         return surname_matches[0]
 
     return "UNKNOWN"
-
-
-if __name__ == "__main__":
-    fixture_teams = ["Man City", "Everton"]
-    data = get_fpl_data()
-
-    for name in test_names:
-        print(name, "->", get_player_team(name, data, fixture_teams))
