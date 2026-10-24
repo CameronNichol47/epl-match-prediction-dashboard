@@ -504,13 +504,13 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
 |---|---:|---:|---:|---|---|---|
-| Everton vs Chelsea | 31.0% | **65.9%** | 3.1% | Draw | Chelsea | TBD |
-| Brentford vs Liverpool | 27.5% | **69.5%** | 3.0% | Draw | Liverpool | TBD |
-| Newcastle United vs Aston Villa | **45.0%** | 40.1% | 14.9% | Newcastle United | Draw | TBD |
-| Bournemouth vs Sunderland | **47.4%** | 38.5% | 14.1% | Bournemouth | Draw | TBD |
-| Brighton vs Crystal Palace | 5.4% | **90.6%** | 4.0% | Draw | Brighton | TBD |
-| Leeds United vs Manchester United | 8.5% | **60.7%** | 30.8% | Draw | Draw | TBD |
-| Nottingham Forest vs Arsenal | **55.4%** | 13.9% | 30.7% | Nottingham Forest | Arsenal | TBD |
+| Everton vs Chelsea | 31.0% | **65.9%** | 3.1% | Draw | Chelsea | Chelsea 0-2 |
+| Brentford vs Liverpool | 27.5% | **69.5%** | 3.0% | Draw | Liverpool | Liverpool 1-2 |
+| Newcastle United vs Aston Villa | **45.0%** | 40.1% | 14.9% | Newcastle United | Draw | Aston Villa 0-1 |
+| Bournemouth vs Sunderland | **47.4%** | 38.5% | 14.1% | Bournemouth | Draw | Bournemouth 2-0 |
+| Brighton vs Crystal Palace | 5.4% | **90.6%** | 4.0% | Draw | Brighton | Brighton 5-0 |
+| Leeds United vs Manchester United | 8.5% | **60.7%** | 30.8% | Draw | Draw | Draw |
+| Nottingham Forest vs Arsenal | **55.4%** | 13.9% | 30.7% | Nottingham Forest | Arsenal | Arsenal 0-1 |
 
 
 

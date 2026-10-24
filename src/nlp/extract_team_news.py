@@ -157,9 +157,9 @@ def get_team_news(url):
 # MAIN
 # -------------------------------
 
-home = "Nottingham Forest"
-away = "Arsenal"
-match_date = "2026-10-18"
+home = "Aston Villa"
+away = "Manchester City"
+match_date = "2026-10-24"
 
 url = get_bbc_url(home, away, match_date)
 
