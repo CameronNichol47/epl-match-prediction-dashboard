@@ -261,20 +261,40 @@ The project currently supports:
 - Streamlit visualization
 - Prediction/API caching
 
-## Planned Improvements
+## Future Improvements
 
-Future development may include:
+The following improvements are planned to increase the accuracy, reliability, and interpretability of the Premier League match prediction model.
 
-- Model probability calibration
-- More extensive backtesting
-- Comparison with Logistic Regression and Random Forest baselines
-- Improved treatment of promoted/relegated teams
-- Player availability and injury information
-- Starting lineup information
-- Additional team-strength metrics
-- Automated weekly data updates
-- Improved Streamlit UI
-- Historical model-vs-market evaluation
+### 1. Expand Historical Training Data (2020/21–Present)
+- Expand the training dataset to include Premier League seasons from 2020/21 onward.
+- Retrieve historical match statistics, including expected goals (xG), expected goals against (xGA), goals scored, goals conceded, and other performance metrics.
+- Maintain chronological ordering to prevent data leakage.
+- Use time-based training, validation, and testing splits to evaluate performance on unseen matches.
+- Account for promoted and relegated teams when constructing historical features.
+
+### 2. Implement Poisson-Based Match Predictions
+- Develop a Poisson model to estimate the expected number of goals scored by each team.
+- Use attacking and defensive performance metrics, including xG, xGA, and home advantage, to estimate expected goals.
+- Calculate probabilities for individual scorelines using the Poisson distribution.
+- Aggregate scoreline probabilities into home win, draw, and away win probabilities.
+- Compare Poisson predictions against the existing XGBoost classifier.
+- Investigate combining both models through a weighted ensemble.
+
+### 3. Integrate Player Availability and Injury Impact Scores
+- Develop an NLP pipeline using Hugging Face Transformers to extract player availability information from team news articles and press conferences.
+- Classify player statuses, including injured, suspended, doubtful, and available.
+- Incorporate estimated return dates to track player availability across upcoming fixtures.
+- Retrieve player performance ratings and estimate expected minutes played using recent Premier League appearances.
+- Calculate a player impact score based on player quality, expected playing time, and availability.
+- Aggregate individual player impact scores into team-level availability features.
+- Integrate these features into the XGBoost model to account for injuries, suspensions, and missing key players.
+
+### 4. Improve Model Evaluation and Probability Calibration
+- Evaluate model performance using accuracy, multiclass log loss, and Brier score.
+- Investigate unusually high draw probabilities and potential model overconfidence.
+- Use probability calibration techniques to improve the reliability of predicted probabilities.
+- Track model predictions against actual match outcomes across multiple matchweeks.
+- Compare XGBoost, Poisson, and potential ensemble models using historical out-of-sample predictions.
 
 ## Disclaimer
 
@@ -536,4 +556,33 @@ The Elo system itself supports newly promoted teams by assigning them an
 initial rating, but the lack of historical rolling features is currently the
 main limitation preventing full predictions for these fixtures.
 
+### Matchweek 8 Predictions
 
+| Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
+|---|---:|---:|---:|---|---|---|
+| Aston Villa vs Manchester City | **36.1%** | 28.4% | 35.5% | Aston Villa | Manchester City | TBD |
+| Arsenal vs Everton | 21.5% | **48.5%** | 30.1% | Draw | Arsenal | TBD |
+| Chelsea vs Tottenham | **42.1%** | 27.6% | 30.3% | Chelsea | Chelsea | TBD |
+| Manchester United vs Bournemouth | **85.2%** | 11.5% | 3.3% | Manchester United | Draw | TBD |
+| Liverpool vs Brighton | **44.9%** | 20.5% | 34.5% | Liverpool | Brighton | TBD |
+| Crystal Palace vs Newcastle United | 7.7% | 22.3% | **70.0%** | Newcastle United | Draw | TBD |
+| Sunderland vs Leeds United | 1.7% | **82.4%** | 15.9% | Draw | Draw | TBD |
+
+
+
+### Prediction Limitations
+
+Matches involving newly promoted teams are currently excluded from model
+predictions.
+
+The model relies heavily on rolling Premier League statistics from previous
+matches, including recent xG, possession, shots, goals, and venue-specific
+performance. Newly promoted teams do not yet have sufficient Premier League
+match history for these rolling features to be generated consistently.
+
+As the season progresses and promoted teams accumulate enough Premier League
+matches, they can be incorporated into the prediction pipeline.
+
+The Elo system itself supports newly promoted teams by assigning them an
+initial rating, but the lack of historical rolling features is currently the
+main limitation preventing full predictions for these fixtures.
