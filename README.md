@@ -586,3 +586,16 @@ matches, they can be incorporated into the prediction pipeline.
 The Elo system itself supports newly promoted teams by assigning them an
 initial rating, but the lack of historical rolling features is currently the
 main limitation preventing full predictions for these fixtures.
+
+### Matchweek 9 Predictions
+
+| Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
+|---|---:|---:|---:|---|---|---|
+| Chelsea vs Manchester United | 12.7% | **56.1%** | 31.2% | Draw | Chelsea | — |
+| Bournemouth vs Leeds United | **92.2%** | 4.0% | 3.8% | Bournemouth | Draw | — |
+| Manchester City vs Brighton | **60.8%** | 18.1% | 21.1% | Manchester City | Manchester City | — |
+| Brentford vs Nottingham Forest | **46.0%** | 34.3% | 19.7% | Brentford | Brentford | — |
+| Tottenham vs Crystal Palace | 24.6% | **68.6%** | 6.9% | Draw | Tottenham | — |
+| Aston Villa vs Fulham | 9.2% | 29.3% | **61.6%** | Fulham | Aston Villa | — |
+| Liverpool vs Arsenal | 27.7% | **41.6%** | 30.7% | Draw | Draw | — |
+| Newcastle United vs Everton | 19.9% | **77.5%** | 2.5% | Draw | Newcastle United | — |
