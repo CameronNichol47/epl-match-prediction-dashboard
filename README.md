@@ -560,13 +560,13 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
 |---|---:|---:|---:|---|---|---|
-| Aston Villa vs Manchester City | **36.1%** | 28.4% | 35.5% | Aston Villa | Manchester City | TBD |
-| Arsenal vs Everton | 21.5% | **48.5%** | 30.1% | Draw | Arsenal | TBD |
-| Chelsea vs Tottenham | **42.1%** | 27.6% | 30.3% | Chelsea | Chelsea | TBD |
-| Manchester United vs Bournemouth | **85.2%** | 11.5% | 3.3% | Manchester United | Draw | TBD |
-| Liverpool vs Brighton | **44.9%** | 20.5% | 34.5% | Liverpool | Brighton | TBD |
-| Crystal Palace vs Newcastle United | 7.7% | 22.3% | **70.0%** | Newcastle United | Draw | TBD |
-| Sunderland vs Leeds United | 1.7% | **82.4%** | 15.9% | Draw | Draw | TBD |
+| Aston Villa vs Manchester City | **36.1%** | 28.4% | 35.5% | Aston Villa | Manchester City | Aston Villa 2-1 |
+| Arsenal vs Everton | 21.5% | **48.5%** | 30.1% | Draw | Arsenal | Arsenal 2-0 |
+| Chelsea vs Tottenham | **42.1%** | 27.6% | 30.3% | Chelsea | Chelsea | Tottenham 0-2 |
+| Manchester United vs Bournemouth | **85.2%** | 11.5% | 3.3% | Manchester United | Draw | Bournemouth 0-3 |
+| Liverpool vs Brighton | **44.9%** | 20.5% | 34.5% | Liverpool | Brighton | Liverpool 2-0 |
+| Crystal Palace vs Newcastle United | 7.7% | 22.3% | **70.0%** | Newcastle United | Draw | Newcastle United 0-2 |
+| Sunderland vs Leeds United | 1.7% | **82.4%** | 15.9% | Draw | Draw | Draw |
 
 
 
