@@ -2,7 +2,7 @@ import requests
 import json
 
 LEAGUE_ID = 4328
-ROUND = 9
+ROUND = 10
 SEASON = "2026-2027"
 
 url = (

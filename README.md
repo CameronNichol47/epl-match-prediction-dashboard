@@ -591,11 +591,26 @@ main limitation preventing full predictions for these fixtures.
 
 | Fixture | Home Win | Draw | Away Win | Model Pick | My Prediction | Actual Result |
 |---|---:|---:|---:|---|---|---|
-| Chelsea vs Manchester United | 12.7% | **56.1%** | 31.2% | Draw | Chelsea | — |
-| Bournemouth vs Leeds United | **92.2%** | 4.0% | 3.8% | Bournemouth | Draw | — |
-| Manchester City vs Brighton | **60.8%** | 18.1% | 21.1% | Manchester City | Manchester City | — |
-| Brentford vs Nottingham Forest | **46.0%** | 34.3% | 19.7% | Brentford | Brentford | — |
-| Tottenham vs Crystal Palace | 24.6% | **68.6%** | 6.9% | Draw | Tottenham | — |
-| Aston Villa vs Fulham | 9.2% | 29.3% | **61.6%** | Fulham | Aston Villa | — |
-| Liverpool vs Arsenal | 27.7% | **41.6%** | 30.7% | Draw | Draw | — |
-| Newcastle United vs Everton | 19.9% | **77.5%** | 2.5% | Draw | Newcastle United | — |
+| Chelsea vs Manchester United | 12.7% | **56.1%** | 31.2% | Draw | Chelsea | Chelsea 2-0 |
+| Bournemouth vs Leeds United | **92.2%** | 4.0% | 3.8% | Bournemouth | Draw | Bournemouth 2-0 |
+| Manchester City vs Brighton | **60.8%** | 18.1% | 21.1% | Manchester City | Manchester City | Brighton 0-1 |
+| Brentford vs Nottingham Forest | **46.0%** | 34.3% | 19.7% | Brentford | Brentford | Brentford 2-0 |
+| Tottenham vs Crystal Palace | 24.6% | **68.6%** | 6.9% | Draw | Tottenham | Tottenham 2-0 |
+| Aston Villa vs Fulham | 9.2% | 29.3% | **61.6%** | Fulham | Aston Villa | Draw 1-1 |
+| Liverpool vs Arsenal | 27.7% | **41.6%** | 30.7% | Draw | Draw | Arsenal 0-1 |
+| Newcastle United vs Everton | 19.9% | **77.5%** | 2.5% | Draw | Newcastle United | Everton 0-1 |
+
+### Matchweek 10 Predictions
+
+### Known Issues / Data Availability
+
+**Understat API — Temporary Unavailability (November 2026)**
+
+The prediction pipeline currently relies on Understat for historical expected goals (xG) data. As of November 6, 2026, Understat is displaying a maintenance page, preventing the `understatapi` library from retrieving match data.
+
+- **Impact:** Predictions requiring a fresh retrieval of Understat data may fail.
+- **Cause:** The service returns HTML instead of the expected JSON response.
+- **Status:** Awaiting restoration of Understat services.
+- **Next Steps:** Resume data collection and verify API functionality once the service is available.
+
+The existing data-processing and prediction logic remains unchanged.
